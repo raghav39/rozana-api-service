@@ -1,0 +1,3 @@
+enum BusinessTaxScheme{
+  CONSUMER, REGISTERED_BUSINESS_GST_REGULAR
+}
