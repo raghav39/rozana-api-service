@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:chopper/chopper.dart';
 import 'package:event_bus/event_bus.dart';
 import 'package:http/io_client.dart';
+import 'package:rozana_api_service/data/events/BadRequestResponseEvent.dart';
 import 'package:rozana_api_service/data/events/UnAuthorizedResponseEvent.dart';
 import 'package:rozana_api_service/data/local/preference_manager.dart';
 import 'package:rozana_api_service/data/model/dto/address.dart';
@@ -126,13 +127,24 @@ class ApiCaller {
       }
       return response;
     }
+    //This method will fire an event to notify all the listeners about the 400 response received by any request.
+    Future<Response> checkForBadRequestResponse(Response response) async {
+      print(response.statusCode);
+      if (response.statusCode == HttpStatus.badRequest &&
+          (response.base.request.url == Uri.parse(
+              "https://rozana.noisytempo.com/api/organizationConfig"))) {
+        authenticatedChopperClient = null;
+        eventBus.fire(BadRequestResponseEvent());
+      }
+      return response;
+    }
 
     authenticatedChopperClient = new ChopperClient(
       client: IOClient(),
       baseUrl: AppConstants.SERVER_ENDPOINT,
       converter: converter,
       errorConverter: converter,
-      interceptors: [authHeader, xAppKeyHeader, checkForUnAuthorizedResponse],
+      interceptors: [authHeader, xAppKeyHeader, checkForUnAuthorizedResponse,checkForBadRequestResponse],
       services: [
         ProductApiService.create(),
         UserCustomerApiService.create(),

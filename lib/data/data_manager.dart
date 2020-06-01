@@ -34,6 +34,7 @@ import 'package:rozana_api_service/data/remote/user_customer_api_service.dart';
 import 'package:rozana_api_service/data/user_customer_cache_manager.dart';
 import 'package:rozana_api_service/utils/jwt_util.dart';
 
+import 'events/BadRequestResponseEvent.dart';
 import 'events/UnAuthorizedResponseEvent.dart';
 import 'model/dto/product_offer.dart';
 
@@ -63,6 +64,8 @@ class DataManager {
       this.eventBus}) {
     eventBus.on<UnAuthorizedResponseEvent>().listen((event) {
       logoutUser();
+    });
+    eventBus.on<BadRequestResponseEvent>().listen((event) {
     });
   }
 
