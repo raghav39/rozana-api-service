@@ -22,14 +22,16 @@ abstract class ProductApiService extends ChopperService {
 
   @Get(path: "products")
   Future<Response<List<Product>>> getAllProducts(
-      {@Query("page") int page = 0,
+      {@Query("featured.equals") bool featured,
+      @Query("page") int page = 0,
       @Query("size") int size = 20,
       @Query("sort") List<String> sort});
 
   @Get(path: "products")
   Future<Response<List<Product>>> getAllProductsForCategoryId(
       @Query("productCategoryId.equals") int productCategoryId,
-      {@Query("page") int page = 0,
+      {@Query("featured.equals") bool featured,
+      @Query("page") int page = 0,
       @Query("size") int size = 20,
       @Query("sort") List<String> sort});
 

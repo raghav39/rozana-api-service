@@ -182,7 +182,7 @@ class DataManager {
     }
   }
 
-  Future<List<Product>> getProducts({int categoryId, int index = 0}) async {
+  Future<List<Product>> getProducts({int categoryId, int index = 0, bool featured}) async {
     print(
         'calling getProducts() with index: $index and categoryId: $categoryId');
     int page = 0;
@@ -197,12 +197,12 @@ class DataManager {
     try {
       if (categoryId != null) {
         products = (await (await apiCaller.getProductService())
-                .getAllProductsForCategoryId(categoryId,
+                .getAllProductsForCategoryId(categoryId, featured: featured,
                     page: page, sort: sort))
             ?.body;
       } else {
         products = (await (await apiCaller.getProductService())
-                .getAllProducts(page: page, sort: sort))
+                .getAllProducts(featured: featured, page: page, sort: sort))
             ?.body;
       }
       productCacheManager.updateProducts(products);

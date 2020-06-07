@@ -6,6 +6,7 @@ part of 'product_api_service.dart';
 // ChopperGenerator
 // **************************************************************************
 
+// ignore_for_file: always_put_control_body_on_new_line, always_specify_types, prefer_const_declarations
 class _$ProductApiService extends ProductApiService {
   _$ProductApiService([ChopperClient client]) {
     if (client == null) return;
@@ -31,9 +32,14 @@ class _$ProductApiService extends ProductApiService {
 
   @override
   Future<Response<List<Product>>> getAllProducts(
-      {int page = 0, int size = 20, List<String> sort}) {
+      {bool featured, int page = 0, int size = 20, List<String> sort}) {
     final $url = '/api/products';
-    final $params = <String, dynamic>{'page': page, 'size': size, 'sort': sort};
+    final $params = <String, dynamic>{
+      'featured.equals': featured,
+      'page': page,
+      'size': size,
+      'sort': sort
+    };
     final $request = Request('GET', $url, client.baseUrl, parameters: $params);
     return client.send<List<Product>, Product>($request);
   }
@@ -41,12 +47,14 @@ class _$ProductApiService extends ProductApiService {
   @override
   Future<Response<List<Product>>> getAllProductsForCategoryId(
       int productCategoryId,
-      {int page = 0,
+      {bool featured,
+      int page = 0,
       int size = 20,
       List<String> sort}) {
     final $url = '/api/products';
     final $params = <String, dynamic>{
       'productCategoryId.equals': productCategoryId,
+      'featured.equals': featured,
       'page': page,
       'size': size,
       'sort': sort
