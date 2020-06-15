@@ -8,28 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/data_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/data_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/address_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/address_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/auth_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/auth_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/delivery_boy_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/delivery_boy_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/delivery_slot_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/delivery_slot_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/device_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/device_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/invoice_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/invoice_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/locality_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/locality_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/order_transaction_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/order_transaction_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/organization_config_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/organization_config_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/outlet_custom_configuration_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/outlet_custom_configuration_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/product_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/product_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/product_api_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/product_api_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/product_offer_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/product_offer_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/user_customer_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/user_customer_api_service.chopper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/organization_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/organization_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/organization_config.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/organization_config.g.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -49,64 +32,6 @@
         <option value="Dart File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>path: &quot;/</find>
-      <find>401</find>
-      <find>httpStat</find>
-      <find>un</find>
-      <find>invocie</find>
-      <find>invoiceDate</find>
-      <find>.body</find>
-      <find>catc</find>
-      <find>OutletCustomConfiguration</find>
-      <find>InvoiceStatus</find>
-      <find>@query</find>
-      <find>products</find>
-      <find>searchpro</find>
-      <find>this</find>
-      <find>this.</find>
-      <find>nood</find>
-      <find>getallpro</find>
-      <find>createor</find>
-      <find>login</find>
-      <find>JaguarConverter</find>
-      <find>repository</find>
-      <find>Serializer(),</find>
-      <find>@requi</find>
-      <find>@JsonSerializable(nullable: false)</find>
-      <find>@JsonSerializable(nullable: false, explicitToJson: true)</find>
-      <find>@JsonSerializable(explicitToJson: true)</find>
-      <find>Locality</find>
-      <find>invoice</find>
-      <find>seria</find>
-      <find>List&lt;</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>package:rozana_api_service</replace>
-      <replace>Locality</replace>
-      <replace>LocalityComponentType</replace>
-      <replace>if(this.organizationAppKey == null || this.organizationAppKey.isEmpty) return null;</replace>
-      <replace>@ChopperApi(baseUrl: &quot;api&quot;)</replace>
-      <replace>@Get</replace>
-      <replace>@Post</replace>
-      <replace>@Put</replace>
-      <replace>@Body()</replace>
-      <replace>baseUrl: &quot;/</replace>
-      <replace>(path: &quot;/</replace>
-      <replace>@Path()</replace>
-      <replace>@Query()</replace>
-      <replace>@Query(</replace>
-      <replace>{id}</replace>
-      <replace>,</replace>
-      <replace>path: &quot;</replace>
-      <replace>?.body</replace>
-      <replace>@JsonSerializable(nullable: false, explicitToJson: true)</replace>
-      <replace>@JsonSerializable(explicitToJson: true)</replace>
-      <replace>@JsonSerializable(explicitToJson: true, createFactory: true)</replace>
-      <replace>.fromJsonFactory,</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -195,7 +120,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

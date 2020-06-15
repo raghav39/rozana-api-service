@@ -119,14 +119,14 @@ packages:
       name: chopper
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.2"
+    version: "3.0.3"
   chopper_generator:
     dependency: "direct dev"
     description:
       name: chopper_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.4"
+    version: "3.0.5"
   clock:
     dependency: transitive
     description:
@@ -281,7 +281,7 @@ packages:
       name: js
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.1+1"
+    version: "0.6.2"
   json_annotation:
     dependency: "direct main"
     description:
@@ -496,7 +496,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.15"
+    version: "0.2.16"
   timing:
     dependency: transitive
     description:
