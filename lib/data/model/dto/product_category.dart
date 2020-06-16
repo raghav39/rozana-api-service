@@ -14,6 +14,8 @@ class ProductCategory extends Equatable {
 
   String imageUrl;
 
+  String banner;
+
   int sequence;
 
   String offerRibbon;
@@ -29,6 +31,7 @@ class ProductCategory extends Equatable {
         this.name,
         this.description = "",
         this.imageUrl,
+        this.banner,
         this.sequence = 0,
         this.offerRibbon = "",
         this.uiShowInGrid,
@@ -48,6 +51,7 @@ class ProductCategory extends Equatable {
     name,
     description,
     imageUrl,
+    banner,
     sequence,
     offerRibbon,
     uiShowInGrid,
@@ -55,59 +59,3 @@ class ProductCategory extends Equatable {
     products
   ];
 }
-/*
-
-part 'product_category.jser.dart';
-
-class ProductCategory extends Equatable {
-  int id;
-
-  String name;
-
-  String description;
-
-  String imageUrl;
-
-  int sequence;
-
-  String offerRibbon;
-
-  List<ProductCategory> subCategories;
-
-  List<Product> products;
-
-  ProductCategory(
-      {this.id,
-      this.name,
-      this.description = "",
-      this.imageUrl,
-      this.sequence = 0,
-      this.offerRibbon = "",
-      this.subCategories,
-      this.products});
-
-  Map<String, dynamic> toJson() => serializer.toMap(this);
-
-  static final serializer = ProductCategorySerializer();
-
-  static ProductCategory fromMap(Map map) => serializer.fromMap(map);
-
-  String toString() => toJson().toString();
-
-  @override
-  List<Object> get props => [
-    id,
-    name,
-    description,
-    imageUrl,
-    sequence,
-    offerRibbon,
-    subCategories,
-    products
-  ];
-}
-
-@GenSerializer()
-class ProductCategorySerializer extends Serializer<ProductCategory>
-    with _$ProductCategorySerializer {}
-*/
