@@ -31,6 +31,31 @@ class _$ProductApiService extends ProductApiService {
   }
 
   @override
+  Future<Response<ProductCategory>> createProductCategory(
+      ProductCategory productCategory) {
+    final $url = '/api/product-categories';
+    final $body = productCategory;
+    final $request = Request('POST', $url, client.baseUrl, body: $body);
+    return client.send<ProductCategory, ProductCategory>($request);
+  }
+
+  @override
+  Future<Response<ProductCategory>> updateProductCategory(
+      ProductCategory productCategory) {
+    final $url = '/api/product-categories';
+    final $body = productCategory;
+    final $request = Request('PUT', $url, client.baseUrl, body: $body);
+    return client.send<ProductCategory, ProductCategory>($request);
+  }
+
+  @override
+  Future<Response<String>> deleteProductCategory(int id) {
+    final $url = '/api/product-categories/$id';
+    final $request = Request('DELETE', $url, client.baseUrl);
+    return client.send<String, String>($request);
+  }
+
+  @override
   Future<Response<List<Product>>> getAllProducts(
       {bool featured, int page = 0, int size = 20, List<String> sort}) {
     final $url = '/api/products';
