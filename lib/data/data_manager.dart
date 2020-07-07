@@ -182,6 +182,36 @@ class DataManager {
     }
   }
 
+  Future<ProductCategory> updateProductCategory(ProductCategory productCategory) async {
+    try {
+      return (await (await apiCaller.getProductService())
+              .updateProductCategory(productCategory))
+          ?.body;
+    } on Response catch (_) {
+      return null;
+    }
+  }
+
+  Future<ProductCategory> createProductCategory(ProductCategory productCategory) async {
+    try {
+      return (await (await apiCaller.getProductService())
+              .createProductCategory(productCategory))
+          ?.body;
+    } on Response catch (_) {
+      return null;
+    }
+  }
+
+  Future<int> deleteProductCategory(int productCategoryId) async {
+    try {
+      return (await (await apiCaller.getProductService())
+              .deleteProductCategory(productCategoryId))
+          ?.statusCode;
+    } on Response catch (_) {
+      return null;
+    }
+  }
+
   Future<List<Product>> getProducts({int categoryId, int index = 0, bool featured}) async {
     print(
         'calling getProducts() with index: $index and categoryId: $categoryId');
@@ -212,10 +242,10 @@ class DataManager {
     return products;
   }
 
-  Future<dynamic> deleteProduct(int productId) async {
+  Future<int> deleteProduct(int productId) async {
     return (await (await apiCaller.getProductService())
             .deleteProduct(productId))
-        ?.body;
+        ?.statusCode;
   }
 
   Future<List<Product>> searchProduct({String query, int index = 0}) async {
