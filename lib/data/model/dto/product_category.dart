@@ -22,6 +22,8 @@ class ProductCategory extends Equatable {
 
   bool uiShowInGrid;
 
+  int parentCategoryId;
+
   List<ProductCategory> subCategories;
 
   List<Product> products;
@@ -35,6 +37,7 @@ class ProductCategory extends Equatable {
         this.sequence = 0,
         this.offerRibbon = "",
         this.uiShowInGrid,
+        this.parentCategoryId,
         this.subCategories,
         this.products});
 
@@ -55,6 +58,7 @@ class ProductCategory extends Equatable {
     sequence,
     offerRibbon,
     uiShowInGrid,
+    parentCategoryId,
     subCategories,
     products
   ];

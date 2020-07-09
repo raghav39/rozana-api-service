@@ -16,6 +16,7 @@ ProductCategory _$ProductCategoryFromJson(Map<String, dynamic> json) {
     sequence: json['sequence'] as int,
     offerRibbon: json['offerRibbon'] as String,
     uiShowInGrid: json['uiShowInGrid'] as bool,
+    parentCategoryId: json['parentCategoryId'] as int,
     subCategories: (json['subCategories'] as List)
         ?.map((e) => e == null
             ? null
@@ -38,6 +39,7 @@ Map<String, dynamic> _$ProductCategoryToJson(ProductCategory instance) =>
       'sequence': instance.sequence,
       'offerRibbon': instance.offerRibbon,
       'uiShowInGrid': instance.uiShowInGrid,
+      'parentCategoryId': instance.parentCategoryId,
       'subCategories':
           instance.subCategories?.map((e) => e?.toJson())?.toList(),
       'products': instance.products?.map((e) => e?.toJson())?.toList(),

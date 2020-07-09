@@ -29,6 +29,9 @@ abstract class ProductApiService extends ChopperService {
   @Delete(path: "product-categories/{id}")
   Future<Response<String>> deleteProductCategory(@Path() int id);
 
+  @Post(path: "product-categories/remove/{categoryId}")
+  Future<Response<ProductCategory>> removeProductCategoryFromProduct(@Path() int categoryId, @Body() Product product);
+
   @Get(path: "products")
   Future<Response<List<Product>>> getAllProducts(
       {@Query("featured.equals") bool featured,
