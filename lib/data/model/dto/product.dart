@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:rozana_api_service/data/model/dto/product_category.dart';
 import 'package:rozana_api_service/data/model/dto/product_stock.dart';
 
 part 'product.g.dart';
@@ -48,6 +49,8 @@ class Product extends Equatable {
 
   List<ProductStock> productStocks;
 
+  List<ProductCategory> productCategories;
+
   List<Product> variants;
 
   Product(
@@ -72,6 +75,7 @@ class Product extends Equatable {
         this.taxStrategyId,
         this.taxStrategyType,
         this.productStocks,
+        this.productCategories,
         this.variants})
       : super();
 
@@ -122,6 +126,7 @@ class Product extends Equatable {
     imageId,
     organizationId,
     alias,
-    variants
+    variants,
+    productCategories
   ];
 }

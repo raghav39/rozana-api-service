@@ -32,6 +32,10 @@ Product _$ProductFromJson(Map<String, dynamic> json) {
         ?.map((e) =>
             e == null ? null : ProductStock.fromJson(e as Map<String, dynamic>))
         ?.toList(),
+    productCategories: (json['productCategories'] as List)
+        ?.map((e) =>
+            e == null ? null : ProductCategory.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
     variants: (json['variants'] as List)
         ?.map((e) =>
             e == null ? null : Product.fromJson(e as Map<String, dynamic>))
@@ -62,5 +66,6 @@ Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
       'taxStrategyType': instance.taxStrategyType,
       'productStocks':
           instance.productStocks?.map((e) => e?.toJson())?.toList(),
+      'productCategories': instance.productCategories?.map((e) => e?.toJson())?.toList(),
       'variants': instance.variants?.map((e) => e?.toJson())?.toList(),
     };
