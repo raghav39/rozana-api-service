@@ -202,10 +202,10 @@ class DataManager {
     }
   }
 
-  Future<ProductCategory> removeProductCategoryFromProduct(int productCategoryId, Product product) async {
+  Future<ProductCategory> removeProductCategoryFromProduct(int productCategoryId, List<Product> products) async {
     try {
       return (await (await apiCaller.getProductService())
-              .removeProductCategoryFromProduct(productCategoryId, product))
+              .removeProductCategoryFromProduct(productCategoryId, products))
           ?.body;
     } on Response catch (_) {
       return null;
