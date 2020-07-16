@@ -57,7 +57,7 @@ class _$ProductApiService extends ProductApiService {
 
   @override
   Future<Response<ProductCategory>> removeProductCategoryFromProduct(
-      int categoryId, Product product) {
+      int categoryId, List<Product> product) {
     final $url = '/api/product-categories/remove/$categoryId';
     final $body = product;
     final $request = Request('POST', $url, client.baseUrl, body: $body);

@@ -30,7 +30,7 @@ abstract class ProductApiService extends ChopperService {
   Future<Response<String>> deleteProductCategory(@Path() int id);
 
   @Post(path: "product-categories/remove/{categoryId}")
-  Future<Response<ProductCategory>> removeProductCategoryFromProduct(@Path() int categoryId, @Body() Product product);
+  Future<Response<ProductCategory>> removeProductCategoryFromProduct(@Path() int categoryId, @Body() List<Product> product);
 
   @Get(path: "products")
   Future<Response<List<Product>>> getAllProducts(
