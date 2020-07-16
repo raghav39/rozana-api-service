@@ -8,3 +8,6 @@ build/
 ios/.generated/
 ios/Flutter/Generated.xcconfig
 ios/Runner/GeneratedPluginRegistrant.*
+.idea/
+example/.flutter-plugins-dependencies
+rozana_api_service.iml
