@@ -17,7 +17,7 @@ class ProductCacheManager {
     return _products;
   }
 
-  Product getProduct(int id) {
+  Product getProduct(int id, {ignoreCache = false}) {
     if (_products == null || _products.isEmpty) {
       return null;
     }
@@ -27,6 +27,10 @@ class ProductCacheManager {
         result = product;
         break;
       }
+    }
+    if (result != null && ignoreCache == true) {
+      _products.remove(result);
+      return null;
     }
     return result;
   }

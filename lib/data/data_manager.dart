@@ -277,8 +277,8 @@ class DataManager {
     }
   }
 
-  Future<Product> getProduct(int productId) async {
-    Product cachedProduct = productCacheManager.getProduct(productId);
+  Future<Product> getProduct(int productId, {bool ignoreCache = false}) async {
+    Product cachedProduct = productCacheManager.getProduct(productId, ignoreCache: ignoreCache);
     if (cachedProduct == null) {
       try {
         Product product =
