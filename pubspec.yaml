@@ -16,6 +16,7 @@ dependencies:
   event_bus: ^1.1.1
   equatable:
   json_annotation:
+  universal_io: ^1.0.1
 
 dev_dependencies:
   flutter_test:
