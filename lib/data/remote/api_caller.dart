@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:io';
+import 'package:universal_io/io.dart' if (dart.library.io) 'dart:io';
 
 import 'package:chopper/chopper.dart';
 import 'package:event_bus/event_bus.dart';
@@ -140,7 +140,6 @@ class ApiCaller {
     }
 
     authenticatedChopperClient = new ChopperClient(
-      client: IOClient(),
       baseUrl: AppConstants.SERVER_ENDPOINT,
       converter: converter,
       errorConverter: converter,
