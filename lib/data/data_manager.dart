@@ -392,7 +392,7 @@ class DataManager {
     Invoice updatedInvoice = Invoice.fromJson(invoice.toJson());
     updatedInvoice.deliveredById = deliveryBoyUser.user.id;
     return (await (await apiCaller.getInvoiceService())
-            ?.updateInvoice(updatedInvoice))
+            ?.updateDeliveryBoy(updatedInvoice))
         ?.body;
   }
 
