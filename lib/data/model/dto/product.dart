@@ -1,12 +1,14 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:rozana_api_service/data/model/dto/base_dto.dart';
 import 'package:rozana_api_service/data/model/dto/product_category.dart';
 import 'package:rozana_api_service/data/model/dto/product_stock.dart';
 
 part 'product.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
-class Product extends Equatable {
+class Product extends Equatable implements BaseDto {
+  @override
   int id;
 
   String name;
@@ -129,4 +131,5 @@ class Product extends Equatable {
     variants,
     productCategories
   ];
+
 }

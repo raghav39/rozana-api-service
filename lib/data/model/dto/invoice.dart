@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:rozana_api_service/data/model/dto/attachment.dart';
+import 'package:rozana_api_service/data/model/dto/base_dto.dart';
 import 'package:rozana_api_service/data/model/dto/line_item.dart';
 import 'package:rozana_api_service/data/model/dto/offer.dart';
 import 'package:rozana_api_service/data/model/dto/selected_product.dart';
@@ -8,7 +9,8 @@ import 'package:rozana_api_service/data/model/dto/selected_product.dart';
 part 'invoice.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
-class Invoice extends Equatable {
+class Invoice extends Equatable implements BaseDto {
+  @override
   int id;
 
   String number;
