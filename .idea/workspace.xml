@@ -8,9 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/data_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/data_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/invoice_api_service.chopper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/invoice_api_service.chopper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/remote/invoice_api_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/invoice_api_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/user_customer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/user_customer.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
