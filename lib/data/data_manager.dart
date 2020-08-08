@@ -383,8 +383,10 @@ class DataManager {
     return response;
   }
 
-  Future<Null> createOrder(Invoice invoice) async {
-    await (await apiCaller.getInvoiceService()).createInvoice(invoice);
+  Future<Invoice> createOrder(Invoice invoice) async {
+    return (await (await apiCaller.getInvoiceService())
+        ?.createInvoice(invoice))
+        ?.body;
   }
 
   Future<Invoice> assignDeliveryBoyToInvoice(
