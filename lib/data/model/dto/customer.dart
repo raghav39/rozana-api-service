@@ -1,11 +1,13 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:rozana_api_service/data/model/dto/address.dart';
+import 'package:rozana_api_service/data/model/dto/base_dto.dart';
 
 part 'customer.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
-class Customer extends Equatable {
+class Customer extends Equatable implements BaseDto {
+  @override
   int id;
 
   String uniqueCode;
