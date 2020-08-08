@@ -403,7 +403,7 @@ class DataManager {
     Invoice updatedInvoice = Invoice.fromJson(invoice.toJson());
     updatedInvoice.orderStatus = orderStatus;
     return (await (await apiCaller.getInvoiceService())
-            ?.updateInvoice(updatedInvoice))
+            ?.updateOrderStatus(updatedInvoice))
         ?.body;
   }
 

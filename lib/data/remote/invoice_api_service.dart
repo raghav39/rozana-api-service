@@ -32,6 +32,9 @@ abstract class InvoiceApiService extends ChopperService {
   @Put(path: "invoices/delivery-boy")
   Future<Response<Invoice>> updateDeliveryBoy(@Body() Invoice invoice);
 
+  @Put(path: "invoices/order-status")
+  Future<Response<Invoice>> updateOrderStatus(@Body() Invoice invoice);
+
   @Get(path: "invoices/count")
   Future<Response<int>> getInvoiceCount();
 }
