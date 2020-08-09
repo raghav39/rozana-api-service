@@ -1,11 +1,15 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:rozana_api_service/data/model/dto/base_dto.dart';
 import 'package:rozana_api_service/data/model/enums/banner_image_redirect_type.dart';
 
 part 'banner_image.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
-class BannerImage extends Equatable {
+class BannerImage extends Equatable  implements BaseDto {
+  @override
+  int id;
+
   final String imageUrl;
 
   final bool disabled;
@@ -17,7 +21,9 @@ class BannerImage extends Equatable {
   final String redirectTo;
 
   BannerImage(
-      {this.imageUrl,
+      {
+        this.id,
+        this.imageUrl,
         this.disabled,
         this.productId,
         this.searchQuery,
@@ -42,7 +48,7 @@ class BannerImage extends Equatable {
   }
 
   @override
-  List<Object> get props => [imageUrl, disabled, productId, searchQuery, redirectTo];
+  List<Object> get props => [id, imageUrl, disabled, productId, searchQuery, redirectTo];
 }
 
 /*
