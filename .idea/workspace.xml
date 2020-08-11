@@ -6,11 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/banner_image.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/banner_image.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,10 +114,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="489" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1596890590358">
+    <state x="489" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1597116272665">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="489" y="369" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1596890590358" />
+    <state x="489" y="369" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1597116272665" />
     <state x="493" y="292" width="693" height="488" key="find.popup" timestamp="1592977767701">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>

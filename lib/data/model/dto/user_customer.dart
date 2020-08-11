@@ -22,7 +22,7 @@ class UserCustomer extends Equatable implements BaseDto {
 
   Wallet wallet;
 
-  UserCustomer({this.customer, this.address, this.user, this.wallet}): this.id = user.id;
+  UserCustomer({this.customer, this.address, this.user, this.wallet}): this.id = customer?.id;
 
   factory UserCustomer.fromJson(Map<String, dynamic> json) =>
       _$UserCustomerFromJson(json);
