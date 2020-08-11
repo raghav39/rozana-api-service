@@ -3,7 +3,6 @@ import 'package:universal_io/io.dart' if (dart.library.io) 'dart:io';
 
 import 'package:chopper/chopper.dart';
 import 'package:event_bus/event_bus.dart';
-import 'package:http/io_client.dart';
 import 'package:rozana_api_service/data/events/BadRequestResponseEvent.dart';
 import 'package:rozana_api_service/data/events/UnAuthorizedResponseEvent.dart';
 import 'package:rozana_api_service/data/local/preference_manager.dart';
@@ -173,7 +172,6 @@ class ApiCaller {
           organizationAppKey,
         );
     unAuthenticatedChopperClient = new ChopperClient(
-      client: IOClient(),
       baseUrl: AppConstants.SERVER_ENDPOINT,
       converter: converter,
       errorConverter: converter,
@@ -195,7 +193,6 @@ class ApiCaller {
           "application/json",
         );
     googleLocationChopperClient = new ChopperClient(
-      client: IOClient(),
       baseUrl: "https://maps.googleapis.com",
       converter: converter,
       errorConverter: converter,
