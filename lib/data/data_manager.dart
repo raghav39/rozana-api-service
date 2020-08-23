@@ -284,6 +284,9 @@ class DataManager {
         Product product =
             (await (await apiCaller.getProductService()).getProduct(productId))
                 ?.body;
+        if(product == null || product.id == null){
+          return null;
+        }
         productCacheManager.addProduct(product);
         return product;
       } on Response catch (_) {
@@ -463,6 +466,9 @@ class DataManager {
       response =
           (await (await apiCaller.getInvoiceService())?.getInvoice(invoiceId))
               ?.body;
+      if(response == null || response.id == null){
+        return null;
+      }
     } on Response catch (_) {
       response = null;
     }
