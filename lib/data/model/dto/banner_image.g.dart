@@ -8,6 +8,7 @@ part of 'banner_image.dart';
 
 BannerImage _$BannerImageFromJson(Map<String, dynamic> json) {
   return BannerImage(
+    id: json['id'] as int,
     imageUrl: json['imageUrl'] as String,
     disabled: json['disabled'] as bool,
     productId: json['productId'] as int,
@@ -18,6 +19,7 @@ BannerImage _$BannerImageFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$BannerImageToJson(BannerImage instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'imageUrl': instance.imageUrl,
       'disabled': instance.disabled,
       'productId': instance.productId,

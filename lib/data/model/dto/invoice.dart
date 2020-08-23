@@ -61,6 +61,8 @@ class Invoice extends Equatable implements BaseDto {
 
   String createdBy;
 
+  String paymentMode;
+
   List<SelectedProduct> selectedProducts;
 
   List<LineItem> lineItems;
@@ -95,14 +97,14 @@ class Invoice extends Equatable implements BaseDto {
       this.deliveryAddressId,
       this.customerLogin,
       this.createdBy,
+      this.paymentMode,
       this.selectedProducts,
       this.lineItems,
       this.attachments,
       this.offers})
       : super();
 
-  factory Invoice.fromJson(Map<String, dynamic> json) =>
-      _$InvoiceFromJson(json);
+  factory Invoice.fromJson(Map<String, dynamic> json) => _$InvoiceFromJson(json);
 
   static const fromJsonFactory = _$InvoiceFromJson;
 
@@ -135,6 +137,7 @@ class Invoice extends Equatable implements BaseDto {
         deliveryAddressId,
         customerLogin,
         createdBy,
+        paymentMode,
         selectedProducts,
         lineItems,
         attachments,

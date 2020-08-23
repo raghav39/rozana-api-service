@@ -20,11 +20,12 @@ UserCustomer _$UserCustomerFromJson(Map<String, dynamic> json) {
     wallet: json['wallet'] == null
         ? null
         : Wallet.fromJson(json['wallet'] as Map<String, dynamic>),
-  );
+  )..id = json['id'] as int;
 }
 
 Map<String, dynamic> _$UserCustomerToJson(UserCustomer instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'customer': instance.customer?.toJson(),
       'address': instance.address?.toJson(),
       'user': instance.user?.toJson(),
