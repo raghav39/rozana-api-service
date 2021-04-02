@@ -2,8 +2,8 @@ import 'dart:convert';
 
 class JWTUtil {
   final String token;
-  _Header _header;
-  _Payload _payload;
+  _Header? _header;
+  _Payload? _payload;
 
   JWTUtil(this.token) {
     List<String> splittedToken = token.split(".");
@@ -33,18 +33,24 @@ class JWTUtil {
   }
 
   bool isTokenExpired() {
-    return _payload.isTokenExpired();
+    if(_payload == null){
+      return true;
+    }
+    return _payload!.isTokenExpired();
   }
 
   bool isTokenValid() {
-    return _header.isHeaderValid() && _payload.isPayloadValid();
+    if(_header == null || _payload == null){
+      return false;
+    }
+    return _header!.isHeaderValid() && _payload!.isPayloadValid();
   }
 
   void getUserAuthority() {}
 }
 
 class _Header {
-  String _alg;
+  String? _alg;
 
   _Header(String headerData) {
     var jsonData = jsonDecode(headerData);
@@ -59,9 +65,9 @@ class _Header {
 }
 
 class _Payload {
-  String _sub;
-  String _auth;
-  int _expire;
+  String? _sub;
+  String? _auth;
+  int? _expire;
 
   _Payload(String payloadData) {
     var jsonData = jsonDecode(payloadData);
@@ -77,7 +83,10 @@ class _Payload {
   }
 
   bool isTokenExpired() {
-    DateTime expireTime = DateTime.fromMillisecondsSinceEpoch(_expire * 1000);
+    if (_expire == null) {
+      return true;
+    }
+    DateTime expireTime = DateTime.fromMillisecondsSinceEpoch(_expire! * 1000);
     return expireTime.isBefore(DateTime.now());
   }
 }

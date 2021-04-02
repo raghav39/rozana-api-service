@@ -8,7 +8,7 @@ part 'delivery_slot_api_service.chopper.dart';
 @ChopperApi(baseUrl: "/api")
 abstract class DeliverySlotApiService extends ChopperService {
 
-  static DeliverySlotApiService create([ChopperClient client]) => _$DeliverySlotApiService(client);
+  static DeliverySlotApiService create([ChopperClient? client]) => _$DeliverySlotApiService(client);
 
   @Get(path: "delivery-slots")
   Future<Response<List<DeliverySlot>>> getAllDeliverySlots();

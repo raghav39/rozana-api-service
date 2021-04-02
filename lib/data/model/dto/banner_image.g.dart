@@ -8,12 +8,12 @@ part of 'banner_image.dart';
 
 BannerImage _$BannerImageFromJson(Map<String, dynamic> json) {
   return BannerImage(
-    id: json['id'] as int,
-    imageUrl: json['imageUrl'] as String,
-    disabled: json['disabled'] as bool,
-    productId: json['productId'] as int,
-    searchQuery: json['searchQuery'] as String,
-    redirectTo: json['redirectTo'] as String,
+    id: json['id'] as int?,
+    imageUrl: json['imageUrl'] as String?,
+    disabled: json['disabled'] as bool?,
+    productId: json['productId'] as int?,
+    searchQuery: json['searchQuery'] as String?,
+    redirectTo: json['redirectTo'] as String?,
   );
 }
 

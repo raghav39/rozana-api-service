@@ -8,60 +8,59 @@ part 'product_category.g.dart';
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class ProductCategory extends Equatable implements BaseDto {
   @override
-  int id;
+  int? id;
 
-  String name;
+  final String name;
 
-  String description;
+  final String description;
 
-  String imageUrl;
+  final String imageUrl;
 
-  String banner;
+  final String banner;
 
-  int sequence;
+  final int sequence;
 
-  String offerRibbon;
+  final String offerRibbon;
 
-  bool uiShowInGrid;
+  final bool uiShowInGrid;
 
-  int parentCategoryId;
+  final int? parentCategoryId;
 
-  List<ProductCategory> subCategories;
+  final List<ProductCategory>? subCategories;
 
-  List<Product> products;
+  final List<Product>? products;
 
   ProductCategory(
-      {this.id,
-        this.name,
-        this.description = "",
-        this.imageUrl,
-        this.banner,
-        this.sequence = 0,
-        this.offerRibbon = "",
-        this.uiShowInGrid,
-        this.parentCategoryId,
-        this.subCategories,
-        this.products});
+      {required this.id,
+      required this.name,
+      this.description = "",
+      this.imageUrl = "",
+      this.banner = "",
+      this.sequence = 0,
+      this.offerRibbon = "",
+      this.uiShowInGrid = false,
+      this.parentCategoryId,
+      this.subCategories,
+      this.products});
 
-  factory ProductCategory.fromJson(Map<String, dynamic> json) =>
-      _$ProductCategoryFromJson(json);
+  factory ProductCategory.fromJson(Map<String, dynamic> json) => _$ProductCategoryFromJson(json);
 
   static const fromJsonFactory = _$ProductCategoryFromJson;
 
   Map<String, dynamic> toJson() => _$ProductCategoryToJson(this);
 
   @override
-  List<Object> get props => [
-    id,
-    name,
-    description,
-    imageUrl,
-    banner,
-    sequence,
-    offerRibbon,
-    uiShowInGrid,
-    parentCategoryId,
-    subCategories,
-    products
-  ];
+  List<Object?> get props => [
+        id,
+        name,
+        description,
+        imageUrl,
+        banner,
+        sequence,
+        offerRibbon,
+        uiShowInGrid,
+        parentCategoryId,
+        subCategories,
+        products
+      ];
 }

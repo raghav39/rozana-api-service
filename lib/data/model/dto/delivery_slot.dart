@@ -5,13 +5,13 @@ part 'delivery_slot.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class DeliverySlot extends Equatable {
-  int id;
+  final int id;
 
-  String startTime;
+  final String startTime;
 
-  String endTime;
+  final String endTime;
 
-  DeliverySlot({this.id, this.startTime, this.endTime});
+  DeliverySlot({required this.id, required this.startTime, required this.endTime});
 
   factory DeliverySlot.fromJson(Map<String, dynamic> json) =>
       _$DeliverySlotFromJson(json);

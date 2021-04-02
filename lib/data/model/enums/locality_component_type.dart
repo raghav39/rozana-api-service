@@ -26,6 +26,6 @@ class LocalityComponentType {
     if (type == 'political') return POLITICAL;
 
     // if found nothing
-    return null;
+    return COUNTRY;
   }
 }

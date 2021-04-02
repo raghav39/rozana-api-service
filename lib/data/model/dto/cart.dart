@@ -5,19 +5,17 @@ import 'package:rozana_api_service/data/model/dto/delivery_slot.dart';
 import 'package:rozana_api_service/data/model/dto/product_offer.dart';
 
 class Cart {
-  DateTime date;
+  DateTime? date;
 
-  DeliverySlot deliverySlot;
+  late DeliverySlot deliverySlot;
 
-  List<CartItem> cartItems;
+  List<CartItem>? cartItems;
 
-  Address deliveryAddress;
+  late Address deliveryAddress;
 
-  double deliveryCharge;
+  late double deliveryCharge;
 
-  String remark;
-
-  String paymentMode;
+  String? remark;
 
   List<Attachment> attachments = [];
 

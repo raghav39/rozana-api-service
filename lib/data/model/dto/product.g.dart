@@ -8,39 +8,35 @@ part of 'product.dart';
 
 Product _$ProductFromJson(Map<String, dynamic> json) {
   return Product(
-    id: json['id'] as int,
-    name: json['name'] as String,
-    description: json['description'] as String,
-    price: (json['price'] as num)?.toDouble(),
-    discountedPrice: (json['discountedPrice'] as num)?.toDouble(),
-    discontinue: json['discontinue'] as bool,
-    category: json['category'] as String,
-    taxationCode: json['taxationCode'] as String,
-    unit: json['unit'] as String,
-    extId: json['extId'] as String,
-    brandName: json['brandName'] as String,
-    priceInclusiveTax: json['priceInclusiveTax'] as bool,
-    outOfStock: json['outOfStock'] as bool,
-    featured: json['featured'] as bool,
-    alias: json['alias'] as String,
-    organizationId: json['organizationId'] as int,
-    imageId: json['imageId'] as int,
-    imageUrl: json['imageUrl'] as String,
-    taxStrategyId: json['taxStrategyId'] as int,
-    taxStrategyType: json['taxStrategyType'] as String,
-    productStocks: (json['productStocks'] as List)
-        ?.map((e) =>
-            e == null ? null : ProductStock.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    productCategories: (json['productCategories'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ProductCategory.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    variants: (json['variants'] as List)
-        ?.map((e) =>
-            e == null ? null : Product.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    id: json['id'] as int?,
+    name: json['name'] as String?,
+    description: json['description'] as String?,
+    price: (json['price'] as num?)?.toDouble(),
+    discountedPrice: (json['discountedPrice'] as num?)?.toDouble(),
+    discontinue: json['discontinue'] as bool?,
+    category: json['category'] as String?,
+    taxationCode: json['taxationCode'] as String?,
+    unit: json['unit'] as String?,
+    extId: json['extId'] as String?,
+    brandName: json['brandName'] as String?,
+    priceInclusiveTax: json['priceInclusiveTax'] as bool?,
+    outOfStock: json['outOfStock'] as bool?,
+    featured: json['featured'] as bool?,
+    alias: json['alias'] as String?,
+    organizationId: json['organizationId'] as int?,
+    imageId: json['imageId'] as int?,
+    imageUrl: json['imageUrl'] as String?,
+    taxStrategyId: json['taxStrategyId'] as int?,
+    taxStrategyType: json['taxStrategyType'] as String?,
+    productStocks: (json['productStocks'] as List<dynamic>?)
+        ?.map((e) => ProductStock.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    productCategories: (json['productCategories'] as List<dynamic>?)
+        ?.map((e) => ProductCategory.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    variants: (json['variants'] as List<dynamic>?)
+        ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 
@@ -65,9 +61,8 @@ Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
       'imageUrl': instance.imageUrl,
       'taxStrategyId': instance.taxStrategyId,
       'taxStrategyType': instance.taxStrategyType,
-      'productStocks':
-          instance.productStocks?.map((e) => e?.toJson())?.toList(),
+      'productStocks': instance.productStocks?.map((e) => e.toJson()).toList(),
       'productCategories':
-          instance.productCategories?.map((e) => e?.toJson())?.toList(),
-      'variants': instance.variants?.map((e) => e?.toJson())?.toList(),
+          instance.productCategories?.map((e) => e.toJson()).toList(),
+      'variants': instance.variants?.map((e) => e.toJson()).toList(),
     };

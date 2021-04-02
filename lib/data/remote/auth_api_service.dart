@@ -9,7 +9,7 @@ part 'auth_api_service.chopper.dart';
 @ChopperApi(baseUrl: "/api")
 abstract class AuthApiService extends ChopperService {
 
-  static AuthApiService create([ChopperClient client]) => _$AuthApiService(client);
+  static AuthApiService create([ChopperClient? client]) => _$AuthApiService(client);
 
   @Post(path: "register")
   Future<Response<void>> registerCustomer(@Body() UserCustomer userCustomer);

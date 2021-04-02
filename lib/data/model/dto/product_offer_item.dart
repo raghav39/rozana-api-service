@@ -6,75 +6,29 @@ part 'product_offer_item.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class ProductOfferItem extends Equatable {
-  int id;
+  final int id;
 
-  double discountValue;
+  final double discountValue;
 
-  bool discountValueInPercentage;
+  final bool discountValueInPercentage;
 
-  Product product;
+  final Product product;
 
-  int productOfferId;
+  final int productOfferId;
 
   ProductOfferItem(
-      {this.id,
-      this.discountValue,
-      this.discountValueInPercentage,
-      this.product,
-      this.productOfferId});
+      {required this.id,
+      required this.discountValue,
+      this.discountValueInPercentage = false,
+      required this.product,
+      required this.productOfferId});
 
-  factory ProductOfferItem.fromJson(Map<String, dynamic> json) =>
-      _$ProductOfferItemFromJson(json);
+  factory ProductOfferItem.fromJson(Map<String, dynamic> json) => _$ProductOfferItemFromJson(json);
 
   static const fromJsonFactory = _$ProductOfferItemFromJson;
 
   Map<String, dynamic> toJson() => _$ProductOfferItemToJson(this);
 
   @override
-  List<Object> get props =>
-      [id, discountValue, discountValueInPercentage, product, productOfferId];
+  List<Object> get props => [id, discountValue, discountValueInPercentage, product, productOfferId];
 }
-/*
-
-part 'product_offer_item.jser.dart';
-
-class ProductOfferItem extends Equatable {
-  int id;
-
-  double discountValue;
-
-  bool discountValueInPercentage;
-
-  Product product;
-
-  int productOfferId;
-
-  ProductOfferItem(
-      {this.id,
-      this.discountValue,
-      this.discountValueInPercentage,
-      this.product,
-      this.productOfferId});
-
-  Map<String, dynamic> toJson() => serializer.toMap(this);
-
-  static final serializer = ProductOfferItemSerializer();
-
-  static ProductOfferItem fromMap(Map map) => serializer.fromMap(map);
-
-  String toString() => toJson().toString();
-
-  @override
-  List<Object> get props => [
-    id,
-    discountValue,
-    discountValueInPercentage,
-    product,
-    productOfferId
-  ];
-}
-
-@GenSerializer()
-class ProductOfferItemSerializer extends Serializer<ProductOfferItem>
-    with _$ProductOfferItemSerializer {}
-*/

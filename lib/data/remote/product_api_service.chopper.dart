@@ -8,7 +8,7 @@ part of 'product_api_service.dart';
 
 // ignore_for_file: always_put_control_body_on_new_line, always_specify_types, prefer_const_declarations
 class _$ProductApiService extends ProductApiService {
-  _$ProductApiService([ChopperClient client]) {
+  _$ProductApiService([ChopperClient? client]) {
     if (client == null) return;
     this.client = client;
   }
@@ -66,7 +66,10 @@ class _$ProductApiService extends ProductApiService {
 
   @override
   Future<Response<List<Product>>> getAllProducts(
-      {bool featured, int page = 0, int size = 20, List<String> sort}) {
+      {bool featured = false,
+      int page = 0,
+      int size = 20,
+      List<String>? sort}) {
     final $url = '/api/products';
     final $params = <String, dynamic>{
       'featured.equals': featured,
@@ -81,10 +84,10 @@ class _$ProductApiService extends ProductApiService {
   @override
   Future<Response<List<Product>>> getAllProductsForCategoryId(
       int productCategoryId,
-      {bool featured,
+      {bool featured = false,
       int page = 0,
       int size = 20,
-      List<String> sort}) {
+      List<String>? sort}) {
     final $url = '/api/products';
     final $params = <String, dynamic>{
       'productCategoryId.equals': productCategoryId,
@@ -129,7 +132,7 @@ class _$ProductApiService extends ProductApiService {
 
   @override
   Future<Response<List<Product>>> searchProducts(String query,
-      {int page = 0, int size = 20, List<String> sort}) {
+      {int page = 0, int size = 20, List<String>? sort}) {
     final $url = '/api/_search/products';
     final $params = <String, dynamic>{
       'query': query,

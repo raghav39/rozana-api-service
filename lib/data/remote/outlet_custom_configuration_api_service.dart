@@ -7,7 +7,7 @@ part 'outlet_custom_configuration_api_service.chopper.dart';
 
 @ChopperApi(baseUrl: "/api")
 abstract class OutletCustomConfigurationApiService extends ChopperService {
-  static OutletCustomConfigurationApiService create([ChopperClient client]) =>
+  static OutletCustomConfigurationApiService create([ChopperClient? client]) =>
       _$OutletCustomConfigurationApiService(client);
 
   @Get(path: "custom-configurations")

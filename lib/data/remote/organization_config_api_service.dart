@@ -8,7 +8,7 @@ part 'organization_config_api_service.chopper.dart';
 @ChopperApi(baseUrl: "/api")
 abstract class OrganizationConfigApiService extends ChopperService {
 
-  static OrganizationConfigApiService create([ChopperClient client]) => _$OrganizationConfigApiService(client);
+  static OrganizationConfigApiService create([ChopperClient? client]) => _$OrganizationConfigApiService(client);
 
   @Get(path: "organizationConfig")
   Future<Response<OrganizationConfig>> getOrganizationConfig();

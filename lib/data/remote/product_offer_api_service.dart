@@ -8,7 +8,7 @@ part 'product_offer_api_service.chopper.dart';
 @ChopperApi(baseUrl: "/api")
 abstract class ProductOfferApiService extends ChopperService {
 
-  static ProductOfferApiService create([ChopperClient client]) => _$ProductOfferApiService(client);
+  static ProductOfferApiService create([ChopperClient? client]) => _$ProductOfferApiService(client);
 
   @Get(path: "product-offers")
   Future<Response<List<ProductOffer>>> getProductOffers();

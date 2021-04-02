@@ -1,3 +1,3 @@
 abstract class BaseDto {
-  int id;
+  int? id;
 }

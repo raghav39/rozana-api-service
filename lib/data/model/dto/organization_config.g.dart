@@ -15,9 +15,9 @@ OrganizationConfig _$OrganizationConfigFromJson(Map<String, dynamic> json) {
     addressId: json['addressId'] as int,
     logoUrl: json['logoUrl'] as String,
     gstin: json['gstin'] as String,
-    deliveryCharge: (json['deliveryCharge'] as num)?.toDouble(),
+    deliveryCharge: (json['deliveryCharge'] as num).toDouble(),
     freeDeliveryThresholdAmount:
-        (json['freeDeliveryThresholdAmount'] as num)?.toDouble(),
+        (json['freeDeliveryThresholdAmount'] as num).toDouble(),
     orderingDateThreshold: json['orderingDateThreshold'] as int,
     maxOrderModificationTime: json['maxOrderModificationTime'] as int,
   );

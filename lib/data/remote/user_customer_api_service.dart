@@ -8,13 +8,13 @@ part 'user_customer_api_service.chopper.dart';
 @ChopperApi(baseUrl: "/api")
 abstract class UserCustomerApiService extends ChopperService {
 
-  static UserCustomerApiService create([ChopperClient client]) => _$UserCustomerApiService(client);
+  static UserCustomerApiService create([ChopperClient? client]) => _$UserCustomerApiService(client);
 
   @Get(path: "user-customers")
   Future<Response<List<UserCustomer>>> getAllUserCustomers(
       {@Query("page") int page = 0,
       @Query("size") int size = 20,
-      @Query("sort") List<String> sort});
+      @Query("sort") List<String>? sort});
 
   @Get(path: "user-customers/{customerId}")
   Future<Response<UserCustomer>> getUserCustomer(@Path() int customerId);

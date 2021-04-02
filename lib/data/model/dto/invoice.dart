@@ -11,13 +11,13 @@ part 'invoice.g.dart';
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class Invoice extends Equatable implements BaseDto {
   @override
-  int id;
+  int? id;
 
-  String number;
+  String? number;
 
-  DateTime date;
+  DateTime? date;
 
-  DateTime dueDate;
+  DateTime? dueDate;
 
   var amountPaid;
 
@@ -25,7 +25,7 @@ class Invoice extends Equatable implements BaseDto {
 
   var additionalDiscount;
 
-  bool isAddionalDiscountBeforeTax;
+  bool? isAddionalDiscountBeforeTax;
 
   var adjustment;
 
@@ -33,43 +33,43 @@ class Invoice extends Equatable implements BaseDto {
 
   var totalAmountAfterTax;
 
-  String status;
+  String? status;
 
-  String orderStatus;
+  String? orderStatus;
 
-  String remark;
+  String? remark;
 
-  int customerId;
+  int? customerId;
 
-  String customerName;
+  String? customerName;
 
-  int transactionValueId;
+  int? transactionValueId;
 
-  int organizationId;
+  int? organizationId;
 
   var totalAmount;
 
-  int deliveredById;
+  int? deliveredById;
 
-  String deliveredByName;
+  String? deliveredByName;
 
-  String promoCodeApplied;
+  String? promoCodeApplied;
 
-  int deliveryAddressId;
+  int? deliveryAddressId;
 
-  String customerLogin;
+  String? customerLogin;
 
-  String createdBy;
+  String? createdBy;
 
-  String paymentMode;
+  String? paymentMode;
 
-  List<SelectedProduct> selectedProducts;
+  List<SelectedProduct>? selectedProducts;
 
-  List<LineItem> lineItems;
+  List<LineItem>? lineItems;
 
-  List<Attachment> attachments;
+  List<Attachment>? attachments;
 
-  List<Offer> offers;
+  List<Offer>? offers;
 
   Invoice(
       {this.id,
@@ -111,7 +111,7 @@ class Invoice extends Equatable implements BaseDto {
   Map<String, dynamic> toJson() => _$InvoiceToJson(this);
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         id,
         number,
         date,

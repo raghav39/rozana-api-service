@@ -5,13 +5,13 @@ part 'attachment.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class Attachment extends Equatable {
-  int id;
+  int? id;
 
-  int invoiceId;
+  int? invoiceId;
 
-  String invoiceNumber;
+  String? invoiceNumber;
 
-  String documentUrl;
+  String? documentUrl;
 
   Attachment({this.id, this.invoiceId, this.invoiceNumber, this.documentUrl});
 
@@ -23,36 +23,5 @@ class Attachment extends Equatable {
   Map<String, dynamic> toJson() => _$AttachmentToJson(this);
 
   @override
-  List<Object> get props => [id, invoiceId, invoiceNumber, documentUrl];
+  List<Object?> get props => [id, invoiceId, invoiceNumber, documentUrl];
 }
-/*
-
-part 'attachment.jser.dart';
-
-class Attachment extends Equatable {
-  int id;
-
-  int invoiceId;
-
-  String invoiceNumber;
-
-  String documentUrl;
-
-  Attachment({this.id, this.invoiceId, this.invoiceNumber, this.documentUrl});
-
-  Map<String, dynamic> toJson() => serializer.toMap(this);
-
-  static final serializer = AttachmentSerializer();
-
-  static Attachment fromMap(Map map) => serializer.fromMap(map);
-
-  String toString() => toJson().toString();
-
-  @override
-  List<Object> get props => [id, invoiceId, invoiceNumber, documentUrl];
-}
-
-@GenSerializer()
-class AttachmentSerializer extends Serializer<Attachment>
-    with _$AttachmentSerializer {}
-*/

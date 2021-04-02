@@ -8,7 +8,7 @@ part 'locality_api_service.chopper.dart';
 @ChopperApi(baseUrl: "/maps/api/geocode")
 abstract class LocalityApiService extends ChopperService {
 
-  static LocalityApiService create([ChopperClient client]) => _$LocalityApiService(client);
+  static LocalityApiService create([ChopperClient? client]) => _$LocalityApiService(client);
 
   @Get(path: "json")
   Future<Response<Locality>> getLocalityByZipCode(@Query() String address,

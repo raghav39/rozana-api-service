@@ -8,12 +8,12 @@ part of 'delivery_boy.dart';
 
 DeliveryBoy _$DeliveryBoyFromJson(Map<String, dynamic> json) {
   return DeliveryBoy(
-    id: json['id'] as int,
+    id: json['id'] as int?,
     contactNumber: json['contactNumber'],
     alternateContactNumber: json['alternateContactNumber'],
-    trackingEnabled: json['trackingEnabled'] as bool,
-    userId: json['userId'] as int,
-    userLogin: json['userLogin'] as String,
+    trackingEnabled: json['trackingEnabled'] as bool?,
+    userId: json['userId'] as int?,
+    userLogin: json['userLogin'] as String?,
   );
 }
 

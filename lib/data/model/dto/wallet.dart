@@ -5,11 +5,11 @@ part 'wallet.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class Wallet extends Equatable {
-  int customerId;
+  final int customerId;
 
-  double amount;
+  final double amount;
 
-  Wallet({this.customerId, this.amount});
+  Wallet({required this.customerId, required this.amount});
 
   factory Wallet.fromJson(Map<String, dynamic> json) =>
       _$WalletFromJson(json);
@@ -21,29 +21,3 @@ class Wallet extends Equatable {
   @override
   List<Object> get props => [customerId, amount];
 }
-/*
-
-part 'wallet.jser.dart';
-
-class Wallet extends Equatable {
-  int customerId;
-
-  double amount;
-
-  Wallet({this.customerId, this.amount});
-
-  Map<String, dynamic> toJson() => serializer.toMap(this);
-
-  static final serializer = WalletSerializer();
-
-  static Wallet fromMap(Map map) => serializer.fromMap(map);
-
-  String toString() => toJson().toString();
-
-  @override
-  List<Object> get props => [customerId, amount];
-}
-
-@GenSerializer()
-class WalletSerializer extends Serializer<Wallet> with _$WalletSerializer {}
-*/

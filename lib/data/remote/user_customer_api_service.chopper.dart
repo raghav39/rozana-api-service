@@ -8,7 +8,7 @@ part of 'user_customer_api_service.dart';
 
 // ignore_for_file: always_put_control_body_on_new_line, always_specify_types, prefer_const_declarations
 class _$UserCustomerApiService extends UserCustomerApiService {
-  _$UserCustomerApiService([ChopperClient client]) {
+  _$UserCustomerApiService([ChopperClient? client]) {
     if (client == null) return;
     this.client = client;
   }
@@ -18,7 +18,7 @@ class _$UserCustomerApiService extends UserCustomerApiService {
 
   @override
   Future<Response<List<UserCustomer>>> getAllUserCustomers(
-      {int page = 0, int size = 20, List<String> sort}) {
+      {int page = 0, int size = 20, List<String>? sort}) {
     final $url = '/api/user-customers';
     final $params = <String, dynamic>{'page': page, 'size': size, 'sort': sort};
     final $request = Request('GET', $url, client.baseUrl, parameters: $params);

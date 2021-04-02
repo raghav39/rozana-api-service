@@ -9,28 +9,26 @@ import 'package:rozana_api_service/data/model/dto/wallet.dart';
 part 'user_customer.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
-class UserCustomer extends Equatable implements BaseDto {
-
+class UserCustomer extends Equatable implements BaseDto{
   @override
-  int id;
+  int? id;
 
-  Customer customer;
+  Customer? customer;
 
-  Address address;
+  Address? address;
 
-  User user;
+  User? user;
 
-  Wallet wallet;
+  Wallet? wallet;
 
   UserCustomer({this.customer, this.address, this.user, this.wallet}): this.id = customer?.id;
 
-  factory UserCustomer.fromJson(Map<String, dynamic> json) =>
-      _$UserCustomerFromJson(json);
+  factory UserCustomer.fromJson(Map<String, dynamic> json) => _$UserCustomerFromJson(json);
 
   static const fromJsonFactory = _$UserCustomerFromJson;
 
   Map<String, dynamic> toJson() => _$UserCustomerToJson(this);
 
   @override
-  List<Object> get props => [customer, address, user, wallet];
+  List<Object?> get props => [customer, address, user, wallet];
 }

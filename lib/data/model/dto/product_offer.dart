@@ -6,22 +6,22 @@ part 'product_offer.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class ProductOffer extends Equatable {
-  int id;
+  final int id;
 
-  String offerImageUrl;
+  final String offerImageUrl;
 
-  String description;
+  final String description;
 
-  List<ProductOfferItem> productOfferItems;
+  final List<ProductOfferItem> productOfferItems;
 
-  int offerId;
+  final int offerId;
 
   ProductOffer(
-      {this.id,
-        this.offerImageUrl,
-        this.description,
-        this.productOfferItems,
-        this.offerId});
+      {required this.id,
+        required this.offerImageUrl,
+        required this.description,
+        required this.productOfferItems,
+        required this.offerId});
 
   factory ProductOffer.fromJson(Map<String, dynamic> json) =>
       _$ProductOfferFromJson(json);
@@ -33,41 +33,3 @@ class ProductOffer extends Equatable {
   @override
   List<Object> get props => [id, offerImageUrl, description, productOfferItems, offerId];
 }
-/*
-
-part 'product_offer.jser.dart';
-
-class ProductOffer extends Equatable {
-  int id;
-
-  String offerImageUrl;
-
-  String description;
-
-  List<ProductOfferItem> productOfferItems;
-
-  int offerId;
-
-  ProductOffer(
-      {this.id,
-      this.offerImageUrl,
-      this.description,
-      this.productOfferItems,
-      this.offerId});
-
-  Map<String, dynamic> toJson() => serializer.toMap(this);
-
-  static final serializer = ProductOfferSerializer();
-
-  static ProductOffer fromMap(Map map) => serializer.fromMap(map);
-
-  String toString() => toJson().toString();
-
-  @override
-  List<Object> get props => [id, offerImageUrl, description, productOfferItems, offerId];
-}
-
-@GenSerializer()
-class ProductOfferSerializer extends Serializer<ProductOffer>
-    with _$ProductOfferSerializer {}
-*/

@@ -9,7 +9,7 @@ part of 'outlet_custom_configuration_api_service.dart';
 // ignore_for_file: always_put_control_body_on_new_line, always_specify_types, prefer_const_declarations
 class _$OutletCustomConfigurationApiService
     extends OutletCustomConfigurationApiService {
-  _$OutletCustomConfigurationApiService([ChopperClient client]) {
+  _$OutletCustomConfigurationApiService([ChopperClient? client]) {
     if (client == null) return;
     this.client = client;
   }

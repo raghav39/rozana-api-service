@@ -5,29 +5,29 @@ part 'address.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class Address extends Equatable {
-  int id;
+  int? id;
 
-  String contactNumber;
+  String? contactNumber;
 
-  String address1;
+  String? address1;
 
-  String address2;
+  String? address2;
 
-  String landmark;
+  String? landmark;
 
-  String city;
+  String? city;
 
-  String zipCode;
+  String? zipCode;
 
-  String state;
+  String? state;
 
-  String country;
+  String? country;
 
-  String alternatePhone;
+  String? alternatePhone;
 
-  double locationLat;
+  double? locationLat;
 
-  double locationLong;
+  double? locationLong;
   Address(
       {this.id,
         this.contactNumber,
@@ -50,7 +50,7 @@ class Address extends Equatable {
   Map<String, dynamic> toJson() => _$AddressToJson(this);
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
     id,
     contactNumber,
     address1,
@@ -65,75 +65,3 @@ class Address extends Equatable {
     locationLong
   ];
 }
-
-/*
-
-part 'address.jser.dart';
-
-class Address extends Equatable {
-  int id;
-
-  String contactNumber;
-
-  String address1;
-
-  String address2;
-
-  String landmark;
-
-  String city;
-
-  String zipCode;
-
-  String state;
-
-  String country;
-
-  String alternatePhone;
-
-  double locationLat;
-
-  double locationLong;
-
-  Address(
-      {this.id,
-      this.contactNumber,
-      this.address1,
-      this.address2,
-      this.landmark,
-      this.city,
-      this.zipCode,
-      this.state,
-      this.country,
-      this.alternatePhone,
-      this.locationLat,
-      this.locationLong});
-
-  Map<String, dynamic> toJson() => serializer.toMap(this);
-
-  static final serializer = AddressSerializer();
-
-  static Address fromMap(Map map) => serializer.fromMap(map);
-
-  String toString() => toJson().toString();
-
-  @override
-  List<Object> get props => [
-    id,
-    contactNumber,
-    address1,
-    address2,
-    landmark,
-    city,
-    zipCode,
-    state,
-    country,
-    alternatePhone,
-    locationLat,
-    locationLong
-  ];
-}
-
-@GenSerializer()
-class AddressSerializer extends Serializer<Address> with _$AddressSerializer {}
-*/

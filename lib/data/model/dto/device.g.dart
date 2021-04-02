@@ -11,7 +11,7 @@ Device _$DeviceFromJson(Map<String, dynamic> json) {
     uuid: json['uuid'] as String,
     name: json['name'] as String,
     token: json['token'] as String,
-    userId: json['userId'] as int,
+    userId: json['userId'] as int?,
   );
 }
 

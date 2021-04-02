@@ -7,7 +7,7 @@ part 'delivery_boy_api_service.chopper.dart';
 @ChopperApi(baseUrl: "/api")
 abstract class DeliveryBoyApiService extends ChopperService {
 
-  static DeliveryBoyApiService create([ChopperClient client]) => _$DeliveryBoyApiService(client);
+  static DeliveryBoyApiService create([ChopperClient? client]) => _$DeliveryBoyApiService(client);
 
   @Get(path: "delivery-boy-users/count")
   Future<Response<int>> getDeliveryBoyCount();

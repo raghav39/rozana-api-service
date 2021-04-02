@@ -5,11 +5,11 @@ part 'offer.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class Offer extends Equatable {
-  int id;
+  final int id;
 
-  String offerType;
+  final String offerType;
 
-  Offer({this.id, this.offerType});
+  Offer({required this.id, required this.offerType});
 
   factory Offer.fromJson(Map<String, dynamic> json) => _$OfferFromJson(json);
 
@@ -20,29 +20,3 @@ class Offer extends Equatable {
   @override
   List<Object> get props => [id, offerType];
 }
-/*
-
-part 'offer.jser.dart';
-
-class Offer extends Equatable {
-  int id;
-
-  String offerType;
-
-  Offer({this.id, this.offerType});
-
-  Map<String, dynamic> toJson() => serializer.toMap(this);
-
-  static final serializer = OfferSerializer();
-
-  static Offer fromMap(Map map) => serializer.fromMap(map);
-
-  String toString() => toJson().toString();
-
-  @override
-  List<Object> get props => [id, offerType];
-}
-
-@GenSerializer()
-class OfferSerializer extends Serializer<Offer> with _$OfferSerializer {}
-*/

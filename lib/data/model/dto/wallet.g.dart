@@ -9,7 +9,7 @@ part of 'wallet.dart';
 Wallet _$WalletFromJson(Map<String, dynamic> json) {
   return Wallet(
     customerId: json['customerId'] as int,
-    amount: (json['amount'] as num)?.toDouble(),
+    amount: (json['amount'] as num).toDouble(),
   );
 }
 

@@ -7,7 +7,7 @@ part 'address_api_service.chopper.dart';
 
 @ChopperApi(baseUrl: "/api")
 abstract class AddressApiService extends ChopperService {
-  static AddressApiService create([ChopperClient client]) => _$AddressApiService(client);
+  static AddressApiService create([ChopperClient? client]) => _$AddressApiService(client);
   @Put(path: "addresses")
   Future<Response<Address>> updateAddress(@Body() Address address);
 }

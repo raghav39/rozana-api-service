@@ -9,7 +9,7 @@ part of 'product_stock.dart';
 ProductStock _$ProductStockFromJson(Map<String, dynamic> json) {
   return ProductStock(
     id: json['id'] as int,
-    quantity: (json['quantity'] as num)?.toDouble(),
+    quantity: (json['quantity'] as num).toDouble(),
     productId: json['productId'] as int,
   );
 }

@@ -8,17 +8,17 @@ part of 'selected_product.dart';
 
 SelectedProduct _$SelectedProductFromJson(Map<String, dynamic> json) {
   return SelectedProduct(
-    id: json['id'] as int,
-    frequency: json['frequency'] as String,
-    quantity: json['quantity'] as int,
-    discontinue: json['discontinue'] as bool,
-    productId: json['productId'] as int,
-    productName: json['productName'] as String,
-    deliverySlotId: json['deliverySlotId'] as int,
-    deliverySlotStartTime: json['deliverySlotStartTime'] as String,
-    deliverySlotEndTime: json['deliverySlotEndTime'] as String,
-    deliveryBoyUserId: json['deliveryBoyUserId'] as int,
-    deliveryBoyName: json['deliveryBoyName'] as String,
+    id: json['id'] as int?,
+    frequency: json['frequency'] as String?,
+    quantity: json['quantity'] as int?,
+    discontinue: json['discontinue'] as bool?,
+    productId: json['productId'] as int?,
+    productName: json['productName'] as String?,
+    deliverySlotId: json['deliverySlotId'] as int?,
+    deliverySlotStartTime: json['deliverySlotStartTime'] as String?,
+    deliverySlotEndTime: json['deliverySlotEndTime'] as String?,
+    deliveryBoyUserId: json['deliveryBoyUserId'] as int?,
+    deliveryBoyName: json['deliveryBoyName'] as String?,
   );
 }
 

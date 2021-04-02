@@ -7,7 +7,7 @@ part 'invoice_api_service.chopper.dart';
 
 @ChopperApi(baseUrl: "/api")
 abstract class InvoiceApiService extends ChopperService {
-  static InvoiceApiService create([ChopperClient client]) =>
+  static InvoiceApiService create([ChopperClient? client]) =>
       _$InvoiceApiService(client);
 
   @Get(path: "invoices")

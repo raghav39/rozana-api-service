@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:universal_io/io.dart' if (dart.library.io) 'dart:io';
 
 import 'package:chopper/chopper.dart';
 import 'package:event_bus/event_bus.dart';
@@ -43,14 +42,15 @@ import 'package:rozana_api_service/data/remote/product_api_service.dart';
 import 'package:rozana_api_service/data/remote/product_offer_api_service.dart';
 import 'package:rozana_api_service/data/remote/user_customer_api_service.dart';
 import 'package:rozana_api_service/utils/app_constants.dart';
+import 'package:universal_io/io.dart' if (dart.library.io) 'dart:io';
 
 class ApiCaller {
-  String organizationAppKey;
-  ChopperClient authenticatedChopperClient;
+  String? organizationAppKey;
+  ChopperClient? authenticatedChopperClient;
 
-  ChopperClient unAuthenticatedChopperClient;
+  ChopperClient? unAuthenticatedChopperClient;
 
-  ChopperClient googleLocationChopperClient;
+  ChopperClient? googleLocationChopperClient;
 
   final PreferenceManager preferenceManager;
 
@@ -90,19 +90,16 @@ class ApiCaller {
         });
 
   Future<ChopperClient> getAuthenticatedClient() async {
-    if (organizationAppKey == null || organizationAppKey.isEmpty) {
-      return null;
-    }
-    String token = await preferenceManager.getAuthToken();
+    String? token = await preferenceManager.getAuthToken();
 
     if (token != null && authenticatedChopperClient != null) {
-      return authenticatedChopperClient;
+      return authenticatedChopperClient!;
     }
     return updateClient();
   }
 
   Future<ChopperClient> updateClient() async {
-    String token = await preferenceManager.getAuthToken();
+    String? token = await preferenceManager.getAuthToken();
 
     //This will add the authorization token to all the outgoing requests
     Future<Request> authHeader(Request request) async => applyHeader(
@@ -115,7 +112,7 @@ class ApiCaller {
     Future<Request> xAppKeyHeader(Request request) async => applyHeader(
           request,
           "X-App-Key",
-          organizationAppKey,
+          organizationAppKey!,
         );
 
     //This method will fire an event to notify all the listeners about the 401 response received by any request.
@@ -126,12 +123,12 @@ class ApiCaller {
       }
       return response;
     }
+
     //This method will fire an event to notify all the listeners about the 400 response received by any request.
     Future<Response> checkForBadRequestResponse(Response response) async {
       print(response.statusCode);
       if (response.statusCode == HttpStatus.badRequest &&
-          (response.base.request.url == Uri.parse(
-              "https://rozana.noisytempo.com/api/organizationConfig"))) {
+          (response.base.request?.url == Uri.parse("https://rozana.noisytempo.com/api/organizationConfig"))) {
         authenticatedChopperClient = null;
         eventBus.fire(BadRequestResponseEvent());
       }
@@ -142,7 +139,7 @@ class ApiCaller {
       baseUrl: AppConstants.SERVER_ENDPOINT,
       converter: converter,
       errorConverter: converter,
-      interceptors: [authHeader, xAppKeyHeader, checkForUnAuthorizedResponse,checkForBadRequestResponse],
+      interceptors: [authHeader, xAppKeyHeader, checkForUnAuthorizedResponse, checkForBadRequestResponse],
       services: [
         ProductApiService.create(),
         UserCustomerApiService.create(),
@@ -156,20 +153,17 @@ class ApiCaller {
         ProductOfferApiService.create()
       ],
     );
-    return authenticatedChopperClient;
+    return authenticatedChopperClient!;
   }
 
   Future<ChopperClient> getUnAuthenticatedClient() async {
-    if (organizationAppKey == null || organizationAppKey.isEmpty) {
-      return null;
-    }
     if (unAuthenticatedChopperClient != null) {
-      return unAuthenticatedChopperClient;
+      return unAuthenticatedChopperClient!;
     }
     Future<Request> xAppKeyHeader(Request request) async => applyHeader(
           request,
           "X-App-Key",
-          organizationAppKey,
+          organizationAppKey!,
         );
     unAuthenticatedChopperClient = new ChopperClient(
       baseUrl: AppConstants.SERVER_ENDPOINT,
@@ -180,12 +174,12 @@ class ApiCaller {
         AuthApiService.create(),
       ],
     );
-    return unAuthenticatedChopperClient;
+    return unAuthenticatedChopperClient!;
   }
 
   Future<ChopperClient> getGoogleLocationClient() async {
     if (googleLocationChopperClient != null) {
-      return googleLocationChopperClient;
+      return googleLocationChopperClient!;
     }
     Future<Request> xAppKeyHeader(Request request) async => applyHeader(
           request,
@@ -201,61 +195,55 @@ class ApiCaller {
         LocalityApiService.create(),
       ],
     );
-    return googleLocationChopperClient;
+    return googleLocationChopperClient!;
   }
 
   Future<AuthApiService> getAuthService() async {
-    return (await getUnAuthenticatedClient())?.getService<AuthApiService>();
+    return (await getUnAuthenticatedClient()).getService<AuthApiService>();
   }
 
   Future<ProductApiService> getProductService() async {
-    return (await getAuthenticatedClient())?.getService<ProductApiService>();
+    return (await getAuthenticatedClient()).getService<ProductApiService>();
   }
 
   Future<UserCustomerApiService> getUserCustomerService() async {
-    return (await getAuthenticatedClient())
-        ?.getService<UserCustomerApiService>();
+    return (await getAuthenticatedClient()).getService<UserCustomerApiService>();
   }
 
   Future<InvoiceApiService> getInvoiceService() async {
-    return (await getAuthenticatedClient())?.getService<InvoiceApiService>();
+    return (await getAuthenticatedClient()).getService<InvoiceApiService>();
   }
 
   Future<DeliverySlotApiService> getDeliverySlotService() async {
-    return (await getAuthenticatedClient())
-        ?.getService<DeliverySlotApiService>();
+    return (await getAuthenticatedClient()).getService<DeliverySlotApiService>();
   }
 
   Future<OrganizationConfigApiService> getOrganizationService() async {
-    return (await getAuthenticatedClient())
-        ?.getService<OrganizationConfigApiService>();
+    return (await getAuthenticatedClient()).getService<OrganizationConfigApiService>();
   }
 
   Future<OrderTransactionApiService> getOrderTransactionApiService() async {
-    return (await getAuthenticatedClient())
-        ?.getService<OrderTransactionApiService>();
+    return (await getAuthenticatedClient()).getService<OrderTransactionApiService>();
   }
 
   Future<DeliveryBoyApiService> getDeliveryBoyApiService() async {
-    return (await getAuthenticatedClient())
-        ?.getService<DeliveryBoyApiService>();
+    return (await getAuthenticatedClient()).getService<DeliveryBoyApiService>();
   }
 
   Future<DeviceApiService> getDeviceApiService() async {
-    return (await getAuthenticatedClient())?.getService<DeviceApiService>();
+    return (await getAuthenticatedClient()).getService<DeviceApiService>();
   }
 
   Future<AddressApiService> getAddressService() async {
-    return (await getAuthenticatedClient())?.getService<AddressApiService>();
+    return (await getAuthenticatedClient()).getService<AddressApiService>();
   }
 
   Future<ProductOfferApiService> getProductOfferService() async {
-    return (await getAuthenticatedClient())
-        ?.getService<ProductOfferApiService>();
+    return (await getAuthenticatedClient()).getService<ProductOfferApiService>();
   }
 
   Future<LocalityApiService> getLocalityApiService() async {
-    return (await getGoogleLocationClient())?.getService<LocalityApiService>();
+    return (await getGoogleLocationClient()).getService<LocalityApiService>();
   }
 }
 
@@ -266,7 +254,7 @@ class JsonSerializableConverter extends JsonConverter {
 
   JsonSerializableConverter(this.factories);
 
-  T _decodeMap<T>(Map<String, dynamic> values) {
+  T? _decodeMap<T>(Map<String, dynamic> values) {
     /// Get jsonFactory using Type parameters
     /// if not found or invalid, throw error or return null
     final jsonFactory = factories[T];
@@ -278,13 +266,12 @@ class JsonSerializableConverter extends JsonConverter {
     return jsonFactory(values);
   }
 
-  List<T> _decodeList<T>(List values) =>
-      values.where((v) => v != null).map<T>((v) => _decode<T>(v)).toList();
+  List<T> _decodeList<T>(List values) => values.where((v) => v != null).map<T>((v) => _decode<T>(v)).toList();
 
   dynamic _decode<T>(entity) {
-    if (entity is Iterable) return _decodeList<T>(entity);
+    if (entity is List) return _decodeList<T>(entity);
 
-    if (entity is Map) return _decodeMap<T>(entity);
+    if (entity is Map<String, dynamic>) return _decodeMap<T>(entity);
 
     return entity;
   }

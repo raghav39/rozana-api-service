@@ -6,16 +6,16 @@ part 'device.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class Device extends Equatable {
-  String uuid;
+  final String uuid;
 
   //Name of the device
-  String name;
+  final String name;
 
   String token;
 
-  int userId;
+  int? userId;
 
-  Device({@required this.uuid, this.name, this.token, this.userId});
+  Device({required this.uuid, required this.name, required this.token, this.userId});
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
 
@@ -24,7 +24,7 @@ class Device extends Equatable {
   Map<String, dynamic> toJson() => _$DeviceToJson(this);
 
   @override
-  List<Object> get props => [uuid, name, token, userId];
+  List<Object?> get props => [uuid, name, token, userId];
 }
 
 /*

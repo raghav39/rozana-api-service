@@ -7,8 +7,5 @@ class DeliverySlotItem {
   String timingsToDisplay;
 
   DeliverySlotItem(
-      {this.deliverySlot,
-      this.isEnabled = true,
-      this.isSelected = false,
-      this.timingsToDisplay = ""});
+      {required this.deliverySlot, this.isEnabled = true, this.isSelected = false, this.timingsToDisplay = ""});
 }

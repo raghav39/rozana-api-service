@@ -7,21 +7,22 @@ class ProductCacheManager {
   /// time in millis to define validity of cache after refresh
   int cacheValidity;
 
-  ProductCacheManager(this.cacheValidity) : _lastUpdated = DateTime.now();
+  ProductCacheManager(this.cacheValidity) : _lastUpdated = DateTime.now(), _products=[];
 
-  List<Product> getProducts() {
+  List<Product>? getProducts() {
     if (_lastUpdated.millisecondsSinceEpoch + cacheValidity <
         DateTime.now().millisecondsSinceEpoch) {
-      _products = null;
+      _products = [];
+      return null;
     }
     return _products;
   }
 
-  Product getProduct(int id, {ignoreCache = false}) {
-    if (_products == null || _products.isEmpty) {
+  Product? getProduct(int id, {ignoreCache = false}) {
+    if (_products.isEmpty) {
       return null;
     }
-    Product result;
+    Product? result;
     for (Product product in _products) {
       if (product.id == id) {
         result = product;
@@ -41,17 +42,11 @@ class ProductCacheManager {
   }
 
   void addProduct(Product product) {
-    if (_products == null) {
-      _products = [];
-    }
     _products.add(product);
     _lastUpdated = DateTime.now();
   }
 
   void addProducts(List<Product> products) {
-    if (_products == null) {
-      _products = [];
-    }
     _products.addAll(products);
     _lastUpdated = DateTime.now();
   }

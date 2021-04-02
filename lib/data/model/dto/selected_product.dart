@@ -5,27 +5,27 @@ part 'selected_product.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class SelectedProduct extends Equatable {
-  int id;
+  int? id;
 
-  String frequency;
+  String? frequency;
 
-  int quantity;
+  int? quantity;
 
-  bool discontinue;
+  bool? discontinue;
 
-  int productId;
+  int? productId;
 
-  String productName;
+  String? productName;
 
-  int deliverySlotId;
+  int? deliverySlotId;
 
-  String deliverySlotStartTime;
+  String? deliverySlotStartTime;
 
-  String deliverySlotEndTime;
+  String? deliverySlotEndTime;
 
-  int deliveryBoyUserId;
+  int? deliveryBoyUserId;
 
-  String deliveryBoyName;
+  String? deliveryBoyName;
 
   SelectedProduct(
       {this.id,
@@ -40,15 +40,14 @@ class SelectedProduct extends Equatable {
       this.deliveryBoyUserId,
       this.deliveryBoyName});
 
-  factory SelectedProduct.fromJson(Map<String, dynamic> json) =>
-      _$SelectedProductFromJson(json);
+  factory SelectedProduct.fromJson(Map<String, dynamic> json) => _$SelectedProductFromJson(json);
 
   static const fromJsonFactory = _$SelectedProductFromJson;
 
   Map<String, dynamic> toJson() => _$SelectedProductToJson(this);
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         id,
         frequency,
         quantity,
@@ -62,72 +61,3 @@ class SelectedProduct extends Equatable {
         deliveryBoyName
       ];
 }
-
-/*
-
-part 'selected_product.jser.dart';
-
-class SelectedProduct extends Equatable {
-  int id;
-
-  String frequency;
-
-  int quantity;
-
-  bool discontinue;
-
-  int productId;
-
-  String productName;
-
-  int deliverySlotId;
-
-  String deliverySlotStartTime;
-
-  String deliverySlotEndTime;
-
-  int deliveryBoyUserId;
-
-  String deliveryBoyName;
-
-  SelectedProduct(
-      {this.id,
-      this.frequency,
-      this.quantity,
-      this.discontinue,
-      this.productId,
-      this.productName,
-      this.deliverySlotId,
-      this.deliverySlotStartTime,
-      this.deliverySlotEndTime,
-      this.deliveryBoyUserId,
-      this.deliveryBoyName});
-
-  Map<String, dynamic> toJson() => serializer.toMap(this);
-
-  static final serializer = SelectedProductSerializer();
-
-  static SelectedProduct fromMap(Map map) => serializer.fromMap(map);
-
-  String toString() => toJson().toString();
-
-  @override
-  List<Object> get props => [
-    id,
-    frequency,
-    quantity,
-    discontinue,
-    productId,
-    productName,
-    deliverySlotId,
-    deliverySlotStartTime,
-    deliverySlotEndTime,
-    deliveryBoyUserId,
-    deliveryBoyName
-  ];
-}
-
-@GenSerializer()
-class SelectedProductSerializer extends Serializer<SelectedProduct>
-    with _$SelectedProductSerializer {}
-*/

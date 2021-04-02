@@ -12,7 +12,7 @@ class PreferenceManager {
     await prefs.setString(PreferenceManager.AUTH_TOKEN, token);
   }
 
-  Future<String> getAuthToken() async {
+  Future<String?> getAuthToken() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getString(PreferenceManager.AUTH_TOKEN);
   }
@@ -28,12 +28,12 @@ class PreferenceManager {
     await prefs.setDouble(PreferenceManager.ADDRESS_LAT, lat);
   }
 
-  Future<double> getAddressLocationCoordinateLat() async {
+  Future<double?> getAddressLocationCoordinateLat() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getDouble(PreferenceManager.ADDRESS_LAT);
   }
 
-  Future<double> getAddressLocationCoordinateLong() async {
+  Future<double?> getAddressLocationCoordinateLong() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getDouble(PreferenceManager.ADDRESS_LONG);
   }

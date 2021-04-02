@@ -7,21 +7,22 @@ class ProductOfferCacheManager {
   /// time in millis to define validity of cache after refresh
   int cacheValidity;
 
-  ProductOfferCacheManager(this.cacheValidity) : _lastUpdated = DateTime.now();
+  ProductOfferCacheManager(this.cacheValidity) : _lastUpdated = DateTime.now(), _productOffers=[];
 
-  List<ProductOffer> getProductOffers() {
+  List<ProductOffer>? getProductOffers() {
     if (_lastUpdated.millisecondsSinceEpoch + cacheValidity <
         DateTime.now().millisecondsSinceEpoch) {
-      _productOffers = null;
+      _productOffers = [];
+      return null;
     }
     return _productOffers;
   }
 
-  ProductOffer getProductOffer(int id) {
-    if (_productOffers == null || _productOffers.isEmpty) {
+  ProductOffer? getProductOffer(int id) {
+    if (_productOffers.isEmpty) {
       return null;
     }
-    ProductOffer result;
+    ProductOffer? result;
     for (ProductOffer productOffer in _productOffers) {
       if (productOffer.id == id) {
         result = productOffer;
@@ -37,9 +38,6 @@ class ProductOfferCacheManager {
   }
 
   void addProductOffer(ProductOffer productOffer) {
-    if (_productOffers == null) {
-      _productOffers = [];
-    }
     _productOffers.add(productOffer);
     _lastUpdated = DateTime.now();
   }

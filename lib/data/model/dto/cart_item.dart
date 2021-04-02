@@ -1,9 +1,8 @@
 import 'package:rozana_api_service/data/model/dto/product.dart';
 
 class CartItem {
-  Product product;
-  int quantity;
+  late final Product product;
+  final int quantity;
 
-  CartItem({this.product, this.quantity = 0});
-
+  CartItem({required this.product, this.quantity = 0});
 }

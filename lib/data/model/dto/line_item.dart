@@ -7,41 +7,41 @@ part 'line_item.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class LineItem extends Equatable {
-  int id;
+  int? id;
 
   var itemPrice;
 
   var quantity;
 
-  String status;
+  String? status;
 
-  DateTime deliveredAt;
+  DateTime? deliveredAt;
 
-  DateTime scheduledDeliveryTime;
+  DateTime? scheduledDeliveryTime;
 
   var deliveryLocationLat;
 
   var deliveryLocationLong;
 
-  int deliveredById;
+  int? deliveredById;
 
-  String deliveredByName;
+  String? deliveredByName;
 
-  int selectedProductId;
+  int? selectedProductId;
 
-  String selectedProductName;
+  String? selectedProductName;
 
-  String selectedProductUnit;
+  String? selectedProductUnit;
 
-  int invoiceId;
+  int? invoiceId;
 
-  Product product;
+  Product? product;
 
-  List<TaxRate> taxRates;
+  List<TaxRate>? taxRates;
 
-  String customerName;
+  String? customerName;
 
-  int customerId;
+  int? customerId;
 
   LineItem(
       {this.id,
@@ -71,7 +71,7 @@ class LineItem extends Equatable {
   Map<String, dynamic> toJson() => _$LineItemToJson(this);
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         id,
         itemPrice,
         quantity,

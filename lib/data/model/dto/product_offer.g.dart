@@ -11,11 +11,9 @@ ProductOffer _$ProductOfferFromJson(Map<String, dynamic> json) {
     id: json['id'] as int,
     offerImageUrl: json['offerImageUrl'] as String,
     description: json['description'] as String,
-    productOfferItems: (json['productOfferItems'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ProductOfferItem.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    productOfferItems: (json['productOfferItems'] as List<dynamic>)
+        .map((e) => ProductOfferItem.fromJson(e as Map<String, dynamic>))
+        .toList(),
     offerId: json['offerId'] as int,
   );
 }
@@ -26,6 +24,6 @@ Map<String, dynamic> _$ProductOfferToJson(ProductOffer instance) =>
       'offerImageUrl': instance.offerImageUrl,
       'description': instance.description,
       'productOfferItems':
-          instance.productOfferItems?.map((e) => e?.toJson())?.toList(),
+          instance.productOfferItems.map((e) => e.toJson()).toList(),
       'offerId': instance.offerId,
     };

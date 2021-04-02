@@ -7,53 +7,53 @@ import 'package:rozana_api_service/data/model/dto/product_stock.dart';
 part 'product.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
-class Product extends Equatable implements BaseDto {
+class Product extends Equatable implements BaseDto{
   @override
-  int id;
+  int? id;
 
-  String name;
+  String? name;
 
-  String description;
+  String? description;
 
-  double price;
+  double? price;
 
-  double discountedPrice;
+  double? discountedPrice;
 
-  bool discontinue;
+  bool? discontinue;
 
-  String category;
+  String? category;
 
-  String taxationCode;
+  String? taxationCode;
 
-  String unit;
+  String? unit;
 
-  String extId;
+  String? extId;
 
-  String brandName;
+  String? brandName;
 
-  bool priceInclusiveTax;
+  bool? priceInclusiveTax;
 
-  bool outOfStock;
+  bool? outOfStock;
 
-  bool featured;
+  bool? featured;
 
-  String alias;
+  String? alias;
 
-  int organizationId;
+  int? organizationId;
 
-  int imageId;
+  int? imageId;
 
-  String imageUrl;
+  String? imageUrl;
 
-  int taxStrategyId;
+  int? taxStrategyId;
 
-  String taxStrategyType;
+  String? taxStrategyType;
 
-  List<ProductStock> productStocks;
+  List<ProductStock>? productStocks;
 
-  List<ProductCategory> productCategories;
+  List<ProductCategory>? productCategories;
 
-  List<Product> variants;
+  List<Product>? variants;
 
   Product(
       {this.id,
@@ -106,30 +106,29 @@ class Product extends Equatable implements BaseDto {
   Map<String, dynamic> toJson() => _$ProductToJson(this);
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
     id,
     name,
     description,
     price,
-    imageUrl,
     discountedPrice,
     discontinue,
-    taxStrategyId,
-    taxStrategyType,
-    brandName,
-    priceInclusiveTax,
     category,
     taxationCode,
     unit,
+    extId,
+    brandName,
+    priceInclusiveTax,
     outOfStock,
     featured,
-    productStocks,
-    extId,
-    imageId,
-    organizationId,
     alias,
-    variants,
-    productCategories
+    organizationId,
+    imageId,
+    imageUrl,
+    taxStrategyId,
+    taxStrategyType,
+    productStocks,
+    productCategories,
+    variants
   ];
-
 }

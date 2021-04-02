@@ -7,11 +7,11 @@ part 'delivery_boy_user.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class DeliveryBoyUser extends Equatable {
-  DeliveryBoy deliveryBoy;
+  final DeliveryBoy deliveryBoy;
 
-  User user;
+  final User user;
 
-  DeliveryBoyUser({this.deliveryBoy, this.user});
+  DeliveryBoyUser({required this.deliveryBoy, required this.user});
 
 
   factory DeliveryBoyUser.fromJson(Map<String, dynamic> json) =>
@@ -24,30 +24,3 @@ class DeliveryBoyUser extends Equatable {
   @override
   List<Object> get props => [deliveryBoy, user];
 }
-/*
-
-part 'delivery_boy_user.jser.dart';
-
-class DeliveryBoyUser extends Equatable {
-  DeliveryBoy deliveryBoy;
-
-  User user;
-
-  DeliveryBoyUser({this.deliveryBoy, this.user});
-
-  Map<String, dynamic> toJson() => serializer.toMap(this);
-
-  static final serializer = DeliveryBoyUserSerializer();
-
-  static DeliveryBoyUser fromMap(Map map) => serializer.fromMap(map);
-
-  String toString() => toJson().toString();
-
-  @override
-  List<Object> get props => [deliveryBoy, user];
-}
-
-@GenSerializer()
-class DeliveryBoyUserSerializer extends Serializer<DeliveryBoyUser>
-    with _$DeliveryBoyUserSerializer {}
-*/

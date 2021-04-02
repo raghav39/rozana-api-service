@@ -28,17 +28,17 @@ class OrganizationConfig extends Equatable {
   final int maxOrderModificationTime;
 
   OrganizationConfig(
-      {this.id,
-      this.name,
-      this.email,
-      this.contactNumber,
-      this.addressId,
-      this.logoUrl,
-      this.gstin,
-      this.deliveryCharge,
-      this.freeDeliveryThresholdAmount,
-      this.orderingDateThreshold,
-      this.maxOrderModificationTime});
+      {required this.id,
+      required this.name,
+      required this.email,
+      required this.contactNumber,
+      required this.addressId,
+      required this.logoUrl,
+      required this.gstin,
+      required this.deliveryCharge,
+      required this.freeDeliveryThresholdAmount,
+      required this.orderingDateThreshold,
+      required this.maxOrderModificationTime});
 
   factory OrganizationConfig.fromJson(Map<String, dynamic> json) => _$OrganizationConfigFromJson(json);
 

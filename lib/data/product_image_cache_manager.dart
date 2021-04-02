@@ -3,7 +3,7 @@ import 'dart:collection';
 import 'package:rozana_api_service/data/model/dto/product_image.dart';
 
 class ProductImageCacheManager {
-  Map<int, List<ProductImage>> _productImages;
+  Map<int, List<ProductImage>?> _productImages;
   DateTime _lastUpdated;
 
   /// time in millis to define validity of cache after refresh
@@ -13,10 +13,9 @@ class ProductImageCacheManager {
       : _lastUpdated = DateTime.now(),
         _productImages = HashMap();
 
-  List<ProductImage> getProductImages(int productId) {
-    if (_lastUpdated.millisecondsSinceEpoch + cacheValidity <
-        DateTime.now().millisecondsSinceEpoch) {
-      _productImages = null;
+  List<ProductImage>? getProductImages(int productId) {
+    if (_lastUpdated.millisecondsSinceEpoch + cacheValidity < DateTime.now().millisecondsSinceEpoch) {
+      _productImages = HashMap();
     }
     return _productImages[productId];
   }
@@ -27,7 +26,7 @@ class ProductImageCacheManager {
   }
 
   void addProductImage(int productId, ProductImage productImage) {
-    List<ProductImage> productImages = _productImages[productId];
+    List<ProductImage>? productImages = _productImages[productId];
     if (productImages == null || productImages.isEmpty) {
       productImages = [productImage];
       _productImages[productId] = productImages;
@@ -35,13 +34,11 @@ class ProductImageCacheManager {
     }
     for (ProductImage productImage1 in productImages) {
       // if the image already exists in the list then ignore
-      if (productImage1.imageUrl == productImage.imageUrl &&
-          productImage1.id == productImage.id) {
+      if (productImage1.imageUrl == productImage.imageUrl && productImage1.id == productImage.id) {
         return;
       }
       // if the product imageUrl is updated for a specific productImage then remove the product image from the list and later add the updated one
-      if (productImage1.imageUrl != productImage.imageUrl &&
-          productImage1.id == productImage.id) {
+      if (productImage1.imageUrl != productImage.imageUrl && productImage1.id == productImage.id) {
         productImages.remove(productImage1);
       }
     }

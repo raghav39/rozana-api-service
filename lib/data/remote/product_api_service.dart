@@ -11,7 +11,7 @@ part 'product_api_service.chopper.dart';
 
 @ChopperApi(baseUrl: "/api")
 abstract class ProductApiService extends ChopperService {
-  static ProductApiService create([ChopperClient client]) =>
+  static ProductApiService create([ChopperClient? client]) =>
       _$ProductApiService(client);
 
   @Get(path: "product-categories")
@@ -34,18 +34,18 @@ abstract class ProductApiService extends ChopperService {
 
   @Get(path: "products")
   Future<Response<List<Product>>> getAllProducts(
-      {@Query("featured.equals") bool featured,
+      {@Query("featured.equals") bool featured = false,
       @Query("page") int page = 0,
       @Query("size") int size = 20,
-      @Query("sort") List<String> sort});
+      @Query("sort") List<String>? sort});
 
   @Get(path: "products")
   Future<Response<List<Product>>> getAllProductsForCategoryId(
       @Query("productCategoryId.equals") int productCategoryId,
-      {@Query("featured.equals") bool featured,
+      {@Query("featured.equals") bool featured = false,
       @Query("page") int page = 0,
       @Query("size") int size = 20,
-      @Query("sort") List<String> sort});
+      @Query("sort") List<String>? sort});
 
   @Post(path: "products")
   Future<Response<Product>> createProduct(@Body() Product product);
@@ -63,7 +63,7 @@ abstract class ProductApiService extends ChopperService {
   Future<Response<List<Product>>> searchProducts(@Query("query") String query,
       {@Query("page") int page = 0,
       @Query("size") int size = 20,
-      @Query("sort") List<String> sort});
+      @Query("sort") List<String>? sort});
 
   @Get(path: "banner-images")
   Future<Response<List<BannerImage>>> getAllBannerImages();
