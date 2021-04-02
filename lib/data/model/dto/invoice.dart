@@ -65,7 +65,7 @@ class Invoice extends Equatable implements BaseDto {
 
   String? extPaymentId;
 
-  bool? isDraft;
+  bool? draft;
 
   String? deliveryMode;
 
@@ -109,7 +109,7 @@ class Invoice extends Equatable implements BaseDto {
       this.attachments,
       this.offers,
       this.extPaymentId,
-      this.isDraft,
+      this.draft,
       this.deliveryMode})
       : super();
 
@@ -152,7 +152,7 @@ class Invoice extends Equatable implements BaseDto {
         attachments,
         offers,
         extPaymentId,
-        isDraft,
+        draft,
         deliveryMode
       ];
 }

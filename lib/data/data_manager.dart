@@ -356,7 +356,7 @@ class DataManager {
   }
 
   Future<Invoice?> createOrder(Invoice invoice) async {
-    invoice.isDraft = true;
+    invoice.draft = true;
     return (await (await apiCaller.getInvoiceService()).createInvoice(invoice)).body;
   }
 
@@ -364,7 +364,7 @@ class DataManager {
     if (invoice.id == null) {
       throw Future.error('Invoice ID cannot be null');
     }
-    invoice.isDraft = false;
+    invoice.draft = false;
     return (await (await apiCaller.getInvoiceService()).updateInvoiceDraft(invoice)).body;
   }
 
