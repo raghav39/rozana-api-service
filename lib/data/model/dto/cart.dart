@@ -17,6 +17,8 @@ class Cart {
 
   String? remark;
 
+  String? paymentMode;
+
   List<Attachment> attachments = [];
 
   List<ProductOffer> offers = [];

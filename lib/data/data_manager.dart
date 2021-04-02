@@ -64,8 +64,7 @@ class DataManager {
     eventBus.on<UnAuthorizedResponseEvent>().listen((event) {
       logoutUser();
     });
-    eventBus.on<BadRequestResponseEvent>().listen((event) {
-    });
+    eventBus.on<BadRequestResponseEvent>().listen((event) {});
   }
 
   /// This will save FCM token in the sharedPreference and send it to the server
@@ -174,9 +173,7 @@ class DataManager {
 
   Future<ProductCategory?> updateProductCategory(ProductCategory productCategory) async {
     try {
-      return (await (await apiCaller.getProductService())
-          .updateProductCategory(productCategory))
-          ?.body;
+      return (await (await apiCaller.getProductService()).updateProductCategory(productCategory))?.body;
     } on Response catch (_) {
       return null;
     }
@@ -184,9 +181,7 @@ class DataManager {
 
   Future<ProductCategory?> createProductCategory(ProductCategory productCategory) async {
     try {
-      return (await (await apiCaller.getProductService())
-          .createProductCategory(productCategory))
-          ?.body;
+      return (await (await apiCaller.getProductService()).createProductCategory(productCategory))?.body;
     } on Response catch (_) {
       return null;
     }
@@ -194,8 +189,7 @@ class DataManager {
 
   Future<ProductCategory?> removeProductCategoryFromProduct(int productCategoryId, List<Product> products) async {
     try {
-      return (await (await apiCaller.getProductService())
-          .removeProductCategoryFromProduct(productCategoryId, products))
+      return (await (await apiCaller.getProductService()).removeProductCategoryFromProduct(productCategoryId, products))
           ?.body;
     } on Response catch (_) {
       return null;
@@ -204,15 +198,13 @@ class DataManager {
 
   Future<int?> deleteProductCategory(int productCategoryId) async {
     try {
-      return (await (await apiCaller.getProductService())
-          .deleteProductCategory(productCategoryId))
-          ?.statusCode;
+      return (await (await apiCaller.getProductService()).deleteProductCategory(productCategoryId))?.statusCode;
     } on Response catch (_) {
       return null;
     }
   }
 
-  Future<List<Product>?> getProducts({int? categoryId, int index = 0}) async {
+  Future<List<Product>?> getProducts({int? categoryId, int index = 0, bool featured = false}) async {
     print('calling getProducts() with index: $index and categoryId: $categoryId');
     int page = 0;
     if (index > 0) {
@@ -226,10 +218,12 @@ class DataManager {
     try {
       if (categoryId != null) {
         products = (await (await apiCaller.getProductService())
-                .getAllProductsForCategoryId(categoryId, page: page, sort: sort))
+                .getAllProductsForCategoryId(categoryId, page: page, sort: sort, featured: featured))
             ?.body;
       } else {
-        products = (await (await apiCaller.getProductService()).getAllProducts(page: page, sort: sort))?.body;
+        products =
+            (await (await apiCaller.getProductService()).getAllProducts(page: page, sort: sort, featured: featured))
+                ?.body;
       }
       if (products != null) {
         productCacheManager.updateProducts(products);
@@ -365,7 +359,16 @@ class DataManager {
   }
 
   Future<Invoice?> createOrder(Invoice invoice) async {
+    invoice.isDraft = true;
     return (await (await apiCaller.getInvoiceService()).createInvoice(invoice))?.body;
+  }
+
+  Future<Invoice?> updateInvoiceDraftToSent(Invoice invoice) async {
+    if (invoice.id == null) {
+      throw Future.error('Invoice ID cannot be null');
+    }
+    invoice.isDraft = false;
+    return (await (await apiCaller.getInvoiceService()).updateInvoiceDraft(invoice))?.body;
   }
 
   Future<Invoice?> assignDeliveryBoyToInvoice(Invoice invoice, DeliveryBoyUser deliveryBoyUser) async {

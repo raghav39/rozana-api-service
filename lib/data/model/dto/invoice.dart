@@ -63,6 +63,12 @@ class Invoice extends Equatable implements BaseDto {
 
   String? paymentMode;
 
+  String? extPaymentId;
+
+  bool? isDraft;
+
+  String? deliveryMode;
+
   List<SelectedProduct>? selectedProducts;
 
   List<LineItem>? lineItems;
@@ -101,7 +107,10 @@ class Invoice extends Equatable implements BaseDto {
       this.selectedProducts,
       this.lineItems,
       this.attachments,
-      this.offers})
+      this.offers,
+      this.extPaymentId,
+      this.isDraft,
+      this.deliveryMode})
       : super();
 
   factory Invoice.fromJson(Map<String, dynamic> json) => _$InvoiceFromJson(json);
@@ -141,6 +150,9 @@ class Invoice extends Equatable implements BaseDto {
         selectedProducts,
         lineItems,
         attachments,
-        offers
+        offers,
+        extPaymentId,
+        isDraft,
+        deliveryMode
       ];
 }

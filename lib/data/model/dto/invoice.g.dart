@@ -48,6 +48,9 @@ Invoice _$InvoiceFromJson(Map<String, dynamic> json) {
     offers: (json['offers'] as List<dynamic>?)
         ?.map((e) => Offer.fromJson(e as Map<String, dynamic>))
         .toList(),
+    extPaymentId: json['extPaymentId'] as String?,
+    isDraft: json['isDraft'] as bool?,
+    deliveryMode: json['deliveryMode'] as String?,
   );
 }
 
@@ -78,6 +81,9 @@ Map<String, dynamic> _$InvoiceToJson(Invoice instance) => <String, dynamic>{
       'customerLogin': instance.customerLogin,
       'createdBy': instance.createdBy,
       'paymentMode': instance.paymentMode,
+      'extPaymentId': instance.extPaymentId,
+      'isDraft': instance.isDraft,
+      'deliveryMode': instance.deliveryMode,
       'selectedProducts':
           instance.selectedProducts?.map((e) => e.toJson()).toList(),
       'lineItems': instance.lineItems?.map((e) => e.toJson()).toList(),

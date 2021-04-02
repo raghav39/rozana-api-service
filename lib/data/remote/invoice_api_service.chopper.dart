@@ -66,6 +66,14 @@ class _$InvoiceApiService extends InvoiceApiService {
   }
 
   @override
+  Future<Response<Invoice>> updateInvoiceDraft(Invoice invoice) {
+    final $url = '/api/invoices/draft-status';
+    final $body = invoice;
+    final $request = Request('PUT', $url, client.baseUrl, body: $body);
+    return client.send<Invoice, Invoice>($request);
+  }
+
+  @override
   Future<Response<Invoice>> updateDeliveryBoy(Invoice invoice) {
     final $url = '/api/invoices/delivery-boy';
     final $body = invoice;
