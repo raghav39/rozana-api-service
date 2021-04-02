@@ -68,7 +68,7 @@ class DataManager {
   }
 
   /// This will save FCM token in the sharedPreference and send it to the server
-  void saveFCMToken(String token, TargetPlatform targetPlatform) async {
+  void saveFCMToken(String? token, TargetPlatform targetPlatform) async {
     String deviceName;
     bool isPhysicalDevice;
     String deviceUUID;
@@ -94,25 +94,25 @@ class DataManager {
       return;
     }
     Device deviceDTO = Device(name: deviceName, token: token, uuid: deviceUUID);
-    (await apiCaller.getDeviceApiService())?.createDeviceInfo(deviceDTO);
+    (await apiCaller.getDeviceApiService()).createDeviceInfo(deviceDTO);
   }
 
   /// This will make the api call synchronized
   Future<Null> registerCustomer(String phoneNumber) async {
-    await (await apiCaller.getAuthService())?.registerCustomer(
+    await (await apiCaller.getAuthService()).registerCustomer(
         UserCustomer(address: Address(contactNumber: phoneNumber), customer: Customer(), user: User()));
   }
 
   /// This will make the api call synchronized
   Future<Null> activateCustomer(String phoneNumber, String otp) async {
-    await (await apiCaller.getAuthService())?.activateCustomer(otp, phoneNumber);
+    await (await apiCaller.getAuthService()).activateCustomer(otp, phoneNumber);
   }
 
   /// This will make the api call synchronized
   Future<Null> authenticateUserUsingOTP(String phoneNumber, String password) async {
     JWTToken? token =
-        (await (await apiCaller.getAuthService())?.authenticateUser(LoginVm(username: phoneNumber, password: password)))
-            ?.body;
+        (await (await apiCaller.getAuthService()).authenticateUser(LoginVm(username: phoneNumber, password: password)))
+            .body;
     if (token != null) {
       await preferenceManager.storeAuthToken(token.id_token);
       apiCaller.updateClient();
@@ -121,8 +121,8 @@ class DataManager {
 
   Future<Null> authenticateUserUsingLogin(String login, String password) async {
     JWTToken? token =
-        (await (await apiCaller.getAuthService())?.authenticateUser(LoginVm(username: login, password: password)))
-            ?.body;
+        (await (await apiCaller.getAuthService()).authenticateUser(LoginVm(username: login, password: password)))
+            .body;
     if (token != null) {
       await preferenceManager.storeAuthToken(token.id_token);
       apiCaller.updateClient();
@@ -151,13 +151,13 @@ class DataManager {
 
   Future<Address?> updateAddress(Address address) async {
     AddressApiService addressService = await apiCaller.getAddressService();
-    return (await addressService.updateAddress(address))?.body;
+    return (await addressService.updateAddress(address)).body;
   }
 
   /// This will make the api call synchronized
   Future<List<ProductCategory>?> getProductCategories() async {
     try {
-      return (await (await apiCaller.getProductService()).getAllProductCategories())?.body;
+      return (await (await apiCaller.getProductService()).getAllProductCategories()).body;
     } on Response catch (_) {
       return [];
     }
@@ -165,7 +165,7 @@ class DataManager {
 
   Future<ProductCategory?> getProductCategory(int productCategoryId) async {
     try {
-      return (await (await apiCaller.getProductService()).getProductCategory(productCategoryId))?.body;
+      return (await (await apiCaller.getProductService()).getProductCategory(productCategoryId)).body;
     } on Response catch (_) {
       return null;
     }
@@ -173,7 +173,7 @@ class DataManager {
 
   Future<ProductCategory?> updateProductCategory(ProductCategory productCategory) async {
     try {
-      return (await (await apiCaller.getProductService()).updateProductCategory(productCategory))?.body;
+      return (await (await apiCaller.getProductService()).updateProductCategory(productCategory)).body;
     } on Response catch (_) {
       return null;
     }
@@ -181,7 +181,7 @@ class DataManager {
 
   Future<ProductCategory?> createProductCategory(ProductCategory productCategory) async {
     try {
-      return (await (await apiCaller.getProductService()).createProductCategory(productCategory))?.body;
+      return (await (await apiCaller.getProductService()).createProductCategory(productCategory)).body;
     } on Response catch (_) {
       return null;
     }
@@ -190,7 +190,7 @@ class DataManager {
   Future<ProductCategory?> removeProductCategoryFromProduct(int productCategoryId, List<Product> products) async {
     try {
       return (await (await apiCaller.getProductService()).removeProductCategoryFromProduct(productCategoryId, products))
-          ?.body;
+          .body;
     } on Response catch (_) {
       return null;
     }
@@ -198,7 +198,7 @@ class DataManager {
 
   Future<int?> deleteProductCategory(int productCategoryId) async {
     try {
-      return (await (await apiCaller.getProductService()).deleteProductCategory(productCategoryId))?.statusCode;
+      return (await (await apiCaller.getProductService()).deleteProductCategory(productCategoryId)).statusCode;
     } on Response catch (_) {
       return null;
     }
@@ -219,11 +219,11 @@ class DataManager {
       if (categoryId != null) {
         products = (await (await apiCaller.getProductService())
                 .getAllProductsForCategoryId(categoryId, page: page, sort: sort, featured: featured))
-            ?.body;
+            .body;
       } else {
         products =
             (await (await apiCaller.getProductService()).getAllProducts(page: page, sort: sort, featured: featured))
-                ?.body;
+                .body;
       }
       if (products != null) {
         productCacheManager.updateProducts(products);
@@ -235,7 +235,7 @@ class DataManager {
   }
 
   Future<dynamic> deleteProduct(int productId) async {
-    return (await (await apiCaller.getProductService()).deleteProduct(productId))?.body;
+    return (await (await apiCaller.getProductService()).deleteProduct(productId)).body;
   }
 
   Future<List<Product>?> searchProduct({required String query, int index = 0}) async {
@@ -249,7 +249,7 @@ class DataManager {
       page = (index ~/ PAGE_SIZE);
     }
     try {
-      return (await (await apiCaller.getProductService()).searchProducts(query, page: page, sort: sort))?.body;
+      return (await (await apiCaller.getProductService()).searchProducts(query, page: page, sort: sort)).body;
     } on Response catch (_) {
       return [];
     }
@@ -259,7 +259,7 @@ class DataManager {
     Product? cachedProduct = productCacheManager.getProduct(productId);
     if (cachedProduct == null) {
       try {
-        Product? product = (await (await apiCaller.getProductService())?.getProduct(productId))?.body;
+        Product? product = (await (await apiCaller.getProductService()).getProduct(productId)).body;
         if (product != null) {
           productCacheManager.addProduct(product);
         }
@@ -276,7 +276,7 @@ class DataManager {
     if (cachedUserCustomer == null) {
       try {
         UserCustomerApiService userCustomerApiService = await apiCaller.getUserCustomerService();
-        List<UserCustomer>? list = (await userCustomerApiService.getAllUserCustomers())?.body;
+        List<UserCustomer>? list = (await userCustomerApiService.getAllUserCustomers()).body;
         if (list != null && list.length > 0) {
           UserCustomer userCustomer = list[0];
           userCustomerCacheManager.updateUserCustomer(userCustomer);
@@ -300,7 +300,7 @@ class DataManager {
     sort.add('asc');
     try {
       List<UserCustomer>? userCustomers =
-          (await (await apiCaller.getUserCustomerService()).getAllUserCustomers(page: page, sort: sort))?.body;
+          (await (await apiCaller.getUserCustomerService()).getAllUserCustomers(page: page, sort: sort)).body;
       if (userCustomers != null) {
         userCustomerCacheManager.updateUserCustomers(userCustomers);
       }
@@ -315,7 +315,7 @@ class DataManager {
     if (userCustomer == null) {
       try {
         UserCustomerApiService userCustomerApiService = await apiCaller.getUserCustomerService();
-        userCustomer = (await userCustomerApiService?.getUserCustomer(customerId))?.body;
+        userCustomer = (await userCustomerApiService.getUserCustomer(customerId)).body;
         if (userCustomer != null) {
           userCustomerCacheManager.updateUserCustomer(userCustomer);
         }
@@ -329,7 +329,7 @@ class DataManager {
   Future<List<UserCustomer>?> searchUserCustomers(String query) async {
     try {
       UserCustomerApiService? userCustomerApiService = await apiCaller.getUserCustomerService();
-      return (await userCustomerApiService.searchUserCustomers(query))?.body;
+      return (await userCustomerApiService.searchUserCustomers(query)).body;
     } on Response catch (_) {
       return null;
     }
@@ -337,7 +337,7 @@ class DataManager {
 
   Future<UserCustomer?> updateUserCustomer(UserCustomer userCustomer) async {
     UserCustomerApiService? userCustomerApiService = await apiCaller.getUserCustomerService();
-    UserCustomer? updatedUserCustomer = (await userCustomerApiService?.updateUserCustomers(userCustomer))?.body;
+    UserCustomer? updatedUserCustomer = (await userCustomerApiService.updateUserCustomers(userCustomer)).body;
     if (updatedUserCustomer != null) {
       userCustomerCacheManager.updateUserCustomer(updatedUserCustomer);
     }
@@ -346,12 +346,9 @@ class DataManager {
 
   Future<List<BannerImage>?> getBannerImages() async {
     ProductApiService? productApiService = await apiCaller.getProductService();
-    if (productApiService == null) {
-      return [];
-    }
     List<BannerImage>? response;
     try {
-      response = (await productApiService.getAllBannerImages())?.body;
+      response = (await productApiService.getAllBannerImages()).body;
     } on Response catch (_) {
       response = [];
     }
@@ -360,7 +357,7 @@ class DataManager {
 
   Future<Invoice?> createOrder(Invoice invoice) async {
     invoice.isDraft = true;
-    return (await (await apiCaller.getInvoiceService()).createInvoice(invoice))?.body;
+    return (await (await apiCaller.getInvoiceService()).createInvoice(invoice)).body;
   }
 
   Future<Invoice?> updateInvoiceDraftToSent(Invoice invoice) async {
@@ -368,25 +365,25 @@ class DataManager {
       throw Future.error('Invoice ID cannot be null');
     }
     invoice.isDraft = false;
-    return (await (await apiCaller.getInvoiceService()).updateInvoiceDraft(invoice))?.body;
+    return (await (await apiCaller.getInvoiceService()).updateInvoiceDraft(invoice)).body;
   }
 
   Future<Invoice?> assignDeliveryBoyToInvoice(Invoice invoice, DeliveryBoyUser deliveryBoyUser) async {
     Invoice updatedInvoice = Invoice.fromJson(invoice.toJson());
     updatedInvoice.deliveredById = deliveryBoyUser.user.id;
-    return (await (await apiCaller.getInvoiceService())?.updateInvoice(updatedInvoice))?.body;
+    return (await (await apiCaller.getInvoiceService()).updateInvoice(updatedInvoice)).body;
   }
 
   Future<Invoice?> updateOrderStatusOfInvoice(Invoice invoice, String orderStatus) async {
     Invoice updatedInvoice = Invoice.fromJson(invoice.toJson());
     updatedInvoice.orderStatus = orderStatus;
-    return (await (await apiCaller.getInvoiceService())?.updateInvoice(updatedInvoice))?.body;
+    return (await (await apiCaller.getInvoiceService()).updateInvoice(updatedInvoice)).body;
   }
 
   Future<List<DeliverySlot>?> getDeliverySlots() async {
     List<DeliverySlot>? response;
     try {
-      response = (await (await apiCaller.getDeliverySlotService())?.getAllDeliverySlots())?.body;
+      response = (await (await apiCaller.getDeliverySlotService()).getAllDeliverySlots()).body;
     } on Response catch (_) {
       response = [];
     }
@@ -397,7 +394,7 @@ class DataManager {
     OrganizationConfigApiService organizationApiService = await apiCaller.getOrganizationService();
     OrganizationConfig? response;
     try {
-      response = (await organizationApiService.getOrganizationConfig())?.body;
+      response = (await organizationApiService.getOrganizationConfig()).body;
     } on Response catch (_) {
       response = null;
     }
@@ -414,10 +411,10 @@ class DataManager {
     try {
       if (date != null) {
         response =
-            (await (await apiCaller.getInvoiceService())?.getInvoiceByDate("${date.toIso8601String()}", page: page))
-                ?.body;
+            (await (await apiCaller.getInvoiceService()).getInvoiceByDate("${date.toIso8601String()}", page: page))
+                .body;
       } else {
-        response = (await (await apiCaller.getInvoiceService())?.getAllInvoices(page: page))?.body;
+        response = (await (await apiCaller.getInvoiceService()).getAllInvoices(page: page)).body;
       }
     } on Response catch (_) {
       response = [];
@@ -428,7 +425,7 @@ class DataManager {
   Future<Invoice?> getInvoice(int invoiceId) async {
     Invoice? response;
     try {
-      response = (await (await apiCaller.getInvoiceService())?.getInvoice(invoiceId))?.body;
+      response = (await (await apiCaller.getInvoiceService()).getInvoice(invoiceId)).body;
     } on Response catch (_) {
       response = null;
     }
@@ -439,7 +436,7 @@ class DataManager {
     List<Product> response;
     try {
       List<ProductVariant>? productVariants =
-          (await (await apiCaller.getProductService())?.getAllProductVariants(product.name!))?.body;
+          (await (await apiCaller.getProductService()).getAllProductVariants(product.name!)).body;
       if (productVariants == null || productVariants.isEmpty) {
         return [];
       }
@@ -453,7 +450,7 @@ class DataManager {
   Future<List<Product>?> getProductSuggestions(Product product) async {
     List<Product>? response;
     try {
-      response = (await (await apiCaller.getProductService())?.getSuggestedProducts(product.id!))?.body;
+      response = (await (await apiCaller.getProductService()).getSuggestedProducts(product.id!)).body;
       if (response == null || response.isEmpty) {
         return [];
       }
@@ -465,7 +462,7 @@ class DataManager {
 
   Future<int?> getProductCount() async {
     try {
-      return (await (await apiCaller.getProductService())?.getProductCount())?.body;
+      return (await (await apiCaller.getProductService()).getProductCount()).body;
     } on Response catch (_) {
       return 0;
     }
@@ -473,7 +470,7 @@ class DataManager {
 
   Future<int?> getOrderTransactionCount() async {
     try {
-      return (await (await apiCaller.getOrderTransactionApiService())?.getOrderTransactionCount())?.body;
+      return (await (await apiCaller.getOrderTransactionApiService()).getOrderTransactionCount()).body;
     } on Response catch (_) {
       return 0;
     }
@@ -481,7 +478,7 @@ class DataManager {
 
   Future<int?> getCustomerCount() async {
     try {
-      return (await (await apiCaller.getUserCustomerService())?.getUserCustomerCount())?.body;
+      return (await (await apiCaller.getUserCustomerService()).getUserCustomerCount()).body;
     } on Response catch (_) {
       return 0;
     }
@@ -489,7 +486,7 @@ class DataManager {
 
   Future<int?> getDeliveryBoyCount() async {
     try {
-      return (await (await apiCaller.getDeliveryBoyApiService())?.getDeliveryBoyCount())?.body;
+      return (await (await apiCaller.getDeliveryBoyApiService()).getDeliveryBoyCount()).body;
     } on Response catch (_) {
       return 0;
     }
@@ -497,7 +494,7 @@ class DataManager {
 
   Future<int?> getInvoiceCount() async {
     try {
-      return (await (await apiCaller.getInvoiceService()).getInvoiceCount())?.body;
+      return (await (await apiCaller.getInvoiceService()).getInvoiceCount()).body;
     } on Response catch (_) {
       return 0;
     }
@@ -505,30 +502,30 @@ class DataManager {
 
   Future<List<DeliveryBoyUser>?> getDeliveryBoys() async {
     try {
-      return (await (await apiCaller.getDeliveryBoyApiService())?.getAllDeliveryBoys())?.body;
+      return (await (await apiCaller.getDeliveryBoyApiService()).getAllDeliveryBoys()).body;
     } on Response catch (_) {
       return [];
     }
   }
 
   Future<Product?> updateProduct(Product product) async {
-    return (await (await apiCaller.getProductService())?.updateProduct(product))?.body;
+    return (await (await apiCaller.getProductService()).updateProduct(product)).body;
   }
 
   Future<Product?> createProduct(Product product) async {
-    return (await (await apiCaller.getProductService())?.createProduct(product))?.body;
+    return (await (await apiCaller.getProductService()).createProduct(product)).body;
   }
 
   Future<Locality?> getLocalityByZipCode(String zipCode) async {
-    return (await (await apiCaller.getLocalityApiService())?.getLocalityByZipCode(zipCode, true, this.googleMapsApiKey))
-        ?.body;
+    return (await (await apiCaller.getLocalityApiService()).getLocalityByZipCode(zipCode, true, this.googleMapsApiKey))
+        .body;
   }
 
   Future<List<ProductOffer>?> getProductOffers() async {
     List<ProductOffer>? cachedProductOffers = productOfferCacheManager.getProductOffers();
     if (cachedProductOffers == null) {
       try {
-        List<ProductOffer>? productOfers = (await (await apiCaller.getProductOfferService())?.getProductOffers())?.body;
+        List<ProductOffer>? productOfers = (await (await apiCaller.getProductOfferService()).getProductOffers()).body;
         if (productOfers != null) {
           productOfferCacheManager.updateProductOffers(productOfers);
         }
@@ -544,7 +541,7 @@ class DataManager {
     if (cachedProductImages == null) {
       try {
         cachedProductImages =
-            (await (await apiCaller.getProductService())?.getAllProductImagesForProduct(productId))?.body;
+            (await (await apiCaller.getProductService()).getAllProductImagesForProduct(productId)).body;
         if (cachedProductImages != null) {
           productImageCacheManager.updateProductImages(productId, cachedProductImages);
         }
@@ -558,7 +555,7 @@ class DataManager {
   Future<ProductImage?> createProductImage(ProductImage productImage) async {
     try {
       ProductImage? updatedProductImage =
-          (await (await apiCaller.getProductService())?.createProductImage(productImage))?.body;
+          (await (await apiCaller.getProductService()).createProductImage(productImage)).body;
       if (updatedProductImage != null) {
         productImageCacheManager.addProductImage(productImage.productId, updatedProductImage);
       }
@@ -571,7 +568,7 @@ class DataManager {
   Future<ProductImage?> updateProductImage(ProductImage productImage) async {
     try {
       ProductImage? updatedProductImage =
-          (await (await apiCaller.getProductService())?.updateProductImage(productImage))?.body;
+          (await (await apiCaller.getProductService()).updateProductImage(productImage)).body;
       if (updatedProductImage != null) {
         productImageCacheManager.addProductImage(productImage.productId, updatedProductImage);
       }
