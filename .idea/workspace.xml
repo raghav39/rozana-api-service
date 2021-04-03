@@ -10,9 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/invoice.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/invoice.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/invoice.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/invoice.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/cart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/cart.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,10 +125,10 @@
       <screen x="-1440" y="-1833" width="1440" height="2537" />
     </state>
     <state x="-907" y="-842" key="#com.intellij.ide.util.MemberChooser/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1617346710874" />
-    <state width="425" height="115" key="javadoc.popup.new" timestamp="1617438838024">
+    <state width="425" height="115" key="javadoc.popup.new" timestamp="1617439480848">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="425" height="115" key="javadoc.popup.new/-1440.-1833.1440.2537/0.23.1680.1027@0.23.1680.1027" timestamp="1617438838024" />
+    <state width="425" height="115" key="javadoc.popup.new/-1440.-1833.1440.2537/0.23.1680.1027@0.23.1680.1027" timestamp="1617439480848" />
     <state x="-1055" y="-1228" key="search.everywhere.popup" timestamp="1617350182834">
       <screen x="-1440" y="-1833" width="1440" height="2537" />
     </state>

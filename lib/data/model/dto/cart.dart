@@ -3,6 +3,7 @@ import 'package:rozana_api_service/data/model/dto/attachment.dart';
 import 'package:rozana_api_service/data/model/dto/cart_item.dart';
 import 'package:rozana_api_service/data/model/dto/delivery_slot.dart';
 import 'package:rozana_api_service/data/model/dto/product_offer.dart';
+import 'package:rozana_api_service/data/model/enums/delivery_mode.dart';
 
 class Cart {
   DateTime? date;
@@ -17,9 +18,11 @@ class Cart {
 
   String? remark;
 
+  DeliveryMode deliveryMode;
+
   List<Attachment> attachments = [];
 
   List<ProductOffer> offers = [];
 
-  Cart({this.cartItems, this.date});
+  Cart({this.cartItems, this.date}): deliveryMode = DeliveryMode.DELIVERY;
 }
