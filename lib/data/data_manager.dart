@@ -393,9 +393,9 @@ class DataManager {
     Invoice updatedInvoice = Invoice.fromJson(invoice.toJson());
     updatedInvoice.orderStatus = orderStatus;
     final service = await apiCaller.getInvoiceService();
-    final response = await service.updateInvoice(updatedInvoice);
+    final response = await service.updateOrderStatus(updatedInvoice);
     if(!response.isSuccessful){
-      throw new Future.error("invoice create failed: ${response.error.toString()}");
+      throw new Future.error("invoice status update failed: ${response.error.toString()}");
     }
     return response.body;
   }
