@@ -357,7 +357,12 @@ class DataManager {
 
   Future<Invoice?> createOrder(Invoice invoice) async {
     invoice.draft = true;
-    return (await (await apiCaller.getInvoiceService()).createInvoice(invoice)).body;
+    final service = await apiCaller.getInvoiceService();
+    final response = await service.createInvoice(invoice);
+    if(!response.isSuccessful){
+      throw new Future.error("invoice create failed: ${response.error.toString()}");
+    }
+    return response.body;
   }
 
   Future<Invoice?> updateInvoiceDraftToSent(Invoice invoice) async {
@@ -365,19 +370,34 @@ class DataManager {
       throw Future.error('Invoice ID cannot be null');
     }
     invoice.draft = false;
-    return (await (await apiCaller.getInvoiceService()).updateInvoiceDraft(invoice)).body;
+    final service = await apiCaller.getInvoiceService();
+    final response = await service.updateInvoiceDraft(invoice);
+    if(!response.isSuccessful){
+      throw new Future.error("invoice update failed: ${response.error.toString()}");
+    }
+    return response.body;
   }
 
   Future<Invoice?> assignDeliveryBoyToInvoice(Invoice invoice, DeliveryBoyUser deliveryBoyUser) async {
     Invoice updatedInvoice = Invoice.fromJson(invoice.toJson());
     updatedInvoice.deliveredById = deliveryBoyUser.user.id;
-    return (await (await apiCaller.getInvoiceService()).updateInvoice(updatedInvoice)).body;
+    final service = await apiCaller.getInvoiceService();
+    final response = await service.updateInvoice(updatedInvoice);
+    if(!response.isSuccessful){
+      throw new Future.error("invoice create failed: ${response.error.toString()}");
+    }
+    return response.body;
   }
 
   Future<Invoice?> updateOrderStatusOfInvoice(Invoice invoice, String orderStatus) async {
     Invoice updatedInvoice = Invoice.fromJson(invoice.toJson());
     updatedInvoice.orderStatus = orderStatus;
-    return (await (await apiCaller.getInvoiceService()).updateInvoice(updatedInvoice)).body;
+    final service = await apiCaller.getInvoiceService();
+    final response = await service.updateInvoice(updatedInvoice);
+    if(!response.isSuccessful){
+      throw new Future.error("invoice create failed: ${response.error.toString()}");
+    }
+    return response.body;
   }
 
   Future<List<DeliverySlot>?> getDeliverySlots() async {
