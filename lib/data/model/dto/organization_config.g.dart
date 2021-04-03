@@ -20,6 +20,7 @@ OrganizationConfig _$OrganizationConfigFromJson(Map<String, dynamic> json) {
         (json['freeDeliveryThresholdAmount'] as num).toDouble(),
     orderingDateThreshold: json['orderingDateThreshold'] as int,
     maxOrderModificationTime: json['maxOrderModificationTime'] as int,
+    razorPayKey: json['razorPayKey'] as String,
   );
 }
 
@@ -36,4 +37,5 @@ Map<String, dynamic> _$OrganizationConfigToJson(OrganizationConfig instance) =>
       'freeDeliveryThresholdAmount': instance.freeDeliveryThresholdAmount,
       'orderingDateThreshold': instance.orderingDateThreshold,
       'maxOrderModificationTime': instance.maxOrderModificationTime,
+      'razorPayKey': instance.razorPayKey,
     };
