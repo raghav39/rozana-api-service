@@ -5,6 +5,7 @@ import 'package:rozana_api_service/data/model/dto/base_dto.dart';
 import 'package:rozana_api_service/data/model/dto/line_item.dart';
 import 'package:rozana_api_service/data/model/dto/offer.dart';
 import 'package:rozana_api_service/data/model/dto/selected_product.dart';
+import 'package:rozana_api_service/data/model/enums/delivery_mode.dart';
 
 part 'invoice.g.dart';
 
@@ -69,7 +70,7 @@ class Invoice extends Equatable implements BaseDto {
 
   bool? draft;
 
-  String? deliveryMode;
+  String deliveryMode;
 
   List<SelectedProduct>? selectedProducts;
 
@@ -113,7 +114,7 @@ class Invoice extends Equatable implements BaseDto {
       this.extPaymentId,
       this.extPaymentOrderId,
       this.draft,
-      this.deliveryMode})
+      this.deliveryMode = "DELIVERY"})
       : super();
 
   factory Invoice.fromJson(Map<String, dynamic> json) => _$InvoiceFromJson(json);

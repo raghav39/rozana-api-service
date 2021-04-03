@@ -51,7 +51,7 @@ Invoice _$InvoiceFromJson(Map<String, dynamic> json) {
     extPaymentId: json['extPaymentId'] as String?,
     extPaymentOrderId: json['extPaymentOrderId'] as String?,
     draft: json['draft'] as bool?,
-    deliveryMode: json['deliveryMode'] as String?,
+    deliveryMode: json['deliveryMode'] as String,
   );
 }
 
