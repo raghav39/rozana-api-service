@@ -15,7 +15,7 @@ class LocalityComponentType {
       const LocalityComponentType._internal("administrative_area_level_1");
   static const COUNTRY = const LocalityComponentType._internal("country");
 
-  static LocalityComponentType toType(String type) {
+  static LocalityComponentType? toType(String type) {
     if (type == 'postal_code') return POSTAL_CODE;
     if (type == 'administrative_area_level_2')
       return ADMINISTRATIVE_AREA_LEVEL_2;
@@ -26,6 +26,6 @@ class LocalityComponentType {
     if (type == 'political') return POLITICAL;
 
     // if found nothing
-    return COUNTRY;
+    return null;
   }
 }

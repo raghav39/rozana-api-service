@@ -10,8 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_offer.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/remote/promo_code_offer_api_service.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/organization_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/organization_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/data_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/data_manager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/cart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/cart.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/enums/locality_component_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/enums/locality_component_type.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/remote/api_caller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/api_caller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +28,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="b5185557" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="2.7_QVGA_API_22" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -45,7 +52,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/data/model/enums" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/data/model/dto" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -53,11 +60,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/data/model/dto" />
+      <recent name="$PROJECT_DIR$/lib/data/remote" />
       <recent name="$PROJECT_DIR$/lib/data/model/enums" />
       <recent name="$PROJECT_DIR$/lib/data/local" />
       <recent name="$PROJECT_DIR$/lib/generated" />
-      <recent name="$PROJECT_DIR$/lib/utils" />
-      <recent name="$PROJECT_DIR$/lib/data" />
     </key>
   </component>
   <component name="RunManager">
@@ -125,9 +132,15 @@
       <screen x="-1440" y="-1833" width="1440" height="2537" />
     </state>
     <state x="-907" y="-842" key="#com.intellij.ide.util.MemberChooser/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1617346710874" />
-    <state width="425" height="115" key="javadoc.popup.new" timestamp="1617445609083">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="-1017" y="-1168" width="693" height="1206" key="find.popup" timestamp="1618163046941">
+      <screen x="-1440" y="-1833" width="1440" height="2537" />
     </state>
+    <state x="-1017" y="-1168" width="693" height="1206" key="find.popup/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1618163046941" />
+    <state x="493" y="292" width="693" height="488" key="find.popup/-1440.-1833.1440.2537/0.23.1680.1027@0.23.1680.1027" timestamp="1617531908198" />
+    <state width="365" height="285" key="javadoc.popup.new" timestamp="1618162733810">
+      <screen x="-1440" y="-1833" width="1440" height="2537" />
+    </state>
+    <state width="365" height="285" key="javadoc.popup.new/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1618162733810" />
     <state width="425" height="115" key="javadoc.popup.new/-1440.-1833.1440.2537/0.23.1680.1027@0.23.1680.1027" timestamp="1617445609083" />
     <state x="-1055" y="-1228" key="search.everywhere.popup" timestamp="1617350182834">
       <screen x="-1440" y="-1833" width="1440" height="2537" />

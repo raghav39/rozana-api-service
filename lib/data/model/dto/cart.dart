@@ -20,6 +20,8 @@ class Cart {
 
   DeliveryMode deliveryMode;
 
+  String? promoCode;
+
   List<Attachment> attachments = [];
 
   List<ProductOffer> offers = [];

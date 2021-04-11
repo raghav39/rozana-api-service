@@ -25,12 +25,15 @@ import 'package:rozana_api_service/data/model/dto/product_image.dart';
 import 'package:rozana_api_service/data/model/dto/product_offer.dart';
 import 'package:rozana_api_service/data/model/dto/product_offer_item.dart';
 import 'package:rozana_api_service/data/model/dto/product_variant.dart';
+import 'package:rozana_api_service/data/model/dto/promo_code_invoice.dart';
+import 'package:rozana_api_service/data/model/dto/promo_code_offer.dart';
 import 'package:rozana_api_service/data/model/dto/resource_error.dart';
 import 'package:rozana_api_service/data/model/dto/user.dart';
 import 'package:rozana_api_service/data/model/dto/user_customer.dart';
 import 'package:rozana_api_service/data/model/dto/wallet.dart';
 import 'package:rozana_api_service/data/remote/address_api_service.dart';
 import 'package:rozana_api_service/data/remote/auth_api_service.dart';
+import 'package:rozana_api_service/data/remote/promo_code_offer_api_service.dart';
 import 'package:rozana_api_service/data/remote/delivery_boy_api_service.dart';
 import 'package:rozana_api_service/data/remote/delivery_slot_api_service.dart';
 import 'package:rozana_api_service/data/remote/device_api_service.dart';
@@ -87,6 +90,8 @@ class ApiCaller {
           Locality: Locality.fromJsonFactory,
           ProductOffer: ProductOffer.fromJsonFactory,
           ProductOfferItem: ProductOfferItem.fromJsonFactory,
+          PromoCodeInvoice: PromoCodeInvoice.fromJsonFactory,
+          PromoCodeOffer: PromoCodeOffer.fromJsonFactory,
         });
 
   Future<ChopperClient> getAuthenticatedClient() async {
@@ -150,7 +155,8 @@ class ApiCaller {
         DeliveryBoyApiService.create(),
         DeviceApiService.create(),
         AddressApiService.create(),
-        ProductOfferApiService.create()
+        ProductOfferApiService.create(),
+        PromoCodeOfferApiService.create()
       ],
     );
     return authenticatedChopperClient!;
@@ -240,6 +246,10 @@ class ApiCaller {
 
   Future<ProductOfferApiService> getProductOfferService() async {
     return (await getAuthenticatedClient()).getService<ProductOfferApiService>();
+  }
+
+  Future<PromoCodeOfferApiService> getPromoCodeOfferApiService() async {
+    return (await getAuthenticatedClient()).getService<PromoCodeOfferApiService>();
   }
 
   Future<LocalityApiService> getLocalityApiService() async {

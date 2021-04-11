@@ -21,6 +21,7 @@ import 'package:rozana_api_service/data/model/dto/product.dart';
 import 'package:rozana_api_service/data/model/dto/product_category.dart';
 import 'package:rozana_api_service/data/model/dto/product_image.dart';
 import 'package:rozana_api_service/data/model/dto/product_variant.dart';
+import 'package:rozana_api_service/data/model/dto/promo_code_invoice.dart';
 import 'package:rozana_api_service/data/model/dto/user.dart';
 import 'package:rozana_api_service/data/model/dto/user_customer.dart';
 import 'package:rozana_api_service/data/product_cache_manager.dart';
@@ -374,6 +375,15 @@ class DataManager {
     final response = await service.updateInvoiceDraft(invoice);
     if(!response.isSuccessful){
       throw new Future.error("invoice update failed: ${response.error.toString()}");
+    }
+    return response.body;
+  }
+
+  Future<PromoCodeInvoice?> applyPromoCodeOffer(Invoice invoice) async {
+    final service = await apiCaller.getPromoCodeOfferApiService();
+    final response = await service.getPromoCodeDiscountValue(invoice);
+    if(!response.isSuccessful){
+      throw new Future.error("promo code application failed: ${response.error.toString()}");
     }
     return response.body;
   }
