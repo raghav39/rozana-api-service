@@ -17,7 +17,7 @@ class PromoCodeInvoice extends Equatable implements BaseDto {
 
   final bool success;
 
-  var promoCodeDiscount;
+  double  promoCodeDiscount;
 
   final PromoCodeOffer promoCodeOfferDTO;
 
@@ -26,9 +26,22 @@ class PromoCodeInvoice extends Equatable implements BaseDto {
       required this.invoice,
       required this.displayText,
       required this.success,
-      this.promoCodeDiscount,
+      promoCodeDiscount,
       required this.promoCodeOfferDTO})
-      : super();
+      : this.promoCodeDiscount = 0, super(){
+    if(promoCodeDiscount == null){
+      this.promoCodeDiscount = 0;
+      return;
+    }
+    if(promoCodeDiscount is int){
+      this.promoCodeDiscount = promoCodeDiscount.toDouble();
+      return;
+    }
+    if(promoCodeDiscount is double){
+      this.promoCodeDiscount = promoCodeDiscount;
+      return;
+    }
+  }
 
   factory PromoCodeInvoice.fromJson(Map<String, dynamic> json) => _$PromoCodeInvoiceFromJson(json);
 

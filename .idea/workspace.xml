@@ -11,8 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/cart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/cart.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,10 +130,10 @@
     </state>
     <state x="-1017" y="-1168" width="693" height="1206" key="find.popup/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1618163046941" />
     <state x="493" y="292" width="693" height="488" key="find.popup/-1440.-1833.1440.2537/0.23.1680.1027@0.23.1680.1027" timestamp="1617531908198" />
-    <state width="365" height="285" key="javadoc.popup.new" timestamp="1618303334075">
+    <state width="365" height="285" key="javadoc.popup.new" timestamp="1618324146946">
       <screen x="-1440" y="-1833" width="1440" height="2537" />
     </state>
-    <state width="365" height="285" key="javadoc.popup.new/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1618303334075" />
+    <state width="365" height="285" key="javadoc.popup.new/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1618324146946" />
     <state width="425" height="115" key="javadoc.popup.new/-1440.-1833.1440.2537/0.23.1680.1027@0.23.1680.1027" timestamp="1617445609083" />
     <state x="-1055" y="-1228" key="search.everywhere.popup" timestamp="1617350182834">
       <screen x="-1440" y="-1833" width="1440" height="2537" />
