@@ -30,7 +30,7 @@ class SelectedProduct extends Equatable {
   SelectedProduct(
       {this.id,
       this.frequency,
-      this.quantity,
+      quantity,
       this.discontinue,
       this.productId,
       this.productName,
@@ -38,7 +38,19 @@ class SelectedProduct extends Equatable {
       this.deliverySlotStartTime,
       this.deliverySlotEndTime,
       this.deliveryBoyUserId,
-      this.deliveryBoyName});
+      this.deliveryBoyName})
+      : this.quantity = 0 {
+    if (quantity == null) {
+      this.quantity = 0;
+      return;
+    }
+    if (quantity is double) {
+      this.quantity = quantity.round();
+    }
+    if (quantity is int) {
+      this.quantity = quantity;
+    }
+  }
 
   factory SelectedProduct.fromJson(Map<String, dynamic> json) => _$SelectedProductFromJson(json);
 

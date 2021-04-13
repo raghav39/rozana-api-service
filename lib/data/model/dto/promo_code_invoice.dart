@@ -33,12 +33,12 @@ class PromoCodeInvoice extends Equatable implements BaseDto {
       this.promoCodeDiscount = 0;
       return;
     }
-    if(promoCodeDiscount is int){
-      this.promoCodeDiscount = promoCodeDiscount.toDouble();
-      return;
-    }
     if(promoCodeDiscount is double){
       this.promoCodeDiscount = promoCodeDiscount;
+      return;
+    }
+    if(promoCodeDiscount is int){
+      this.promoCodeDiscount = promoCodeDiscount.toDouble();
       return;
     }
   }
