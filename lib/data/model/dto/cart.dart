@@ -22,9 +22,11 @@ class Cart {
 
   String? promoCode;
 
+  double additionalDiscount;
+
   List<Attachment> attachments = [];
 
   List<ProductOffer> offers = [];
 
-  Cart({this.cartItems, this.date}): deliveryMode = DeliveryMode.DELIVERY;
+  Cart({this.cartItems, this.date}): deliveryMode = DeliveryMode.DELIVERY, additionalDiscount = 0;
 }
