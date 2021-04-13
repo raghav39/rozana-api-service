@@ -29,6 +29,8 @@ class OrganizationConfig extends Equatable {
 
   final String razorPayKey;
 
+  final bool acceptOrders;
+
   OrganizationConfig(
       {required this.id,
       required this.name,
@@ -41,7 +43,8 @@ class OrganizationConfig extends Equatable {
       required this.freeDeliveryThresholdAmount,
       required this.orderingDateThreshold,
       required this.maxOrderModificationTime,
-      required this.razorPayKey});
+      required this.razorPayKey,
+      this.acceptOrders = true});
 
   factory OrganizationConfig.fromJson(Map<String, dynamic> json) => _$OrganizationConfigFromJson(json);
 
@@ -62,6 +65,7 @@ class OrganizationConfig extends Equatable {
         freeDeliveryThresholdAmount,
         orderingDateThreshold,
         maxOrderModificationTime,
-        razorPayKey
+        razorPayKey,
+        acceptOrders
       ];
 }
