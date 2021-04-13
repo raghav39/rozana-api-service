@@ -10,7 +10,7 @@ SelectedProduct _$SelectedProductFromJson(Map<String, dynamic> json) {
   return SelectedProduct(
     id: json['id'] as int?,
     frequency: json['frequency'] as String?,
-    quantity: json['quantity'] as int?,
+    quantity: json['quantity'],
     discontinue: json['discontinue'] as bool?,
     productId: json['productId'] as int?,
     productName: json['productName'] as String?,
