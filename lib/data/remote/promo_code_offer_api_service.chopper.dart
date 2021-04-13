@@ -24,4 +24,11 @@ class _$PromoCodeOfferApiService extends PromoCodeOfferApiService {
     final $request = Request('POST', $url, client.baseUrl, body: $body);
     return client.send<PromoCodeInvoice, PromoCodeInvoice>($request);
   }
+
+  @override
+  Future<Response<List<PromoCodeOffer>>> getPromoCodes() {
+    final $url = '/api/promo-code-offers';
+    final $request = Request('GET', $url, client.baseUrl);
+    return client.send<List<PromoCodeOffer>, PromoCodeOffer>($request);
+  }
 }
