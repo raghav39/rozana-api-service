@@ -9,7 +9,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="" />
+    <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/selected_product.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/selected_product.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

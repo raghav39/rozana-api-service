@@ -13,8 +13,10 @@ PromoCodeInvoice _$PromoCodeInvoiceFromJson(Map<String, dynamic> json) {
     displayText: json['displayText'] as String,
     success: json['success'] as bool,
     promoCodeDiscount: json['promoCodeDiscount'],
-    promoCodeOfferDTO: PromoCodeOffer.fromJson(
-        json['promoCodeOfferDTO'] as Map<String, dynamic>),
+    promoCodeOfferDTO: json['promoCodeOfferDTO'] == null
+        ? null
+        : PromoCodeOffer.fromJson(
+            json['promoCodeOfferDTO'] as Map<String, dynamic>),
   );
 }
 
@@ -25,5 +27,5 @@ Map<String, dynamic> _$PromoCodeInvoiceToJson(PromoCodeInvoice instance) =>
       'displayText': instance.displayText,
       'success': instance.success,
       'promoCodeDiscount': instance.promoCodeDiscount,
-      'promoCodeOfferDTO': instance.promoCodeOfferDTO.toJson(),
+      'promoCodeOfferDTO': instance.promoCodeOfferDTO?.toJson(),
     };

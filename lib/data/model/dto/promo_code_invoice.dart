@@ -17,9 +17,9 @@ class PromoCodeInvoice extends Equatable implements BaseDto {
 
   final bool success;
 
-  double  promoCodeDiscount;
+  double promoCodeDiscount;
 
-  final PromoCodeOffer promoCodeOfferDTO;
+  PromoCodeOffer? promoCodeOfferDTO;
 
   PromoCodeInvoice(
       {required this.id,
@@ -27,17 +27,18 @@ class PromoCodeInvoice extends Equatable implements BaseDto {
       required this.displayText,
       required this.success,
       promoCodeDiscount,
-      required this.promoCodeOfferDTO})
-      : this.promoCodeDiscount = 0, super(){
-    if(promoCodeDiscount == null){
+      this.promoCodeOfferDTO})
+      : this.promoCodeDiscount = 0,
+        super() {
+    if (promoCodeDiscount == null) {
       this.promoCodeDiscount = 0;
       return;
     }
-    if(promoCodeDiscount is double){
+    if (promoCodeDiscount is double) {
       this.promoCodeDiscount = promoCodeDiscount;
       return;
     }
-    if(promoCodeDiscount is int){
+    if (promoCodeDiscount is int) {
       this.promoCodeDiscount = promoCodeDiscount.toDouble();
       return;
     }

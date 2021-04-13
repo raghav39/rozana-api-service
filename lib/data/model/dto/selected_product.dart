@@ -39,7 +39,7 @@ class SelectedProduct extends Equatable {
       this.deliverySlotEndTime,
       this.deliveryBoyUserId,
       this.deliveryBoyName})
-      : this.quantity = int.parse(quantity);
+      : this.quantity = quantity.round();
 
   factory SelectedProduct.fromJson(Map<String, dynamic> json) => _$SelectedProductFromJson(json);
 
