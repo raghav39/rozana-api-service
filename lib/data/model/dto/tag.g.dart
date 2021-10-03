@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'offer.dart';
+part of 'tag.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Offer _$OfferFromJson(Map<String, dynamic> json) => Offer(
+Tag _$TagFromJson(Map<String, dynamic> json) => Tag(
       id: json['id'] as int,
-      offerType: json['offerType'] as String,
+      name: json['name'] as String,
     );
 
-Map<String, dynamic> _$OfferToJson(Offer instance) => <String, dynamic>{
+Map<String, dynamic> _$TagToJson(Tag instance) => <String, dynamic>{
       'id': instance.id,
-      'offerType': instance.offerType,
+      'name': instance.name,
     };

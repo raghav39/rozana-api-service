@@ -6,9 +6,8 @@ part of 'order_transaction.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-OrderTransaction _$OrderTransactionFromJson(Map<String, dynamic> json) {
-  return OrderTransaction();
-}
+OrderTransaction _$OrderTransactionFromJson(Map<String, dynamic> json) =>
+    OrderTransaction();
 
 Map<String, dynamic> _$OrderTransactionToJson(OrderTransaction instance) =>
     <String, dynamic>{};

@@ -6,15 +6,15 @@ part of 'product_offer_item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ProductOfferItem _$ProductOfferItemFromJson(Map<String, dynamic> json) {
-  return ProductOfferItem(
-    id: json['id'] as int,
-    discountValue: (json['discountValue'] as num).toDouble(),
-    discountValueInPercentage: json['discountValueInPercentage'] as bool,
-    product: Product.fromJson(json['product'] as Map<String, dynamic>),
-    productOfferId: json['productOfferId'] as int,
-  );
-}
+ProductOfferItem _$ProductOfferItemFromJson(Map<String, dynamic> json) =>
+    ProductOfferItem(
+      id: json['id'] as int,
+      discountValue: (json['discountValue'] as num).toDouble(),
+      discountValueInPercentage:
+          json['discountValueInPercentage'] as bool? ?? false,
+      product: Product.fromJson(json['product'] as Map<String, dynamic>),
+      productOfferId: json['productOfferId'] as int,
+    );
 
 Map<String, dynamic> _$ProductOfferItemToJson(ProductOfferItem instance) =>
     <String, dynamic>{

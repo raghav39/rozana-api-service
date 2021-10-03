@@ -6,20 +6,18 @@ part of 'customer.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Customer _$CustomerFromJson(Map<String, dynamic> json) {
-  return Customer(
-    id: json['id'] as int?,
-    uniqueCode: json['uniqueCode'] as String?,
-    taxTreatment: json['taxTreatment'] as String,
-    taxpayerIdentificationNumber:
-        json['taxpayerIdentificationNumber'] as String?,
-    addressId: json['addressId'] as int?,
-    userId: json['userId'] as int?,
-    additionalAddresses: (json['additionalAddresses'] as List<dynamic>?)
-        ?.map((e) => Address.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
-}
+Customer _$CustomerFromJson(Map<String, dynamic> json) => Customer(
+      id: json['id'] as int?,
+      uniqueCode: json['uniqueCode'] as String?,
+      taxTreatment: json['taxTreatment'] as String? ?? "CONSUMER",
+      taxpayerIdentificationNumber:
+          json['taxpayerIdentificationNumber'] as String?,
+      addressId: json['addressId'] as int?,
+      userId: json['userId'] as int?,
+      additionalAddresses: (json['additionalAddresses'] as List<dynamic>?)
+          ?.map((e) => Address.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
 Map<String, dynamic> _$CustomerToJson(Customer instance) => <String, dynamic>{
       'id': instance.id,

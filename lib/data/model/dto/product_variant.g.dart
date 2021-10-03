@@ -6,15 +6,14 @@ part of 'product_variant.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) {
-  return ProductVariant(
-    id: json['id'] as int,
-    name: json['name'] as String,
-    products: (json['products'] as List<dynamic>)
-        .map((e) => Product.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
-}
+ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) =>
+    ProductVariant(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      products: (json['products'] as List<dynamic>)
+          .map((e) => Product.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
 Map<String, dynamic> _$ProductVariantToJson(ProductVariant instance) =>
     <String, dynamic>{

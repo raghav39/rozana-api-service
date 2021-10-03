@@ -6,13 +6,11 @@ part of 'delivery_slot.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DeliverySlot _$DeliverySlotFromJson(Map<String, dynamic> json) {
-  return DeliverySlot(
-    id: json['id'] as int,
-    startTime: json['startTime'] as String,
-    endTime: json['endTime'] as String,
-  );
-}
+DeliverySlot _$DeliverySlotFromJson(Map<String, dynamic> json) => DeliverySlot(
+      id: json['id'] as int,
+      startTime: json['startTime'] as String,
+      endTime: json['endTime'] as String,
+    );
 
 Map<String, dynamic> _$DeliverySlotToJson(DeliverySlot instance) =>
     <String, dynamic>{

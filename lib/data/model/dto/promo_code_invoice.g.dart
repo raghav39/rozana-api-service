@@ -6,19 +6,18 @@ part of 'promo_code_invoice.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PromoCodeInvoice _$PromoCodeInvoiceFromJson(Map<String, dynamic> json) {
-  return PromoCodeInvoice(
-    id: json['id'] as int?,
-    invoice: Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
-    displayText: json['displayText'] as String,
-    success: json['success'] as bool,
-    promoCodeDiscount: json['promoCodeDiscount'],
-    promoCodeOfferDTO: json['promoCodeOfferDTO'] == null
-        ? null
-        : PromoCodeOffer.fromJson(
-            json['promoCodeOfferDTO'] as Map<String, dynamic>),
-  );
-}
+PromoCodeInvoice _$PromoCodeInvoiceFromJson(Map<String, dynamic> json) =>
+    PromoCodeInvoice(
+      id: json['id'] as int?,
+      invoice: Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
+      displayText: json['displayText'] as String,
+      success: json['success'] as bool,
+      promoCodeDiscount: json['promoCodeDiscount'],
+      promoCodeOfferDTO: json['promoCodeOfferDTO'] == null
+          ? null
+          : PromoCodeOffer.fromJson(
+              json['promoCodeOfferDTO'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$PromoCodeInvoiceToJson(PromoCodeInvoice instance) =>
     <String, dynamic>{

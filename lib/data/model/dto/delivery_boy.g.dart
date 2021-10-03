@@ -6,16 +6,14 @@ part of 'delivery_boy.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DeliveryBoy _$DeliveryBoyFromJson(Map<String, dynamic> json) {
-  return DeliveryBoy(
-    id: json['id'] as int?,
-    contactNumber: json['contactNumber'],
-    alternateContactNumber: json['alternateContactNumber'],
-    trackingEnabled: json['trackingEnabled'] as bool?,
-    userId: json['userId'] as int?,
-    userLogin: json['userLogin'] as String?,
-  );
-}
+DeliveryBoy _$DeliveryBoyFromJson(Map<String, dynamic> json) => DeliveryBoy(
+      id: json['id'] as int?,
+      contactNumber: json['contactNumber'],
+      alternateContactNumber: json['alternateContactNumber'],
+      trackingEnabled: json['trackingEnabled'] as bool?,
+      userId: json['userId'] as int?,
+      userLogin: json['userLogin'] as String?,
+    );
 
 Map<String, dynamic> _$DeliveryBoyToJson(DeliveryBoy instance) =>
     <String, dynamic>{

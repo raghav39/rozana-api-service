@@ -10,9 +10,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/data/model/dto/tag.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/selected_product.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/selected_product.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/address.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/address.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/attachment.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/attachment.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/banner_image.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/banner_image.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/customer.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/customer.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/delivery_boy.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/delivery_boy.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/delivery_boy_user.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/delivery_boy_user.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/delivery_slot.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/delivery_slot.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/device.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/device.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/invoice.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/invoice.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/jwt_token.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/jwt_token.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/line_item.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/line_item.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/locality.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/locality.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/login_vm.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/login_vm.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/offer.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/offer.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/order_transaction.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/order_transaction.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/organization_config.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/organization_config.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/outlet_custom_configuration.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/outlet_custom_configuration.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_category.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_category.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_image.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_image.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_offer.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_offer.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_offer_item.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_offer_item.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_stock.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_stock.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_variant.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_variant.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/promo_code_offer.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_offer.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/resource_error.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/resource_error.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/selected_product.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/selected_product.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/tax_rate.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/tax_rate.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/user.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/user.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/user_customer.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/user_customer.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/wallet.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/wallet.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +59,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="b5185557" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -39,12 +75,19 @@
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ACTIVE_CLOUD_PROJECT_ACCOUNT" value="noisytempo@gmail.com" />
+    <property name="ACTIVE_CLOUD_PROJECT_ID" value="rozana-prod" />
+    <property name="ACTIVE_CLOUD_PROJECT_NAME" value="Rozana Prod" />
+    <property name="ACTIVE_CLOUD_PROJECT_NUMBER" value="968783238279" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.google.cloudcode.ide_session_index" value="20211003_0007" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/data/model/dto" />
     <property name="project.structure.last.edited" value="Project" />
@@ -62,10 +105,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -75,6 +114,13 @@
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" singleton="false">
       <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
@@ -86,6 +132,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -96,6 +143,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545460612148</updated>
+      <workItem from="1633241453333" duration="3080000" />
     </task>
     <servers />
   </component>
@@ -108,38 +156,30 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-907" y="-842" key="#com.intellij.ide.util.MemberChooser" timestamp="1617346710874">
+    <state x="-1120" y="-917" key="#Plugins" timestamp="1633243023619">
       <screen x="-1440" y="-1833" width="1440" height="2537" />
     </state>
-    <state x="-907" y="-842" key="#com.intellij.ide.util.MemberChooser/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1617346710874" />
-    <state x="-1017" y="-1168" width="693" height="1206" key="find.popup" timestamp="1618163046941">
+    <state x="-1120" y="-917" key="#Plugins/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1633243023619" />
+    <state x="-1013" y="-810" width="586" height="490" key="find.popup" timestamp="1633243356957">
       <screen x="-1440" y="-1833" width="1440" height="2537" />
     </state>
-    <state x="-1017" y="-1168" width="693" height="1206" key="find.popup/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1618163046941" />
-    <state x="493" y="292" width="693" height="488" key="find.popup/-1440.-1833.1440.2537/0.23.1680.1027@0.23.1680.1027" timestamp="1617531908198" />
-    <state width="365" height="285" key="javadoc.popup.new" timestamp="1618325368714">
-      <screen x="-1440" y="-1833" width="1440" height="2537" />
-    </state>
-    <state width="365" height="285" key="javadoc.popup.new/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1618325368714" />
-    <state width="425" height="115" key="javadoc.popup.new/-1440.-1833.1440.2537/0.23.1680.1027@0.23.1680.1027" timestamp="1617445609083" />
-    <state x="-1055" y="-1228" key="search.everywhere.popup" timestamp="1617350182834">
-      <screen x="-1440" y="-1833" width="1440" height="2537" />
-    </state>
-    <state x="-1055" y="-1228" key="search.everywhere.popup/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1617350182834" />
+    <state x="-1013" y="-810" width="586" height="490" key="find.popup/-1440.-1833.1440.2537/0.23.1680.1027@-1440.-1833.1440.2537" timestamp="1633243356957" />
   </component>
   <component name="masterDetails">
     <states>

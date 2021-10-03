@@ -6,24 +6,23 @@ part of 'organization_config.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-OrganizationConfig _$OrganizationConfigFromJson(Map<String, dynamic> json) {
-  return OrganizationConfig(
-    id: json['id'] as int,
-    name: json['name'] as String,
-    email: json['email'] as String,
-    contactNumber: json['contactNumber'] as String,
-    addressId: json['addressId'] as int,
-    logoUrl: json['logoUrl'] as String,
-    gstin: json['gstin'] as String,
-    deliveryCharge: (json['deliveryCharge'] as num).toDouble(),
-    freeDeliveryThresholdAmount:
-        (json['freeDeliveryThresholdAmount'] as num).toDouble(),
-    orderingDateThreshold: json['orderingDateThreshold'] as int,
-    maxOrderModificationTime: json['maxOrderModificationTime'] as int,
-    razorPayKey: json['razorPayKey'] as String,
-    acceptOrders: json['acceptOrders'] as bool,
-  );
-}
+OrganizationConfig _$OrganizationConfigFromJson(Map<String, dynamic> json) =>
+    OrganizationConfig(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      email: json['email'] as String,
+      contactNumber: json['contactNumber'] as String,
+      addressId: json['addressId'] as int,
+      logoUrl: json['logoUrl'] as String,
+      gstin: json['gstin'] as String,
+      deliveryCharge: (json['deliveryCharge'] as num).toDouble(),
+      freeDeliveryThresholdAmount:
+          (json['freeDeliveryThresholdAmount'] as num).toDouble(),
+      orderingDateThreshold: json['orderingDateThreshold'] as int,
+      maxOrderModificationTime: json['maxOrderModificationTime'] as int,
+      razorPayKey: json['razorPayKey'] as String,
+      acceptOrders: json['acceptOrders'] as bool? ?? true,
+    );
 
 Map<String, dynamic> _$OrganizationConfigToJson(OrganizationConfig instance) =>
     <String, dynamic>{

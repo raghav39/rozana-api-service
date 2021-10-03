@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:rozana_api_service/data/model/dto/base_dto.dart';
 import 'package:rozana_api_service/data/model/dto/product_category.dart';
 import 'package:rozana_api_service/data/model/dto/product_stock.dart';
+import 'package:rozana_api_service/data/model/dto/tag.dart';
 
 part 'product.g.dart';
 
@@ -55,6 +56,8 @@ class Product extends Equatable implements BaseDto{
 
   List<Product>? variants;
 
+  List<Tag>? tags;
+
   Product(
       {this.id,
         this.name,
@@ -78,7 +81,8 @@ class Product extends Equatable implements BaseDto{
         this.taxStrategyType,
         this.productStocks,
         this.productCategories,
-        this.variants})
+        this.variants,
+        this.tags})
       : super();
 
   double getTaxPercentage() {
@@ -129,6 +133,7 @@ class Product extends Equatable implements BaseDto{
     taxStrategyType,
     productStocks,
     productCategories,
-    variants
+    variants,
+    tags
   ];
 }
