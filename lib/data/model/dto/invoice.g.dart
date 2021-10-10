@@ -7,7 +7,7 @@ part of 'invoice.dart';
 // **************************************************************************
 
 Invoice _$InvoiceFromJson(Map<String, dynamic> json) => Invoice(
-      id: json['id'] as int?,
+      id: json['id'] as int,
       number: json['number'] as String?,
       date:
           json['date'] == null ? null : DateTime.parse(json['date'] as String),

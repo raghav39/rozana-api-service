@@ -12,7 +12,7 @@ part 'invoice.g.dart';
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class Invoice extends Equatable implements BaseDto {
   @override
-  int? id;
+  int id;
 
   String? number;
 
@@ -81,7 +81,7 @@ class Invoice extends Equatable implements BaseDto {
   List<Offer>? offers;
 
   Invoice(
-      {this.id,
+      {required this.id,
       this.number,
       this.date,
       this.dueDate,

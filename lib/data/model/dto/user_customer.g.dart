@@ -7,9 +7,7 @@ part of 'user_customer.dart';
 // **************************************************************************
 
 UserCustomer _$UserCustomerFromJson(Map<String, dynamic> json) => UserCustomer(
-      customer: json['customer'] == null
-          ? null
-          : Customer.fromJson(json['customer'] as Map<String, dynamic>),
+      customer: Customer.fromJson(json['customer'] as Map<String, dynamic>),
       address: json['address'] == null
           ? null
           : Address.fromJson(json['address'] as Map<String, dynamic>),
@@ -19,12 +17,12 @@ UserCustomer _$UserCustomerFromJson(Map<String, dynamic> json) => UserCustomer(
       wallet: json['wallet'] == null
           ? null
           : Wallet.fromJson(json['wallet'] as Map<String, dynamic>),
-    )..id = json['id'] as int?;
+    )..id = json['id'] as int;
 
 Map<String, dynamic> _$UserCustomerToJson(UserCustomer instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'customer': instance.customer?.toJson(),
+      'customer': instance.customer.toJson(),
       'address': instance.address?.toJson(),
       'user': instance.user?.toJson(),
       'wallet': instance.wallet?.toJson(),

@@ -10,45 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/data/model/dto/tag.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/address.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/address.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/attachment.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/attachment.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/banner_image.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/banner_image.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/model/dto/banner_image.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/banner_image.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/customer.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/customer.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/delivery_boy.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/delivery_boy.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/delivery_boy_user.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/delivery_boy_user.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/delivery_slot.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/delivery_slot.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/device.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/device.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/base_dto.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/base_dto.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/customer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/customer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/invoice.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/invoice.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/model/dto/invoice.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/invoice.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/jwt_token.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/jwt_token.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/line_item.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/line_item.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/locality.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/locality.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/login_vm.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/login_vm.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/offer.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/offer.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/order_transaction.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/order_transaction.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/organization_config.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/organization_config.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/outlet_custom_configuration.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/outlet_custom_configuration.g.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_category.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_category.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_category.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_category.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_image.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_image.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_offer.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_offer.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_offer_item.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_offer_item.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_stock.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_stock.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product_variant.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product_variant.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/promo_code_offer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_offer.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/model/dto/promo_code_offer.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_offer.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/resource_error.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/resource_error.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/selected_product.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/selected_product.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/tax_rate.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/tax_rate.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/user.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/user.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/user_customer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/user_customer.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/model/dto/user_customer.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/user_customer.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/wallet.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/wallet.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +63,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20211003_0007" />
+    <property name="com.google.cloudcode.ide_session_index" value="20211010_0000" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
@@ -143,7 +121,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545460612148</updated>
-      <workItem from="1633241453333" duration="3080000" />
+      <workItem from="1633241453333" duration="4370000" />
+      <workItem from="1633803464744" duration="826000" />
     </task>
     <servers />
   </component>

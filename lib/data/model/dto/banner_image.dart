@@ -8,7 +8,7 @@ part 'banner_image.g.dart';
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class BannerImage extends Equatable implements BaseDto {
   @override
-  int? id;
+  int id;
 
   final String? imageUrl;
 
@@ -20,7 +20,7 @@ class BannerImage extends Equatable implements BaseDto {
 
   final String? redirectTo;
 
-  BannerImage({this.id, this.imageUrl, this.disabled, this.productId, this.searchQuery, this.redirectTo});
+  BannerImage({required this.id, this.imageUrl, this.disabled, this.productId, this.searchQuery, this.redirectTo});
 
   factory BannerImage.fromJson(Map<String, dynamic> json) => _$BannerImageFromJson(json);
 

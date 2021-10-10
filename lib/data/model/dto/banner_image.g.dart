@@ -7,7 +7,7 @@ part of 'banner_image.dart';
 // **************************************************************************
 
 BannerImage _$BannerImageFromJson(Map<String, dynamic> json) => BannerImage(
-      id: json['id'] as int?,
+      id: json['id'] as int,
       imageUrl: json['imageUrl'] as String?,
       disabled: json['disabled'] as bool?,
       productId: json['productId'] as int?,

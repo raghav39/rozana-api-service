@@ -8,7 +8,7 @@ part 'product_category.g.dart';
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class ProductCategory extends Equatable implements BaseDto {
   @override
-  int? id;
+  int id;
 
   final String name;
 

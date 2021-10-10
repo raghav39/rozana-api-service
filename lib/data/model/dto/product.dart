@@ -8,9 +8,9 @@ import 'package:rozana_api_service/data/model/dto/tag.dart';
 part 'product.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
-class Product extends Equatable implements BaseDto{
+class Product extends Equatable implements BaseDto {
   @override
-  int? id;
+  int id = -1;
 
   String? name;
 
@@ -59,30 +59,30 @@ class Product extends Equatable implements BaseDto{
   List<Tag>? tags;
 
   Product(
-      {this.id,
-        this.name,
-        this.description,
-        this.price,
-        this.discountedPrice,
-        this.discontinue,
-        this.category,
-        this.taxationCode,
-        this.unit,
-        this.extId,
-        this.brandName,
-        this.priceInclusiveTax,
-        this.outOfStock = false,
-        this.featured = false,
-        this.alias,
-        this.organizationId,
-        this.imageId,
-        this.imageUrl,
-        this.taxStrategyId,
-        this.taxStrategyType,
-        this.productStocks,
-        this.productCategories,
-        this.variants,
-        this.tags})
+      {required this.id,
+      this.name,
+      this.description,
+      this.price,
+      this.discountedPrice,
+      this.discontinue,
+      this.category,
+      this.taxationCode,
+      this.unit,
+      this.extId,
+      this.brandName,
+      this.priceInclusiveTax,
+      this.outOfStock = false,
+      this.featured = false,
+      this.alias,
+      this.organizationId,
+      this.imageId,
+      this.imageUrl,
+      this.taxStrategyId,
+      this.taxStrategyType,
+      this.productStocks,
+      this.productCategories,
+      this.variants,
+      this.tags})
       : super();
 
   double getTaxPercentage() {
@@ -111,29 +111,29 @@ class Product extends Equatable implements BaseDto{
 
   @override
   List<Object?> get props => [
-    id,
-    name,
-    description,
-    price,
-    discountedPrice,
-    discontinue,
-    category,
-    taxationCode,
-    unit,
-    extId,
-    brandName,
-    priceInclusiveTax,
-    outOfStock,
-    featured,
-    alias,
-    organizationId,
-    imageId,
-    imageUrl,
-    taxStrategyId,
-    taxStrategyType,
-    productStocks,
-    productCategories,
-    variants,
-    tags
-  ];
+        id,
+        name,
+        description,
+        price,
+        discountedPrice,
+        discontinue,
+        category,
+        taxationCode,
+        unit,
+        extId,
+        brandName,
+        priceInclusiveTax,
+        outOfStock,
+        featured,
+        alias,
+        organizationId,
+        imageId,
+        imageUrl,
+        taxStrategyId,
+        taxStrategyType,
+        productStocks,
+        productCategories,
+        variants,
+        tags
+      ];
 }

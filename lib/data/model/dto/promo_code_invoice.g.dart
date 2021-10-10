@@ -8,7 +8,7 @@ part of 'promo_code_invoice.dart';
 
 PromoCodeInvoice _$PromoCodeInvoiceFromJson(Map<String, dynamic> json) =>
     PromoCodeInvoice(
-      id: json['id'] as int?,
+      id: json['id'] as int,
       invoice: Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
       displayText: json['displayText'] as String,
       success: json['success'] as bool,

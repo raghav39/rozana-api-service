@@ -8,7 +8,7 @@ part 'promo_code_offer.g.dart';
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class PromoCodeOffer extends Equatable implements BaseDto {
   @override
-  int? id;
+  int id;
 
   final String code;
 

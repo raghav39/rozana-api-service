@@ -8,7 +8,7 @@ part of 'promo_code_offer.dart';
 
 PromoCodeOffer _$PromoCodeOfferFromJson(Map<String, dynamic> json) =>
     PromoCodeOffer(
-      id: json['id'] as int?,
+      id: json['id'] as int,
       code: json['code'] as String,
       description: json['description'] as String,
       terms: json['terms'] as String,

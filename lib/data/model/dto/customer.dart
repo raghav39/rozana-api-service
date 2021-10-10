@@ -6,8 +6,7 @@ import 'package:rozana_api_service/data/model/dto/base_dto.dart';
 part 'customer.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
-class Customer extends Equatable implements BaseDto{
-  @override
+class Customer extends Equatable {
   int? id;
 
   String? uniqueCode;
@@ -24,12 +23,12 @@ class Customer extends Equatable implements BaseDto{
 
   Customer(
       {this.id,
-        this.uniqueCode,
-        this.taxTreatment = "CONSUMER",
-        this.taxpayerIdentificationNumber,
-        this.addressId,
-        this.userId,
-        this.additionalAddresses});
+      this.uniqueCode,
+      this.taxTreatment = "CONSUMER",
+      this.taxpayerIdentificationNumber,
+      this.addressId,
+      this.userId,
+      this.additionalAddresses});
 
   factory Customer.fromJson(Map<String, dynamic> json) =>
       _$CustomerFromJson(json);
@@ -40,12 +39,12 @@ class Customer extends Equatable implements BaseDto{
 
   @override
   List<Object?> get props => [
-    id,
-    uniqueCode,
-    taxTreatment,
-    taxpayerIdentificationNumber,
-    addressId,
-    userId,
-    additionalAddresses
-  ];
+        id,
+        uniqueCode,
+        taxTreatment,
+        taxpayerIdentificationNumber,
+        addressId,
+        userId,
+        additionalAddresses
+      ];
 }
