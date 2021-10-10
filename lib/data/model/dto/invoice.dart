@@ -5,7 +5,6 @@ import 'package:rozana_api_service/data/model/dto/base_dto.dart';
 import 'package:rozana_api_service/data/model/dto/line_item.dart';
 import 'package:rozana_api_service/data/model/dto/offer.dart';
 import 'package:rozana_api_service/data/model/dto/selected_product.dart';
-import 'package:rozana_api_service/data/model/enums/delivery_mode.dart';
 
 part 'invoice.g.dart';
 
@@ -16,9 +15,9 @@ class Invoice extends Equatable implements BaseDto {
 
   String? number;
 
-  DateTime? date;
+  DateTime date;
 
-  DateTime? dueDate;
+  DateTime dueDate;
 
   var amountPaid;
 
@@ -26,7 +25,7 @@ class Invoice extends Equatable implements BaseDto {
 
   var additionalDiscount;
 
-  bool? isAddionalDiscountBeforeTax;
+  bool isAddionalDiscountBeforeTax;
 
   var adjustment;
 
@@ -34,19 +33,19 @@ class Invoice extends Equatable implements BaseDto {
 
   var totalAmountAfterTax;
 
-  String? status;
+  String status;
 
-  String? orderStatus;
+  String orderStatus;
 
   String? remark;
 
-  int? customerId;
+  int customerId;
 
   String? customerName;
 
   int? transactionValueId;
 
-  int? organizationId;
+  int organizationId;
 
   var totalAmount;
 
@@ -56,68 +55,75 @@ class Invoice extends Equatable implements BaseDto {
 
   String? promoCodeApplied;
 
-  int? deliveryAddressId;
+  int deliveryAddressId;
 
   String? customerLogin;
 
   String? createdBy;
 
-  String? paymentMode;
+  String paymentMode;
 
   String? extPaymentId;
 
   String? extPaymentOrderId;
 
-  bool? draft;
+  bool draft;
 
   String deliveryMode;
 
-  List<SelectedProduct>? selectedProducts;
+  List<SelectedProduct> selectedProducts;
 
-  List<LineItem>? lineItems;
+  List<LineItem> lineItems;
 
-  List<Attachment>? attachments;
+  List<Attachment> attachments;
 
-  List<Offer>? offers;
+  List<Offer> offers;
 
-  Invoice(
-      {required this.id,
-      this.number,
-      this.date,
-      this.dueDate,
-      this.amountPaid,
-      this.shippingCharge,
-      this.additionalDiscount,
-      this.isAddionalDiscountBeforeTax,
-      this.adjustment,
-      this.totalAmountBeforeTax,
-      this.totalAmountAfterTax,
-      this.status,
-      this.orderStatus,
-      this.remark,
-      this.customerId,
-      this.customerName,
-      this.transactionValueId,
-      this.organizationId,
-      this.totalAmount,
-      this.deliveredById,
-      this.deliveredByName,
-      this.promoCodeApplied,
-      this.deliveryAddressId,
-      this.customerLogin,
-      this.createdBy,
-      this.paymentMode,
-      this.selectedProducts,
-      this.lineItems,
-      this.attachments,
-      this.offers,
-      this.extPaymentId,
-      this.extPaymentOrderId,
-      this.draft,
-      this.deliveryMode = "DELIVERY"})
-      : super();
+  Invoice({
+    required this.id,
+    required this.customerId,
+    required this.organizationId,
+    required this.deliveryAddressId,
+    date,
+    dueDate,
+    selectedProducts,
+    lineItems,
+    attachments,
+    offers,
+    this.isAddionalDiscountBeforeTax = true,
+    this.draft = true,
+    this.status = "DRAFT",
+    this.orderStatus = "ORDER_PLACED",
+    this.paymentMode = "CASH",
+    this.deliveryMode = "DELIVERY",
+    this.number,
+    this.amountPaid,
+    this.shippingCharge,
+    this.additionalDiscount,
+    this.adjustment,
+    this.totalAmountBeforeTax,
+    this.totalAmountAfterTax,
+    this.remark,
+    this.customerName,
+    this.transactionValueId,
+    this.totalAmount,
+    this.deliveredById,
+    this.deliveredByName,
+    this.promoCodeApplied,
+    this.customerLogin,
+    this.createdBy,
+    this.extPaymentId,
+    this.extPaymentOrderId,
+  })  : this.date = DateTime.now(),
+        this.dueDate = DateTime.now(),
+        this.selectedProducts = [],
+        this.lineItems = [],
+        this.attachments = [],
+        this.offers = [],
+        super();
 
-  factory Invoice.fromJson(Map<String, dynamic> json) => _$InvoiceFromJson(json);
+  factory Invoice.fromJson(Map<String, dynamic> json) =>
+      _$InvoiceFromJson(json);
 
   static const fromJsonFactory = _$InvoiceFromJson;
 
