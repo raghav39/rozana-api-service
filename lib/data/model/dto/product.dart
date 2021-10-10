@@ -7,20 +7,25 @@ import 'package:rozana_api_service/data/model/dto/tag.dart';
 
 part 'product.g.dart';
 
+const List<Tag> emptyTagList = [];
+const List<Product> emptyVariantsList = [];
+const List<ProductCategory> emptyProductCategoriesList = [];
+
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class Product extends Equatable implements BaseDto {
+
   @override
   int id = -1;
 
-  String? name;
+  String name;
 
   String? description;
 
-  double? price;
+  double price;
 
   double? discountedPrice;
 
-  bool? discontinue;
+  bool discontinue;
 
   String? category;
 
@@ -32,57 +37,57 @@ class Product extends Equatable implements BaseDto {
 
   String? brandName;
 
-  bool? priceInclusiveTax;
+  bool priceInclusiveTax;
 
-  bool? outOfStock;
+  bool outOfStock;
 
-  bool? featured;
+  bool featured;
 
   String? alias;
 
-  int? organizationId;
+  int organizationId;
 
   int? imageId;
 
   String? imageUrl;
 
-  int? taxStrategyId;
+  int taxStrategyId;
 
-  String? taxStrategyType;
+  String taxStrategyType;
 
   List<ProductStock>? productStocks;
 
-  List<ProductCategory>? productCategories;
+  List<ProductCategory> productCategories;
 
-  List<Product>? variants;
+  List<Product> variants;
 
-  List<Tag>? tags;
+  List<Tag> tags;
 
   Product(
       {required this.id,
-      this.name,
+      required this.name,
+      required this.price,
+      required this.taxStrategyId,
+      required this.taxStrategyType,
+      required this.organizationId,
+      this.discontinue = false,
+      this.priceInclusiveTax = false,
+      this.outOfStock = false,
+      this.featured = false,
       this.description,
-      this.price,
       this.discountedPrice,
-      this.discontinue,
       this.category,
       this.taxationCode,
       this.unit,
       this.extId,
       this.brandName,
-      this.priceInclusiveTax,
-      this.outOfStock = false,
-      this.featured = false,
       this.alias,
-      this.organizationId,
       this.imageId,
       this.imageUrl,
-      this.taxStrategyId,
-      this.taxStrategyType,
       this.productStocks,
-      this.productCategories,
-      this.variants,
-      this.tags})
+      this.productCategories = emptyProductCategoriesList,
+      this.variants = emptyVariantsList,
+      this.tags = emptyTagList})
       : super();
 
   double getTaxPercentage() {
