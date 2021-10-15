@@ -65,8 +65,8 @@ class Product extends Equatable implements BaseDto {
   Product(
       {required this.id,
       required this.name,
-      required this.taxStrategyId,
-      required this.organizationId,
+      this.organizationId = -1,
+      this.taxStrategyId = -1,
       this.taxStrategyType = 'GST0',
       this.price = 0,
       this.discontinue = false,
