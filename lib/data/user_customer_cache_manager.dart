@@ -36,7 +36,7 @@ class UserCustomerCacheManager {
 
   void updateUserCustomer(UserCustomer userCustomer) {
     _userCustomers.update(
-      userCustomer.customer!.id!,
+      userCustomer.customer.id ?? -1,
       (UserCustomer userCustomer) {
         return userCustomer;
       },

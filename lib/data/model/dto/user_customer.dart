@@ -10,7 +10,7 @@ part 'user_customer.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class UserCustomer extends Equatable{
-  int id;
+  int? id;
 
   Customer customer;
 
@@ -20,7 +20,7 @@ class UserCustomer extends Equatable{
 
   Wallet? wallet;
 
-  UserCustomer({required this.customer, this.address, this.user, this.wallet}): this.id = customer.id!;
+  UserCustomer({required this.customer, this.address, this.user, this.wallet}): this.id = customer.id;
 
   factory UserCustomer.fromJson(Map<String, dynamic> json) => _$UserCustomerFromJson(json);
 
