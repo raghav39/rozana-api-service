@@ -23,31 +23,3 @@ class DeliverySlot extends Equatable {
   @override
   List<Object> get props => [id, startTime, endTime];
 }
-/*
-part 'delivery_slot.jser.dart';
-
-class DeliverySlot extends Equatable {
-  int id;
-
-  String startTime;
-
-  String endTime;
-
-  DeliverySlot({this.id, this.startTime, this.endTime});
-
-  Map<String, dynamic> toJson() => serializer.toMap(this);
-
-  static final serializer = DeliverySlotSerializer();
-
-  static DeliverySlot fromMap(Map map) => serializer.fromMap(map);
-
-  String toString() => toJson().toString();
-
-  @override
-  List<Object> get props => [id, startTime, endTime];
-}
-
-@GenSerializer()
-class DeliverySlotSerializer extends Serializer<DeliverySlot>
-    with _$DeliverySlotSerializer {}
-*/

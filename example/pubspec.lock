@@ -155,7 +155,7 @@ packages:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.1.0"
+    version: "4.3.0"
   logging:
     dependency: transitive
     description:
@@ -239,7 +239,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.1.13+4"
+    version: "0.1.13+17"
   shared_preferences:
     dependency: transitive
     description:

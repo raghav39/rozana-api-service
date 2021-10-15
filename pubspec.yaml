@@ -1,6 +1,6 @@
 name: rozana_api_service
 description: A new Flutter package project.
-version: 0.1.13+16
+version: 0.1.13+17
 author: Raghav Rawat
 homepage:
 
@@ -15,7 +15,7 @@ dependencies:
   device_info: ^2.0.2
   event_bus: ^2.0.0
   equatable: ^2.0.3
-  json_annotation: ^4.1.0
+  json_annotation: ^4.3.0
   universal_io: ^2.0.4
 
 dev_dependencies:
@@ -23,7 +23,7 @@ dev_dependencies:
     sdk: flutter
   build_runner:
   chopper_generator: ^4.0.2
-  json_serializable: ^5.0.2
+  json_serializable: ^6.0.0
   mockito: ^5.0.16
   built_value_generator: ^8.1.2
 
