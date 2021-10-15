@@ -50,7 +50,7 @@ class _$InvoiceApiService extends InvoiceApiService {
   }
 
   @override
-  Future<Response<Invoice>> createInvoice(Invoice invoice) {
+  Future<Response<Invoice>> createInvoice(InvoiceDraft invoice) {
     final $url = '/api/invoices';
     final $body = invoice;
     final $request = Request('POST', $url, client.baseUrl, body: $body);

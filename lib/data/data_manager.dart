@@ -13,6 +13,7 @@ import 'package:rozana_api_service/data/model/dto/delivery_boy_user.dart';
 import 'package:rozana_api_service/data/model/dto/delivery_slot.dart';
 import 'package:rozana_api_service/data/model/dto/device.dart';
 import 'package:rozana_api_service/data/model/dto/invoice.dart';
+import 'package:rozana_api_service/data/model/dto/invoice_draft.dart';
 import 'package:rozana_api_service/data/model/dto/jwt_token.dart';
 import 'package:rozana_api_service/data/model/dto/locality.dart';
 import 'package:rozana_api_service/data/model/dto/login_vm.dart';
@@ -357,7 +358,7 @@ class DataManager {
     return response;
   }
 
-  Future<Invoice?> createOrder(Invoice invoice) async {
+  Future<Invoice?> createOrder(InvoiceDraft invoice) async {
     invoice.draft = true;
     final service = await apiCaller.getInvoiceService();
     final response = await service.createInvoice(invoice);

@@ -1,32 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'invoice.dart';
+part of 'invoice_draft.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Invoice _$InvoiceFromJson(Map<String, dynamic> json) => Invoice(
-      id: json['id'] as int,
-      customerId: json['customerId'] as int,
-      organizationId: json['organizationId'] as int,
+InvoiceDraft _$InvoiceDraftFromJson(Map<String, dynamic> json) => InvoiceDraft(
       deliveryAddressId: json['deliveryAddressId'] as int,
-      isAddionalDiscountBeforeTax:
-          json['isAddionalDiscountBeforeTax'] as bool? ?? true,
-      number: json['number'] as String?,
-      shippingCharge: json['shippingCharge'],
-      additionalDiscount: json['additionalDiscount'],
-      adjustment: json['adjustment'],
-      totalAmountBeforeTax: json['totalAmountBeforeTax'],
-      totalAmountAfterTax: json['totalAmountAfterTax'],
-      customerName: json['customerName'] as String?,
-      transactionValueId: json['transactionValueId'] as int?,
-      deliveredById: json['deliveredById'] as int?,
-      deliveredByName: json['deliveredByName'] as String?,
-      customerLogin: json['customerLogin'] as String?,
-      createdBy: json['createdBy'] as String?,
-      date:
-          json['date'] == null ? null : DateTime.parse(json['date'] as String),
       dueDate: json['dueDate'] == null
           ? null
           : DateTime.parse(json['dueDate'] as String),
@@ -48,14 +29,15 @@ Invoice _$InvoiceFromJson(Map<String, dynamic> json) => Invoice(
       paymentMode: json['paymentMode'] as String? ?? "CASH",
       deliveryMode: json['deliveryMode'] as String? ?? "DELIVERY",
       amountPaid: json['amountPaid'],
-      totalAmount: json['totalAmount'],
       remark: json['remark'] as String?,
+      totalAmount: json['totalAmount'],
       promoCodeApplied: json['promoCodeApplied'] as String?,
       extPaymentId: json['extPaymentId'] as String?,
       extPaymentOrderId: json['extPaymentOrderId'] as String?,
     );
 
-Map<String, dynamic> _$InvoiceToJson(Invoice instance) => <String, dynamic>{
+Map<String, dynamic> _$InvoiceDraftToJson(InvoiceDraft instance) =>
+    <String, dynamic>{
       'dueDate': instance.dueDate.toIso8601String(),
       'amountPaid': instance.amountPaid,
       'status': instance.status,
@@ -74,21 +56,4 @@ Map<String, dynamic> _$InvoiceToJson(Invoice instance) => <String, dynamic>{
       'lineItems': instance.lineItems.map((e) => e.toJson()).toList(),
       'attachments': instance.attachments.map((e) => e.toJson()).toList(),
       'offers': instance.offers.map((e) => e.toJson()).toList(),
-      'id': instance.id,
-      'organizationId': instance.organizationId,
-      'customerId': instance.customerId,
-      'date': instance.date.toIso8601String(),
-      'shippingCharge': instance.shippingCharge,
-      'additionalDiscount': instance.additionalDiscount,
-      'number': instance.number,
-      'customerLogin': instance.customerLogin,
-      'createdBy': instance.createdBy,
-      'deliveredById': instance.deliveredById,
-      'customerName': instance.customerName,
-      'deliveredByName': instance.deliveredByName,
-      'totalAmountBeforeTax': instance.totalAmountBeforeTax,
-      'totalAmountAfterTax': instance.totalAmountAfterTax,
-      'isAddionalDiscountBeforeTax': instance.isAddionalDiscountBeforeTax,
-      'transactionValueId': instance.transactionValueId,
-      'adjustment': instance.adjustment,
     };

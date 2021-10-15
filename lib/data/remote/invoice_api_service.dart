@@ -2,6 +2,7 @@ import "dart:async";
 
 import 'package:chopper/chopper.dart';
 import 'package:rozana_api_service/data/model/dto/invoice.dart';
+import 'package:rozana_api_service/data/model/dto/invoice_draft.dart';
 
 part 'invoice_api_service.chopper.dart';
 
@@ -24,7 +25,7 @@ abstract class InvoiceApiService extends ChopperService {
       {@Query("page") int page = 0, @Query("size") int size = 20});
 
   @Post(path: "invoices")
-  Future<Response<Invoice>> createInvoice(@Body() Invoice invoice);
+  Future<Response<Invoice>> createInvoice(@Body() InvoiceDraft invoice);
 
   @Put(path: "invoices")
   Future<Response<Invoice>> updateInvoice(@Body() Invoice invoice);
