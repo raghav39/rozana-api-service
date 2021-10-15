@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:rozana_api_service/data/model/dto/base_dto.dart';
 import 'package:rozana_api_service/data/model/dto/invoice.dart';
+import 'package:rozana_api_service/data/model/dto/invoice_draft.dart';
 import 'package:rozana_api_service/data/model/dto/promo_code_offer.dart';
 
 part 'promo_code_invoice.g.dart';
@@ -11,7 +12,7 @@ class PromoCodeInvoice extends Equatable implements BaseDto {
   @override
   int id;
 
-  final Invoice invoice;
+  final InvoiceDraft invoice;
 
   final String displayText;
 

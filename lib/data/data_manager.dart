@@ -393,7 +393,7 @@ class DataManager {
     final service = await apiCaller.getPromoCodeOfferApiService();
     final response = await service.getPromoCodes();
     if(!response.isSuccessful){
-      throw new Future.error("promo code application failed: ${response.error.toString()}");
+      throw new Future.error("failed while getting promo codes : ${response.error.toString()}");
     }
     return response.body;
   }

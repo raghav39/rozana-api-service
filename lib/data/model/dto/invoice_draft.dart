@@ -44,7 +44,7 @@ class InvoiceDraft extends Equatable {
   List<Offer> offers;
 
   InvoiceDraft({
-    required this.deliveryAddressId,
+    this.deliveryAddressId = -1,
     DateTime? date,
     DateTime? dueDate,
     List<SelectedProduct>? selectedProducts,
