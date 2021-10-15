@@ -13,10 +13,22 @@ Invoice _$InvoiceFromJson(Map<String, dynamic> json) => Invoice(
       deliveryAddressId: json['deliveryAddressId'] as int,
       date: json['date'],
       dueDate: json['dueDate'],
-      selectedProducts: json['selectedProducts'],
-      lineItems: json['lineItems'],
-      attachments: json['attachments'],
-      offers: json['offers'],
+      selectedProducts: (json['selectedProducts'] as List<dynamic>?)
+              ?.map((e) => SelectedProduct.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          emptySelectedProductList,
+      lineItems: (json['lineItems'] as List<dynamic>?)
+              ?.map((e) => LineItem.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          emptyLineItemList,
+      attachments: (json['attachments'] as List<dynamic>?)
+              ?.map((e) => Attachment.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          emptyAttachmentList,
+      offers: (json['offers'] as List<dynamic>?)
+              ?.map((e) => Offer.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          emptyOfferList,
       isAddionalDiscountBeforeTax:
           json['isAddionalDiscountBeforeTax'] as bool? ?? true,
       draft: json['draft'] as bool? ?? true,

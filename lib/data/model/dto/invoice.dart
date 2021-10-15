@@ -8,6 +8,11 @@ import 'package:rozana_api_service/data/model/dto/selected_product.dart';
 
 part 'invoice.g.dart';
 
+const List<SelectedProduct> emptySelectedProductList = [];
+const List<LineItem> emptyLineItemList = [];
+const List<Attachment> emptyAttachmentList = [];
+const List<Offer> emptyOfferList = [];
+
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class Invoice extends Equatable implements BaseDto {
   @override
@@ -86,10 +91,10 @@ class Invoice extends Equatable implements BaseDto {
     required this.deliveryAddressId,
     date,
     dueDate,
-    selectedProducts,
-    lineItems,
-    attachments,
-    offers,
+    this.selectedProducts = emptySelectedProductList,
+    this.lineItems = emptyLineItemList,
+    this.attachments = emptyAttachmentList,
+    this.offers = emptyOfferList,
     this.isAddionalDiscountBeforeTax = true,
     this.draft = true,
     this.status = "DRAFT",
@@ -116,10 +121,6 @@ class Invoice extends Equatable implements BaseDto {
     this.extPaymentOrderId,
   })  : this.date = DateTime.tryParse(date) ?? DateTime.now(),
         this.dueDate = DateTime.tryParse(dueDate) ?? DateTime.now(),
-        this.selectedProducts = List<SelectedProduct>.from(selectedProducts ?? []),
-        this.lineItems = List<LineItem>.from(lineItems ?? []),
-        this.attachments = List<Attachment>.from(attachments ?? []),
-        this.offers = List<Offer>.from(offers ?? []),
         super();
 
   factory Invoice.fromJson(Map<String, dynamic> json) =>

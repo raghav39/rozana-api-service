@@ -7,8 +7,13 @@ import 'package:rozana_api_service/data/model/dto/tag.dart';
 
 part 'product.g.dart';
 
+const List<Tag> emptyTagList = [];
+const List<Product> emptyVariantsList = [];
+const List<ProductCategory> emptyProductCategoriesList = [];
+
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class Product extends Equatable implements BaseDto {
+
   @override
   int id = -1;
 
@@ -80,13 +85,10 @@ class Product extends Equatable implements BaseDto {
       this.imageId,
       this.imageUrl,
       this.productStocks,
-      productCategories,
-      variants,
-      tags})
-      : this.productCategories = productCategories ?? <ProductCategory>[],
-        this.variants = variants ?? <Product>[],
-        this.tags = tags ?? <Tag>[],
-        super();
+      this.productCategories = emptyProductCategoriesList,
+      this.variants = emptyVariantsList,
+      this.tags = emptyTagList})
+      : super();
 
   double getTaxPercentage() {
     switch (taxStrategyType) {
