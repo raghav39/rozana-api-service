@@ -68,7 +68,6 @@ class Invoice extends InvoiceDraft implements BaseDto {
   })  : this.date = date ?? DateTime.now(),
         super(
             deliveryAddressId: deliveryAddressId,
-            date: date,
             dueDate: dueDate,
             selectedProducts: selectedProducts,
             lineItems: lineItems,
@@ -79,7 +78,10 @@ class Invoice extends InvoiceDraft implements BaseDto {
             totalAmount: totalAmount,
             promoCodeApplied: promoCodeApplied,
             extPaymentId: extPaymentId,
-            extPaymentOrderId: extPaymentOrderId);
+            extPaymentOrderId: extPaymentOrderId) {
+    final DateTime now = DateTime.now();
+    this.date = date ?? DateTime(now.year, now.month, now.day);
+  }
 
   factory Invoice.fromJson(Map<String, dynamic> json) =>
       _$InvoiceFromJson(json);

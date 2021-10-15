@@ -45,7 +45,6 @@ class InvoiceDraft extends Equatable {
 
   InvoiceDraft({
     this.deliveryAddressId = -1,
-    DateTime? date,
     DateTime? dueDate,
     List<SelectedProduct>? selectedProducts,
     List<LineItem>? lineItems,
@@ -67,7 +66,10 @@ class InvoiceDraft extends Equatable {
         this.lineItems = lineItems ?? <LineItem>[],
         this.attachments = attachments ?? <Attachment>[],
         this.offers = offers ?? <Offer>[],
-        super();
+        super(){
+    final DateTime now = DateTime.now();
+    this.dueDate = dueDate ?? DateTime(now.year, now.month, now.day);
+  }
 
   factory InvoiceDraft.fromJson(Map<String, dynamic> json) =>
       _$InvoiceDraftFromJson(json);
