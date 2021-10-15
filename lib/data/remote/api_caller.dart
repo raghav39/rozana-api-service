@@ -48,7 +48,10 @@ import 'package:rozana_api_service/utils/app_constants.dart';
 import 'package:universal_io/io.dart' if (dart.library.io) 'dart:io';
 
 class ApiCaller {
+  String serverEndpoint;
+
   String? organizationAppKey;
+
   ChopperClient? authenticatedChopperClient;
 
   ChopperClient? unAuthenticatedChopperClient;
@@ -61,7 +64,7 @@ class ApiCaller {
 
   final converter;
 
-  ApiCaller(this.preferenceManager, this.organizationAppKey, this.eventBus)
+  ApiCaller(this.preferenceManager, this.organizationAppKey, this.eventBus, {this.serverEndpoint = AppConstants.SERVER_ENDPOINT})
       : converter = JsonSerializableConverter({
           UserCustomer: UserCustomer.fromJsonFactory,
           LoginVm: LoginVm.fromJsonFactory,
@@ -141,7 +144,7 @@ class ApiCaller {
     }
 
     authenticatedChopperClient = new ChopperClient(
-      baseUrl: AppConstants.SERVER_ENDPOINT,
+      baseUrl: this.serverEndpoint,
       converter: converter,
       errorConverter: converter,
       interceptors: [authHeader, xAppKeyHeader, checkForUnAuthorizedResponse, checkForBadRequestResponse],
@@ -172,7 +175,7 @@ class ApiCaller {
           organizationAppKey!,
         );
     unAuthenticatedChopperClient = new ChopperClient(
-      baseUrl: AppConstants.SERVER_ENDPOINT,
+      baseUrl: this.serverEndpoint,
       converter: converter,
       errorConverter: converter,
       interceptors: [xAppKeyHeader],
