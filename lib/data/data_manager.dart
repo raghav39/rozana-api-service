@@ -381,7 +381,7 @@ class DataManager {
     return response.body;
   }
 
-  Future<PromoCodeInvoice?> applyPromoCodeOffer(Invoice invoice) async {
+  Future<PromoCodeInvoice?> applyPromoCodeOffer(InvoiceDraft invoice) async {
     final service = await apiCaller.getPromoCodeOfferApiService();
     final response = await service.getPromoCodeDiscountValue(invoice);
     if(!response.isSuccessful){

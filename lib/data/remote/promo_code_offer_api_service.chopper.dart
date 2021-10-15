@@ -18,7 +18,7 @@ class _$PromoCodeOfferApiService extends PromoCodeOfferApiService {
 
   @override
   Future<Response<PromoCodeInvoice>> getPromoCodeDiscountValue(
-      Invoice invoice) {
+      InvoiceDraft invoice) {
     final $url = '/api/promo-code-offer/discount-value';
     final $body = invoice;
     final $request = Request('POST', $url, client.baseUrl, body: $body);
