@@ -87,10 +87,15 @@ class Product extends Equatable implements BaseDto {
       this.productCategories = emptyProductCategoriesList,
       this.variants = emptyVariantsList,
       this.tags = emptyTagList})
-      :
-        this.organizationId = int.tryParse(organizationId) ?? -1,
-        this.taxStrategyId = int.tryParse(taxStrategyId) ?? -1,
-        this.price = double.tryParse(price) ?? 0,
+      : this.organizationId = (organizationId is String
+                ? int.tryParse(organizationId)
+                : organizationId) ??
+            -1,
+        this.taxStrategyId = (taxStrategyId is String
+                ? int.tryParse(taxStrategyId)
+                : taxStrategyId) ??
+            -1,
+        this.price = (price is String ? double.tryParse(price) : price) ?? 0,
         super();
 
   double getTaxPercentage() {
