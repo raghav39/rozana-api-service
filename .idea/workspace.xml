@@ -11,9 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/data_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/data_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/invoice_draft.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/invoice_draft.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/promo_code_invoice.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1545460612148</updated>
       <workItem from="1633241453333" duration="4370000" />
-      <workItem from="1633803464744" duration="19883000" />
+      <workItem from="1633803464744" duration="20755000" />
     </task>
     <servers />
   </component>

@@ -1,17 +1,12 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:rozana_api_service/data/model/dto/base_dto.dart';
-import 'package:rozana_api_service/data/model/dto/invoice.dart';
 import 'package:rozana_api_service/data/model/dto/invoice_draft.dart';
 import 'package:rozana_api_service/data/model/dto/promo_code_offer.dart';
 
 part 'promo_code_invoice.g.dart';
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
-class PromoCodeInvoice extends Equatable implements BaseDto {
-  @override
-  int id;
-
+class PromoCodeInvoice extends Equatable {
   final InvoiceDraft invoice;
 
   final String displayText;
@@ -23,8 +18,7 @@ class PromoCodeInvoice extends Equatable implements BaseDto {
   PromoCodeOffer? promoCodeOfferDTO;
 
   PromoCodeInvoice(
-      {required this.id,
-      required this.invoice,
+      {required this.invoice,
       required this.displayText,
       required this.success,
       promoCodeDiscount,
@@ -45,12 +39,14 @@ class PromoCodeInvoice extends Equatable implements BaseDto {
     }
   }
 
-  factory PromoCodeInvoice.fromJson(Map<String, dynamic> json) => _$PromoCodeInvoiceFromJson(json);
+  factory PromoCodeInvoice.fromJson(Map<String, dynamic> json) =>
+      _$PromoCodeInvoiceFromJson(json);
 
   Map<String, dynamic> toJson() => _$PromoCodeInvoiceToJson(this);
 
   static const fromJsonFactory = _$PromoCodeInvoiceFromJson;
 
   @override
-  List<Object?> get props => [id, invoice, displayText, success, promoCodeDiscount, promoCodeOfferDTO];
+  List<Object?> get props =>
+      [invoice, displayText, success, promoCodeDiscount, promoCodeOfferDTO];
 }

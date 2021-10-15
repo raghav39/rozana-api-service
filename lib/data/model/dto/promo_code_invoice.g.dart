@@ -8,7 +8,6 @@ part of 'promo_code_invoice.dart';
 
 PromoCodeInvoice _$PromoCodeInvoiceFromJson(Map<String, dynamic> json) =>
     PromoCodeInvoice(
-      id: json['id'] as int,
       invoice: InvoiceDraft.fromJson(json['invoice'] as Map<String, dynamic>),
       displayText: json['displayText'] as String,
       success: json['success'] as bool,
@@ -21,7 +20,6 @@ PromoCodeInvoice _$PromoCodeInvoiceFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$PromoCodeInvoiceToJson(PromoCodeInvoice instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'invoice': instance.invoice.toJson(),
       'displayText': instance.displayText,
       'success': instance.success,
