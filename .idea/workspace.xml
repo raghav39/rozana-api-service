@@ -10,10 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/cart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/cart.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/invoice.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/invoice.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/dto/order_transaction.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/order_transaction.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/model/dto/product.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/dto/product.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20211015_0004" />
+    <property name="com.google.cloudcode.ide_session_index" value="20211015_0005" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
@@ -109,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1545460612148</updated>
       <workItem from="1633241453333" duration="4370000" />
-      <workItem from="1633803464744" duration="10263000" />
+      <workItem from="1633803464744" duration="10629000" />
     </task>
     <servers />
   </component>
