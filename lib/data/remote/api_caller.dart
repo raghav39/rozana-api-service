@@ -48,7 +48,7 @@ import 'package:rozana_api_service/utils/app_constants.dart';
 import 'package:universal_io/io.dart' if (dart.library.io) 'dart:io';
 
 class ApiCaller {
-  String serverEndpoint;
+  final String serverEndpoint;
 
   String? organizationAppKey;
 
@@ -64,7 +64,7 @@ class ApiCaller {
 
   final converter;
 
-  ApiCaller(this.preferenceManager, this.organizationAppKey, this.eventBus, {this.serverEndpoint = AppConstants.SERVER_ENDPOINT})
+  ApiCaller(this.preferenceManager, this.organizationAppKey, this.eventBus, this.serverEndpoint)
       : converter = JsonSerializableConverter({
           UserCustomer: UserCustomer.fromJsonFactory,
           LoginVm: LoginVm.fromJsonFactory,

@@ -9,19 +9,21 @@ import 'package:rozana_api_service/data/product_image_cache_manager.dart';
 import 'package:rozana_api_service/data/product_offer_cache_manager.dart';
 import 'package:rozana_api_service/data/remote/api_caller.dart';
 import 'package:rozana_api_service/data/user_customer_cache_manager.dart';
+import 'package:rozana_api_service/utils/app_constants.dart';
 
 class RozanaApiService {
   String appKey;
   final String googleMapsApiKey;
+  final String serverEndpoint;
   late ApiCaller _apiCaller;
   late DataManager dataManager;
   final EventBus eventBus;
 
   static RozanaApiService? _instance;
 
-  RozanaApiService._({required this.appKey, required this.googleMapsApiKey, required this.eventBus}) {
+  RozanaApiService._({required this.appKey, required this.googleMapsApiKey, required this.eventBus, required this.serverEndpoint}) {
     final preferenceManager = PreferenceManager();
-    this._apiCaller = ApiCaller(preferenceManager, appKey, eventBus);
+    this._apiCaller = ApiCaller(preferenceManager, appKey, eventBus, this.serverEndpoint);
     final productCacheManager = ProductCacheManager(100000);
     final userCustomerCacheManager = UserCustomerCacheManager(100000);
     final productOfferCacheManager = ProductOfferCacheManager(100000);
@@ -39,9 +41,9 @@ class RozanaApiService {
         eventBus: eventBus);
   }
 
-  factory RozanaApiService({appKey, googleMapsApiKey, required EventBus eventBus}) {
+  factory RozanaApiService({appKey, googleMapsApiKey, required EventBus eventBus, serverEndpoint = AppConstants.SERVER_ENDPOINT}) {
     if (_instance == null && appKey != null && googleMapsApiKey != null) {
-      _instance = RozanaApiService._(appKey: appKey, googleMapsApiKey: googleMapsApiKey, eventBus: eventBus);
+      _instance = RozanaApiService._(appKey: appKey, googleMapsApiKey: googleMapsApiKey, eventBus: eventBus, serverEndpoint: serverEndpoint);
     }
     return _instance!;
   }
