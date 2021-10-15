@@ -9,18 +9,18 @@ part of 'organization_config.dart';
 OrganizationConfig _$OrganizationConfigFromJson(Map<String, dynamic> json) =>
     OrganizationConfig(
       id: json['id'] as int,
-      name: json['name'] as String,
-      email: json['email'] as String,
-      contactNumber: json['contactNumber'] as String,
-      addressId: json['addressId'] as int,
-      logoUrl: json['logoUrl'] as String,
-      gstin: json['gstin'] as String,
-      deliveryCharge: (json['deliveryCharge'] as num).toDouble(),
+      name: json['name'] as String? ?? "",
+      email: json['email'] as String? ?? "rozana@noisytempo.com",
+      contactNumber: json['contactNumber'] as String? ?? "",
+      addressId: json['addressId'] as int? ?? -1,
+      logoUrl: json['logoUrl'] as String? ?? "",
+      gstin: json['gstin'] as String? ?? "",
+      deliveryCharge: (json['deliveryCharge'] as num?)?.toDouble() ?? 0,
       freeDeliveryThresholdAmount:
-          (json['freeDeliveryThresholdAmount'] as num).toDouble(),
-      orderingDateThreshold: json['orderingDateThreshold'] as int,
-      maxOrderModificationTime: json['maxOrderModificationTime'] as int,
-      razorPayKey: json['razorPayKey'] as String,
+          (json['freeDeliveryThresholdAmount'] as num?)?.toDouble() ?? 0,
+      orderingDateThreshold: json['orderingDateThreshold'] as int? ?? 100,
+      maxOrderModificationTime: json['maxOrderModificationTime'] as int? ?? 100,
+      razorPayKey: json['razorPayKey'] as String? ?? "",
       acceptOrders: json['acceptOrders'] as bool? ?? true,
     );
 

@@ -33,17 +33,17 @@ class OrganizationConfig extends Equatable {
 
   OrganizationConfig(
       {required this.id,
-      required this.name,
-      required this.email,
-      required this.contactNumber,
-      required this.addressId,
-      required this.logoUrl,
-      required this.gstin,
-      required this.deliveryCharge,
-      required this.freeDeliveryThresholdAmount,
-      required this.orderingDateThreshold,
-      required this.maxOrderModificationTime,
-      required this.razorPayKey,
+      this.name = "",
+      this.email = "rozana@noisytempo.com",
+      this.contactNumber = "",
+      this.addressId = -1,
+      this.logoUrl = "",
+      this.gstin = "",
+      this.deliveryCharge = 0,
+      this.freeDeliveryThresholdAmount = 0,
+      this.orderingDateThreshold = 100,
+      this.maxOrderModificationTime = 100,
+      this.razorPayKey = "",
       this.acceptOrders = true});
 
   factory OrganizationConfig.fromJson(Map<String, dynamic> json) => _$OrganizationConfigFromJson(json);
