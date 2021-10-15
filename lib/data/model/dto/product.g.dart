@@ -9,10 +9,10 @@ part of 'product.dart';
 Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       id: json['id'] as int,
       name: json['name'] as String,
-      price: (json['price'] as num).toDouble(),
       taxStrategyId: json['taxStrategyId'] as int,
-      taxStrategyType: json['taxStrategyType'] as String,
       organizationId: json['organizationId'] as int,
+      taxStrategyType: json['taxStrategyType'] as String? ?? 'GST0',
+      price: (json['price'] as num?)?.toDouble() ?? 0,
       discontinue: json['discontinue'] as bool? ?? false,
       priceInclusiveTax: json['priceInclusiveTax'] as bool? ?? false,
       outOfStock: json['outOfStock'] as bool? ?? false,

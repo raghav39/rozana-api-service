@@ -13,7 +13,6 @@ const List<ProductCategory> emptyProductCategoriesList = [];
 
 @JsonSerializable(explicitToJson: true, createFactory: true)
 class Product extends Equatable implements BaseDto {
-
   @override
   int id = -1;
 
@@ -66,10 +65,10 @@ class Product extends Equatable implements BaseDto {
   Product(
       {required this.id,
       required this.name,
-      required this.price,
       required this.taxStrategyId,
-      required this.taxStrategyType,
       required this.organizationId,
+      this.taxStrategyType = 'GST0',
+      this.price = 0,
       this.discontinue = false,
       this.priceInclusiveTax = false,
       this.outOfStock = false,

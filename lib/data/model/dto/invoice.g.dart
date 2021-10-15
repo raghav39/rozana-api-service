@@ -11,24 +11,23 @@ Invoice _$InvoiceFromJson(Map<String, dynamic> json) => Invoice(
       customerId: json['customerId'] as int,
       organizationId: json['organizationId'] as int,
       deliveryAddressId: json['deliveryAddressId'] as int,
-      date: json['date'],
-      dueDate: json['dueDate'],
+      date:
+          json['date'] == null ? null : DateTime.parse(json['date'] as String),
+      dueDate: json['dueDate'] == null
+          ? null
+          : DateTime.parse(json['dueDate'] as String),
       selectedProducts: (json['selectedProducts'] as List<dynamic>?)
-              ?.map((e) => SelectedProduct.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          emptySelectedProductList,
+          ?.map((e) => SelectedProduct.fromJson(e as Map<String, dynamic>))
+          .toList(),
       lineItems: (json['lineItems'] as List<dynamic>?)
-              ?.map((e) => LineItem.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          emptyLineItemList,
+          ?.map((e) => LineItem.fromJson(e as Map<String, dynamic>))
+          .toList(),
       attachments: (json['attachments'] as List<dynamic>?)
-              ?.map((e) => Attachment.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          emptyAttachmentList,
+          ?.map((e) => Attachment.fromJson(e as Map<String, dynamic>))
+          .toList(),
       offers: (json['offers'] as List<dynamic>?)
-              ?.map((e) => Offer.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          emptyOfferList,
+          ?.map((e) => Offer.fromJson(e as Map<String, dynamic>))
+          .toList(),
       isAddionalDiscountBeforeTax:
           json['isAddionalDiscountBeforeTax'] as bool? ?? true,
       draft: json['draft'] as bool? ?? true,
