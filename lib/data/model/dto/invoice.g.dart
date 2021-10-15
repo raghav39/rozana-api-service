@@ -10,7 +10,7 @@ Invoice _$InvoiceFromJson(Map<String, dynamic> json) => Invoice(
       id: json['id'] as int,
       customerId: json['customerId'] as int,
       organizationId: json['organizationId'] as int,
-      deliveryAddressId: json['deliveryAddressId'] as int,
+      deliveryAddressId: json['deliveryAddressId'] as int? ?? -1,
       isAddionalDiscountBeforeTax:
           json['isAddionalDiscountBeforeTax'] as bool? ?? true,
       number: json['number'] as String?,

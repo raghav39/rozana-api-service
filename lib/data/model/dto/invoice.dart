@@ -34,7 +34,7 @@ class Invoice extends InvoiceDraft implements BaseDto {
     required this.id,
     required this.customerId,
     required this.organizationId,
-    required int deliveryAddressId,
+    int deliveryAddressId = -1,
     this.isAddionalDiscountBeforeTax = true,
     this.number,
     this.shippingCharge,
