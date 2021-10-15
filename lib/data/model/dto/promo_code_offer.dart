@@ -14,13 +14,13 @@ class PromoCodeOffer extends Equatable implements BaseDto {
 
   final String description;
 
-  final String terms;
+  final String? terms;
 
   PromoCodeOffer(
       {required this.id,
       required this.code,
       required this.description,
-      required this.terms})
+      this.terms})
       : super();
 
   factory PromoCodeOffer.fromJson(Map<String, dynamic> json) => _$PromoCodeOfferFromJson(json);

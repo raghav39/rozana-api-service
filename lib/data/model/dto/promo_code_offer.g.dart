@@ -11,7 +11,7 @@ PromoCodeOffer _$PromoCodeOfferFromJson(Map<String, dynamic> json) =>
       id: json['id'] as int,
       code: json['code'] as String,
       description: json['description'] as String,
-      terms: json['terms'] as String,
+      terms: json['terms'] as String?,
     );
 
 Map<String, dynamic> _$PromoCodeOfferToJson(PromoCodeOffer instance) =>
