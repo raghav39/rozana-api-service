@@ -28,7 +28,8 @@ class Cart {
 
   List<ProductOffer> offers = [];
 
-  Cart({this.date})
-      : deliveryMode = DeliveryMode.DELIVERY,
-        additionalDiscount = 0;
+  Cart({cartItems, deliveryMode, additionalDiscount, this.date})
+      : this.cartItems = cartItems ?? [],
+        this.deliveryMode = deliveryMode ?? DeliveryMode.DELIVERY,
+        this.additionalDiscount = additionalDiscount ?? 0;
 }

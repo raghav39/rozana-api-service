@@ -17,7 +17,7 @@ UserCustomer _$UserCustomerFromJson(Map<String, dynamic> json) => UserCustomer(
       wallet: json['wallet'] == null
           ? null
           : Wallet.fromJson(json['wallet'] as Map<String, dynamic>),
-    )..id = json['id'] as int;
+    )..id = json['id'] as int?;
 
 Map<String, dynamic> _$UserCustomerToJson(UserCustomer instance) =>
     <String, dynamic>{

@@ -17,24 +17,3 @@ class OrderTransaction extends Equatable {
   @override
   List<Object> get props => [];
 }
-/*
-part 'order_transaction.jser.dart';
-
-class OrderTransaction  extends Equatable {
-  OrderTransaction();
-
-  Map<String, dynamic> toJson() => serializer.toMap(this);
-
-  static final serializer = OrderTransactionSerializer();
-
-  static OrderTransaction fromMap(Map map) => serializer.fromMap(map);
-
-  String toString() => toJson().toString();
-
-  @override
-  List<Object> get props => [];
-}
-
-@GenSerializer()
-class OrderTransactionSerializer extends Serializer<OrderTransaction>
-    with _$OrderTransactionSerializer {}*/
