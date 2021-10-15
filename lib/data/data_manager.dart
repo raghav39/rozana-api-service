@@ -475,7 +475,7 @@ class DataManager {
     List<Product> response;
     try {
       List<ProductVariant>? productVariants =
-          (await (await apiCaller.getProductService()).getAllProductVariants(product.name!)).body;
+          (await (await apiCaller.getProductService()).getAllProductVariants(product.name)).body;
       if (productVariants == null || productVariants.isEmpty) {
         return [];
       }
@@ -489,7 +489,7 @@ class DataManager {
   Future<List<Product>?> getProductSuggestions(Product product) async {
     List<Product>? response;
     try {
-      response = (await (await apiCaller.getProductService()).getSuggestedProducts(product.id!)).body;
+      response = (await (await apiCaller.getProductService()).getSuggestedProducts(product.id)).body;
       if (response == null || response.isEmpty) {
         return [];
       }
