@@ -30,18 +30,9 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       productStocks: (json['productStocks'] as List<dynamic>?)
           ?.map((e) => ProductStock.fromJson(e as Map<String, dynamic>))
           .toList(),
-      productCategories: (json['productCategories'] as List<dynamic>?)
-              ?.map((e) => ProductCategory.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          emptyProductCategoriesList,
-      variants: (json['variants'] as List<dynamic>?)
-              ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          emptyVariantsList,
-      tags: (json['tags'] as List<dynamic>?)
-              ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          emptyTagList,
+      productCategories: json['productCategories'],
+      variants: json['variants'],
+      tags: json['tags'],
     );
 
 Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{

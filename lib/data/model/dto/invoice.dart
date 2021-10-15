@@ -116,10 +116,10 @@ class Invoice extends Equatable implements BaseDto {
     this.extPaymentOrderId,
   })  : this.date = DateTime.tryParse(date) ?? DateTime.now(),
         this.dueDate = DateTime.tryParse(dueDate) ?? DateTime.now(),
-        this.selectedProducts = selectedProducts ?? [],
-        this.lineItems = lineItems ?? [],
-        this.attachments = attachments ?? [],
-        this.offers = offers ?? [],
+        this.selectedProducts = selectedProducts ?? <SelectedProduct>[],
+        this.lineItems = lineItems ?? <LineItem>[],
+        this.attachments = attachments ?? <Attachment>[],
+        this.offers = offers ?? <Offer>[],
         super();
 
   factory Invoice.fromJson(Map<String, dynamic> json) =>
