@@ -10,7 +10,7 @@ class Cart {
 
   late DeliverySlot deliverySlot;
 
-  List<CartItem>? cartItems;
+  List<CartItem> cartItems = [];
 
   late Address deliveryAddress;
 
@@ -28,5 +28,8 @@ class Cart {
 
   List<ProductOffer> offers = [];
 
-  Cart({this.cartItems, this.date}): deliveryMode = DeliveryMode.DELIVERY, additionalDiscount = 0;
+  Cart({cartItems, this.date})
+      : deliveryMode = DeliveryMode.DELIVERY,
+        additionalDiscount = 0,
+        this.cartItems = cartItems;
 }
