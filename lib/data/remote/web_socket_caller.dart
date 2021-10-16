@@ -98,13 +98,15 @@ class WebSocketCaller {
 //      );
 //    });
   }
-  void subscribeTopic<T>(String topicName, JsonConvertor<T> converter, Sink<T> sink) {
+  void subscribeTopic<T>(String topicName, JsonConvertor<T> converter, StreamController<T> controller) {
     stompClient.subscribe(
       destination: topicName,
       callback: (StompFrame frame) {
         Map<String, dynamic> valueMap = json.decode(frame.body ?? "{}");
         T obj = converter(valueMap);
-        sink.add(obj);
+        if(!controller.isClosed){
+          controller.sink.add(obj);
+        }
       },
     );
   }

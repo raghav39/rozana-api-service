@@ -10,13 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/data/model/dto/delivery_boy_location.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/remote/web_socket_caller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/data_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/data_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/rozana_api_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/rozana_api_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/app_constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/app_constants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/remote/web_socket_caller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/web_socket_caller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +119,7 @@
       <option name="presentableId" value="Default" />
       <updated>1545460612148</updated>
       <workItem from="1633241453333" duration="4370000" />
-      <workItem from="1633803464744" duration="32288000" />
+      <workItem from="1633803464744" duration="33284000" />
     </task>
     <servers />
   </component>

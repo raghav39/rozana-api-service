@@ -734,10 +734,10 @@ class DataManager {
     }).toList();*/
   }
 
-  void subscribeDriverLocation(Sink<DeliveryBoyLocation> locationSink) {
+  void subscribeDriverLocation(StreamController<DeliveryBoyLocation> controller) {
     webSocketCaller.subscribeTopic<DeliveryBoyLocation>(
         WS_TOPIC_DRIVER_LOCATION,
         (Map<String, dynamic> json) => DeliveryBoyLocation.fromJson(json),
-        locationSink);
+        controller);
   }
 }
