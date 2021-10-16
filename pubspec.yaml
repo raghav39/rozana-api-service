@@ -1,6 +1,6 @@
 name: rozana_api_service
 description: A new Flutter package project.
-version: 0.1.13+29
+version: 0.1.13+30
 homepage:
 
 environment:
@@ -16,6 +16,7 @@ dependencies:
   equatable: ^2.0.3
   json_annotation: ^4.3.0
   universal_io: ^2.0.4
+  stomp_dart_client: ^0.4.3
 
 dev_dependencies:
   flutter_test:
