@@ -41,7 +41,7 @@ class WebSocketCaller {
     stompClient = StompClient(
       config: StompConfig(
         useSockJS: false,
-        url: websocketServerEndpoint + "?access_token=$token",
+        url: websocketServerEndpoint + "/websocket/tracker?access_token=$token",
         onConnect: onWebsocketConnect,
         beforeConnect: beforeWebsocketConnect,
         onWebSocketError: onWebsocketError,
