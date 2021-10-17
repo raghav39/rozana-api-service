@@ -95,4 +95,12 @@ class _$InvoiceApiService extends InvoiceApiService {
     final $request = Request('GET', $url, client.baseUrl);
     return client.send<int, int>($request);
   }
+
+  @override
+  Future<Response<InvoiceAddressVM>> getSourceDestinationAddressForInvoice(
+      int id) {
+    final $url = '/api/invoice/addresses/$id';
+    final $request = Request('GET', $url, client.baseUrl);
+    return client.send<InvoiceAddressVM, InvoiceAddressVM>($request);
+  }
 }

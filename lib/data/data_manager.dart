@@ -14,6 +14,7 @@ import 'package:rozana_api_service/data/model/dto/delivery_boy_user.dart';
 import 'package:rozana_api_service/data/model/dto/delivery_slot.dart';
 import 'package:rozana_api_service/data/model/dto/device.dart';
 import 'package:rozana_api_service/data/model/dto/invoice.dart';
+import 'package:rozana_api_service/data/model/dto/invoice_address_vm.dart';
 import 'package:rozana_api_service/data/model/dto/invoice_draft.dart';
 import 'package:rozana_api_service/data/model/dto/jwt_token.dart';
 import 'package:rozana_api_service/data/model/dto/locality.dart';
@@ -177,7 +178,8 @@ class DataManager {
       return (await (await apiCaller.getProductService())
               .getAllProductCategories())
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return [];
     }
   }
@@ -187,7 +189,8 @@ class DataManager {
       return (await (await apiCaller.getProductService())
               .getProductCategory(productCategoryId))
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return null;
     }
   }
@@ -198,7 +201,8 @@ class DataManager {
       return (await (await apiCaller.getProductService())
               .updateProductCategory(productCategory))
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return null;
     }
   }
@@ -209,7 +213,8 @@ class DataManager {
       return (await (await apiCaller.getProductService())
               .createProductCategory(productCategory))
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return null;
     }
   }
@@ -220,7 +225,8 @@ class DataManager {
       return (await (await apiCaller.getProductService())
               .removeProductCategoryFromProduct(productCategoryId, products))
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return null;
     }
   }
@@ -230,7 +236,8 @@ class DataManager {
       return (await (await apiCaller.getProductService())
               .deleteProductCategory(productCategoryId))
           .statusCode;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return null;
     }
   }
@@ -262,7 +269,8 @@ class DataManager {
       if (products != null) {
         productCacheManager.updateProducts(products);
       }
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       products = [];
     }
     return products;
@@ -289,7 +297,8 @@ class DataManager {
       return (await (await apiCaller.getProductService())
               .searchProducts(query, page: page, sort: sort))
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return [];
     }
   }
@@ -305,7 +314,8 @@ class DataManager {
           productCacheManager.addProduct(product);
         }
         return product;
-      } on Response catch (_) {
+      } on Response catch (e) {
+        print(e);
         return null;
       }
     }
@@ -326,7 +336,8 @@ class DataManager {
           userCustomerCacheManager.updateUserCustomer(userCustomer);
           return userCustomer;
         }
-      } on Response catch (_) {
+      } on Response catch (e) {
+        print(e);
         return null;
       }
     }
@@ -351,7 +362,8 @@ class DataManager {
         userCustomerCacheManager.updateUserCustomers(userCustomers);
       }
       return userCustomers;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return [];
     }
   }
@@ -368,7 +380,8 @@ class DataManager {
         if (userCustomer != null) {
           userCustomerCacheManager.updateUserCustomer(userCustomer);
         }
-      } on Response catch (_) {
+      } on Response catch (e) {
+        print(e);
         userCustomer = null;
       }
     }
@@ -380,7 +393,8 @@ class DataManager {
       UserCustomerApiService? userCustomerApiService =
           await apiCaller.getUserCustomerService();
       return (await userCustomerApiService.searchUserCustomers(query)).body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return null;
     }
   }
@@ -401,7 +415,8 @@ class DataManager {
     List<BannerImage>? response;
     try {
       response = (await productApiService.getAllBannerImages()).body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       response = [];
     }
     return response;
@@ -484,7 +499,8 @@ class DataManager {
       response = (await (await apiCaller.getDeliverySlotService())
               .getAllDeliverySlots())
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       response = [];
     }
     return response;
@@ -496,7 +512,8 @@ class DataManager {
     OrganizationConfig? response;
     try {
       response = (await organizationApiService.getOrganizationConfig()).body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       response = null;
     }
     return response;
@@ -519,7 +536,8 @@ class DataManager {
                 .getAllInvoices(page: page))
             .body;
       }
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       response = [];
     }
     return response;
@@ -531,7 +549,8 @@ class DataManager {
       response =
           (await (await apiCaller.getInvoiceService()).getInvoice(invoiceId))
               .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       response = null;
     }
     return response;
@@ -548,7 +567,8 @@ class DataManager {
         return [];
       }
       response = productVariants[0].products;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       response = [];
     }
     return response;
@@ -563,7 +583,8 @@ class DataManager {
       if (response == null || response.isEmpty) {
         return [];
       }
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       response = [];
     }
     return response;
@@ -573,7 +594,8 @@ class DataManager {
     try {
       return (await (await apiCaller.getProductService()).getProductCount())
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return 0;
     }
   }
@@ -583,7 +605,8 @@ class DataManager {
       return (await (await apiCaller.getOrderTransactionApiService())
               .getOrderTransactionCount())
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return 0;
     }
   }
@@ -593,7 +616,8 @@ class DataManager {
       return (await (await apiCaller.getUserCustomerService())
               .getUserCustomerCount())
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return 0;
     }
   }
@@ -603,7 +627,8 @@ class DataManager {
       return (await (await apiCaller.getDeliveryBoyApiService())
               .getDeliveryBoyCount())
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return 0;
     }
   }
@@ -612,7 +637,8 @@ class DataManager {
     try {
       return (await (await apiCaller.getInvoiceService()).getInvoiceCount())
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return 0;
     }
   }
@@ -622,7 +648,8 @@ class DataManager {
       return (await (await apiCaller.getDeliveryBoyApiService())
               .getAllDeliveryBoys())
           .body;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return [];
     }
   }
@@ -655,7 +682,8 @@ class DataManager {
         if (productOfers != null) {
           productOfferCacheManager.updateProductOffers(productOfers);
         }
-      } on Response catch (_) {
+      } on Response catch (e) {
+        print(e);
         return [];
       }
     }
@@ -674,7 +702,8 @@ class DataManager {
           productImageCacheManager.updateProductImages(
               productId, cachedProductImages);
         }
-      } on Response catch (_) {
+      } on Response catch (e) {
+        print(e);
         return [];
       }
     }
@@ -692,7 +721,8 @@ class DataManager {
             productImage.productId, updatedProductImage);
       }
       return updatedProductImage;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return null;
     }
   }
@@ -708,7 +738,8 @@ class DataManager {
             productImage.productId, updatedProductImage);
       }
       return updatedProductImage;
-    } on Response catch (_) {
+    } on Response catch (e) {
+      print(e);
       return null;
     }
   }
@@ -722,9 +753,9 @@ class DataManager {
         return (await (await apiCaller.getProductOfferService())
                 .getProductOffersForProducts(products.map((product) => product.id).toList()))
             ?.body;
-      } on Response catch (_) {
-        return [];
-      }
+      } on Response catch (e) { print(e);
+      return [];
+    }
     }
     Map<int, Product> productMap = Map();
     products.forEach((Product product) => productMap.putIfAbsent(product.id, () => product));
@@ -734,10 +765,22 @@ class DataManager {
     }).toList();*/
   }
 
-  void subscribeDriverLocation(StreamController<DeliveryBoyLocation> controller) {
+  void subscribeDriverLocation(
+      StreamController<DeliveryBoyLocation> controller) {
     webSocketCaller.subscribeTopic<DeliveryBoyLocation>(
         WS_TOPIC_DRIVER_LOCATION,
         (Map<String, dynamic> json) => DeliveryBoyLocation.fromJson(json),
         controller);
+  }
+
+  Future<InvoiceAddressVM?> getInvoiceAddresses(int invoiceId) async {
+    try {
+      return (await (await apiCaller.getInvoiceService())
+              .getSourceDestinationAddressForInvoice(invoiceId))
+          .body;
+    } on Response catch (e) {
+      print(e);
+      return null;
+    }
   }
 }

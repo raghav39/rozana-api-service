@@ -2,6 +2,7 @@ import "dart:async";
 
 import 'package:chopper/chopper.dart';
 import 'package:rozana_api_service/data/model/dto/invoice.dart';
+import 'package:rozana_api_service/data/model/dto/invoice_address_vm.dart';
 import 'package:rozana_api_service/data/model/dto/invoice_draft.dart';
 
 part 'invoice_api_service.chopper.dart';
@@ -41,4 +42,7 @@ abstract class InvoiceApiService extends ChopperService {
 
   @Get(path: "invoices/count")
   Future<Response<int>> getInvoiceCount();
+
+  @Get(path: "invoice/addresses/{id}")
+  Future<Response<InvoiceAddressVM>> getSourceDestinationAddressForInvoice(@Path() int id);
 }
