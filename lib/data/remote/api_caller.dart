@@ -13,6 +13,7 @@ import 'package:rozana_api_service/data/model/dto/delivery_boy_user.dart';
 import 'package:rozana_api_service/data/model/dto/delivery_slot.dart';
 import 'package:rozana_api_service/data/model/dto/device.dart';
 import 'package:rozana_api_service/data/model/dto/invoice.dart';
+import 'package:rozana_api_service/data/model/dto/invoice_address_vm.dart';
 import 'package:rozana_api_service/data/model/dto/jwt_token.dart';
 import 'package:rozana_api_service/data/model/dto/line_item.dart';
 import 'package:rozana_api_service/data/model/dto/locality.dart';
@@ -33,7 +34,6 @@ import 'package:rozana_api_service/data/model/dto/user_customer.dart';
 import 'package:rozana_api_service/data/model/dto/wallet.dart';
 import 'package:rozana_api_service/data/remote/address_api_service.dart';
 import 'package:rozana_api_service/data/remote/auth_api_service.dart';
-import 'package:rozana_api_service/data/remote/promo_code_offer_api_service.dart';
 import 'package:rozana_api_service/data/remote/delivery_boy_api_service.dart';
 import 'package:rozana_api_service/data/remote/delivery_slot_api_service.dart';
 import 'package:rozana_api_service/data/remote/device_api_service.dart';
@@ -43,8 +43,8 @@ import 'package:rozana_api_service/data/remote/order_transaction_api_service.dar
 import 'package:rozana_api_service/data/remote/organization_config_api_service.dart';
 import 'package:rozana_api_service/data/remote/product_api_service.dart';
 import 'package:rozana_api_service/data/remote/product_offer_api_service.dart';
+import 'package:rozana_api_service/data/remote/promo_code_offer_api_service.dart';
 import 'package:rozana_api_service/data/remote/user_customer_api_service.dart';
-import 'package:rozana_api_service/utils/app_constants.dart';
 import 'package:universal_io/io.dart' if (dart.library.io) 'dart:io';
 
 class ApiCaller {
@@ -64,7 +64,8 @@ class ApiCaller {
 
   final converter;
 
-  ApiCaller(this.preferenceManager, this.organizationAppKey, this.eventBus, this.serverEndpoint)
+  ApiCaller(this.preferenceManager, this.organizationAppKey, this.eventBus,
+      this.serverEndpoint)
       : converter = JsonSerializableConverter({
           UserCustomer: UserCustomer.fromJsonFactory,
           LoginVm: LoginVm.fromJsonFactory,
@@ -95,6 +96,7 @@ class ApiCaller {
           ProductOfferItem: ProductOfferItem.fromJsonFactory,
           PromoCodeInvoice: PromoCodeInvoice.fromJsonFactory,
           PromoCodeOffer: PromoCodeOffer.fromJsonFactory,
+          InvoiceAddressVM: InvoiceAddressVM.fromJsonFactory,
         });
 
   Future<ChopperClient> getAuthenticatedClient() async {
@@ -136,7 +138,9 @@ class ApiCaller {
     Future<Response> checkForBadRequestResponse(Response response) async {
       print(response.statusCode);
       if (response.statusCode == HttpStatus.badRequest &&
-          (response.base.request?.url == Uri.parse("https://rozana.noisytempo.com/api/organizationConfig"))) {
+          (response.base.request?.url ==
+              Uri.parse(
+                  "https://rozana.noisytempo.com/api/organizationConfig"))) {
         authenticatedChopperClient = null;
         eventBus.fire(BadRequestResponseEvent());
       }
@@ -147,7 +151,12 @@ class ApiCaller {
       baseUrl: this.serverEndpoint,
       converter: converter,
       errorConverter: converter,
-      interceptors: [authHeader, xAppKeyHeader, checkForUnAuthorizedResponse, checkForBadRequestResponse],
+      interceptors: [
+        authHeader,
+        xAppKeyHeader,
+        checkForUnAuthorizedResponse,
+        checkForBadRequestResponse
+      ],
       services: [
         ProductApiService.create(),
         UserCustomerApiService.create(),
@@ -216,7 +225,8 @@ class ApiCaller {
   }
 
   Future<UserCustomerApiService> getUserCustomerService() async {
-    return (await getAuthenticatedClient()).getService<UserCustomerApiService>();
+    return (await getAuthenticatedClient())
+        .getService<UserCustomerApiService>();
   }
 
   Future<InvoiceApiService> getInvoiceService() async {
@@ -224,15 +234,18 @@ class ApiCaller {
   }
 
   Future<DeliverySlotApiService> getDeliverySlotService() async {
-    return (await getAuthenticatedClient()).getService<DeliverySlotApiService>();
+    return (await getAuthenticatedClient())
+        .getService<DeliverySlotApiService>();
   }
 
   Future<OrganizationConfigApiService> getOrganizationService() async {
-    return (await getAuthenticatedClient()).getService<OrganizationConfigApiService>();
+    return (await getAuthenticatedClient())
+        .getService<OrganizationConfigApiService>();
   }
 
   Future<OrderTransactionApiService> getOrderTransactionApiService() async {
-    return (await getAuthenticatedClient()).getService<OrderTransactionApiService>();
+    return (await getAuthenticatedClient())
+        .getService<OrderTransactionApiService>();
   }
 
   Future<DeliveryBoyApiService> getDeliveryBoyApiService() async {
@@ -248,11 +261,13 @@ class ApiCaller {
   }
 
   Future<ProductOfferApiService> getProductOfferService() async {
-    return (await getAuthenticatedClient()).getService<ProductOfferApiService>();
+    return (await getAuthenticatedClient())
+        .getService<ProductOfferApiService>();
   }
 
   Future<PromoCodeOfferApiService> getPromoCodeOfferApiService() async {
-    return (await getAuthenticatedClient()).getService<PromoCodeOfferApiService>();
+    return (await getAuthenticatedClient())
+        .getService<PromoCodeOfferApiService>();
   }
 
   Future<LocalityApiService> getLocalityApiService() async {
@@ -279,7 +294,8 @@ class JsonSerializableConverter extends JsonConverter {
     return jsonFactory(values);
   }
 
-  List<T> _decodeList<T>(List values) => values.where((v) => v != null).map<T>((v) => _decode<T>(v)).toList();
+  List<T> _decodeList<T>(List values) =>
+      values.where((v) => v != null).map<T>((v) => _decode<T>(v)).toList();
 
   dynamic _decode<T>(entity) {
     if (entity is List) return _decodeList<T>(entity);
