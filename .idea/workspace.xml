@@ -12,6 +12,7 @@
     <list default="true" id="d4ee35ef-e6c3-4636-be35-b70b776fa360" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/remote/api_caller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/remote/api_caller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20211017_0004" />
+    <property name="com.google.cloudcode.ide_session_index" value="20211020_0000" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
@@ -117,7 +118,7 @@
       <option name="presentableId" value="Default" />
       <updated>1545460612148</updated>
       <workItem from="1633241453333" duration="4370000" />
-      <workItem from="1633803464744" duration="37101000" />
+      <workItem from="1633803464744" duration="37879000" />
     </task>
     <servers />
   </component>
